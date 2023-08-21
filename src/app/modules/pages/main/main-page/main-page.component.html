@@ -1,0 +1,16 @@
+<div class="w-100">
+<ia-search-bar></ia-search-bar>
+</div>
+<ia-study-case-carrousel></ia-study-case-carrousel>
+
+<p-scrollPanel [style]="{ width: '70%', height: '100%' }">
+    <h2>Articulos</h2> 
+        <ia-card-collection [articles]="articles"></ia-card-collection>
+        <ia-paginator></ia-paginator>
+</p-scrollPanel>
+
+<div class="ia-filters">
+    <h4>Filters:</h4>
+    <ia-articles-filter></ia-articles-filter>
+</div>
+

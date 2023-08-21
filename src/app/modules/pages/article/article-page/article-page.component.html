@@ -1,0 +1,23 @@
+<ng-container *ngIf="article">
+
+    <ia-navbar [sectionTitle]="article.title"></ia-navbar>
+    <ia-title-header [title]="article.title"></ia-title-header>
+    <ia-info></ia-info>
+    <p-scrollPanel [style]="{ width: '70%', height: '100%' }">
+        <ia-text-p [textParagraph]="article.parapgraph[0]"></ia-text-p>
+        <div class="callouts">
+            <ia-callout *ngFor="let callout of article.callouts" [callout]="callout"></ia-callout>
+        </div>
+        <ia-text-p *ngFor="let p of article.parapgraph.slice(1)" 
+        [textParagraph]="p"></ia-text-p>
+        <p>Articulos Relacionados: </p>
+        <ul>
+            <li *ngFor="let l of article.intrestLinks">
+                <a [href]="l.link"> {{l.text}}</a>
+            </li>
+          </ul>
+        <p>{{article.publishedDate}}</p>
+    </p-scrollPanel>
+    <ia-topic-related class="mr-5"></ia-topic-related>
+
+</ng-container>
