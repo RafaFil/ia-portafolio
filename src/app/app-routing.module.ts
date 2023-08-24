@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'main/article/:id',
     loadChildren: () => import('./modules/pages/article/article.module').then( m => m.ArticleModule )
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./modules/pages/error/error.module').then( m => m.ErrorModule )
   }
 ];
 

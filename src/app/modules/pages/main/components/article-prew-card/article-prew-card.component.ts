@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Article } from 'src/app/modules/core/interfaces/article';
 
 @Component({
@@ -10,9 +11,13 @@ export class ArticlePrewCardComponent implements OnInit {
 
   @Input() article!: Article;
 
-  constructor() { }
+  constructor(private router : Router, private routerA : ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
+  goToArticle() {
+
+    this.router.navigate([`main/article/${this.article.id}`]);
+  }
 }

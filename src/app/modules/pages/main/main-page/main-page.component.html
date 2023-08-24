@@ -1,16 +1,24 @@
-<div class="w-100">
-<ia-search-bar></ia-search-bar>
+<div class="w-100 animated-item ia-navbar-container" [class.active]="showNavBar">
+    <ia-navbar></ia-navbar>
 </div>
-<ia-study-case-carrousel></ia-study-case-carrousel>
 
-<p-scrollPanel [style]="{ width: '70%', height: '100%' }">
-    <h2>Articulos</h2> 
+<div class="container">
+    <div class="w-100 animated-item">
+        <ia-search-bar #searchBar></ia-search-bar>
+    </div>
+
+    <div class="animated-item">
+        <ia-study-case-carrousel></ia-study-case-carrousel>
+    </div>
+
+    <p-scrollPanel [style]="{ width: '70%', height: '100%' }" class="animated-item">
+        <h2>Articulos</h2> 
         <ia-card-collection [articles]="articles"></ia-card-collection>
         <ia-paginator></ia-paginator>
-</p-scrollPanel>
+    </p-scrollPanel>
 
-<div class="ia-filters">
-    <h4>Filters:</h4>
-    <ia-articles-filter></ia-articles-filter>
+    <div class="ia-filters animated-item">
+        <h4>Filters:</h4>
+        <ia-articles-filter></ia-articles-filter>
+    </div>
 </div>
-

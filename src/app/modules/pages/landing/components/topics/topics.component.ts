@@ -10,7 +10,13 @@ export class TopicsComponent implements OnInit {
   topics : String[] = [
     "Introduccion a Machine Learning",
     "Tratamiento previo de los datos y fundamentos de los algoritmos de ML",
-    "UT3"
+    "Algoritmos Lineales",
+    "Algoritmos No Lineales",
+    "Algoritmos No Lineales",
+    "Clustering y Modelos Jerárquicos",
+    "Ensambles",
+    "Evaluación",
+    "Casos de estudio"
   ]
 
   constructor() { }
