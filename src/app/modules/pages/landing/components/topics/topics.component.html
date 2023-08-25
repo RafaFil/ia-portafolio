@@ -1,3 +1,2 @@
-<div class="card p-fluid">
-    <ia-base-chip  [text]="topics" class=""></ia-base-chip>
-</div>
+<ia-base-chip  *ngFor="let topic of topics" [text]="topic"></ia-base-chip>
+

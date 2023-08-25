@@ -1,0 +1,14 @@
+.custom-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar-container {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.search-bar-container.active {
+    width: 25rem;
+}

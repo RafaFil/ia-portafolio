@@ -4,7 +4,7 @@ export interface Article {
     id: number,
     title: string,
     category: string,
-    ut: string,
+    topics: string,
     parapgraph: string[],
     images?: string[],
     relatedJupyter?: string[],
@@ -13,5 +13,6 @@ export interface Article {
         text: string,
         link: string,
     }[],
-    publishedDate?: Date | string
+    publishedDate?: Date | string,
+    tags : string[]
 }

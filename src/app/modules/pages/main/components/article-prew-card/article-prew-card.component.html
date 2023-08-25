@@ -1,9 +1,8 @@
-<p-card header="{{article.title}}" subheader="{{article.publishedDate}}">
+<p-card header="{{article.title}}" subheader="{{formatDate()}}">
     <p class="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-        quas!
+        <ia-tags *ngFor="let tag of article.tags" [text]="tag" class="ml-3"></ia-tags>
     </p>
-    <ng-template pTemplate="footer">
-        <p-button label="Ver mas" icon="pi pi-check" (onClick)="goToArticle()"></p-button>
+    <ng-template pTemplate="footer" class="ia-prew-footer">
+        <p-button label="Ver mas" icon="pi pi-external-link" (onClick)="goToArticle()"></p-button>
     </ng-template>
 </p-card>

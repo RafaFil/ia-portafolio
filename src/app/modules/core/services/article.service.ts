@@ -25,8 +25,9 @@ export class ArticleService {
         id: 0,
         title: "string",
         category: "string",
-        ut: "string",
-        parapgraph: []
+        topics: "string",
+        parapgraph: [],
+        tags: []
       }
     }
   }

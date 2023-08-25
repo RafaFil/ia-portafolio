@@ -23,17 +23,17 @@
     animation: fadeInUp 1s ease;
 }*/
 
-/* Initial state for the navigation bar */
 .ia-navbar-container {
+
     position: fixed;
-    top: -100px; /* Off-screen initially */
+    top: -100px;
     left: 0;
     width: 100%;
     transition: top 0.3s ease;
-  }
-  
-  .ia-navbar-container.active {
+}
+
+.ia-navbar-container.active {
+
     top: 0;
     z-index: 999;
-  }
-  
+}

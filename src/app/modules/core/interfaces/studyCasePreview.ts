@@ -1,4 +1,5 @@
 export interface StudyCasePreview {
     title: string,
-    shortDescripton: string
+    shortDescripton: string,
+    image: string
 }

@@ -1,2 +1,14 @@
-<p-listbox [options]="filters" 
-[(ngModel)]="filter"></p-listbox>
+<form [formGroup]="filterForm">
+    <p-accordion [activeIndex]="0">
+        <p-accordionTab header="Filtrar por Temas: ">
+            <ia-tags *ngFor="let ut of UTS" [text]="ut" (click)="AddFilterUT(IaTag)" [severity]="'primary'"
+            #IaTag value="ut"></ia-tags>
+        </p-accordionTab>
+        <p-accordionTab header="Filtrar por Tipo: ">
+            <ia-tags *ngFor="let tag of TAG" [text]="tag" (click)="AddFilterUT(IaTag)" [severity]="'primary'"
+            #IaTag value="ut"></ia-tags>
+        </p-accordionTab>
+        <p-accordionTab header="Ordenar por:">
+        </p-accordionTab>
+    </p-accordion>
+</form>

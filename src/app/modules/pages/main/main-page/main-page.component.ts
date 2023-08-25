@@ -17,6 +17,10 @@ export class MainPageComponent implements OnInit {
   
   showNavBar = false;
 
+  searchBarText = "";
+
+  articleTags : string[] = [];
+
   @HostListener('window:scroll', [])
   onScroll(): void {
 
@@ -33,5 +37,14 @@ export class MainPageComponent implements OnInit {
     this.articles = this.articleService.getAllArticles();
   }
 
+  searchBarTextRecieve(s : string) {
+    this.searchBarText = s;
+  }
 
+  newTopicSelected(s : string) {
+    
+    this.articleTags.push(s);
+    this.articles = this.articles
+    .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
+  }
 }

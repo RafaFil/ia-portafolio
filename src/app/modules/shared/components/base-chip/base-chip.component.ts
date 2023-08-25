@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BaseChipComponent implements OnInit {
 
-  @Input() text!: String[];
+  @Input() text!: String;
 
 
   constructor() { }
@@ -15,8 +15,8 @@ export class BaseChipComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goTopic(a : any) {
-    console.log(a.value)
+  goTopic() {
+    console.log(this.text)
   }
 
 }

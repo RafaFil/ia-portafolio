@@ -11,19 +11,23 @@ export class StudyCaseCarrouselComponent implements OnInit {
   studyCasesPreview : StudyCasePreview[] = [
     {
       title: "caso 1",
-      shortDescripton: "description"
+      shortDescripton: "description",
+      image: "../../../../../../assets/img/cow.jpg"
     },
     {
       title: "caso 2",
-      shortDescripton: "description"
+      shortDescripton: "description",
+      image: "../../../../../../assets/img/cow.jpg"
     },
     {
       title: "caso 3",
-      shortDescripton: "description"
+      shortDescripton: "description",
+      image: "../../../../../../assets/img/cow.jpg"
     },
     {
       title: "caso 4",
-      shortDescripton: "description"
+      shortDescripton: "description",
+      image: "../../../../../../assets/img/cow.jpg"
     },
   ]
 

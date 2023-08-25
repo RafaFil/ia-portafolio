@@ -3,7 +3,11 @@
         <label>{{sectionTitle}}</label>
     </div>
     <div class="p-toolbar-group-end">
-        <p-button icon="pi pi-search" class="mr-2"></p-button>
-        <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>
+        <div class="custom-bar">
+            <p-button icon="pi pi-search" class="mr-2" (click)="toggleSearchBar()"></p-button>
+            <div class="search-bar-container" [class.active]="showSearchBar">
+                <ia-search-bar (changeOnInputSearch)="onSearchBarInput($event)"></ia-search-bar>
+            </div>
+        </div>
     </div>
 </p-toolbar>

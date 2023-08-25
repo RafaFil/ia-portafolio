@@ -1,0 +1,16 @@
+::ng-deep .p-card .p-card-footer {
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+::ng-deep .p-card .p-card-content {
+    padding: 0;
+}
+
+::ng-deep .p-card .p-card-body {
+    padding: 0.5rem;
+}
+
+::ng-deep .p-component, .p-componen {
+    margin-right: 0.2rem;
+}

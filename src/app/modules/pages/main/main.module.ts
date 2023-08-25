@@ -23,7 +23,8 @@ import { ArticlesFilterComponent } from './components/articles-filter/articles-f
     CommonModule,
     NgPrimeModule,
     SharedModule,
-    MainRoutingModule
+    MainRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }

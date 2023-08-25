@@ -1,10 +1,10 @@
 <div class="w-100 animated-item ia-navbar-container" [class.active]="showNavBar">
-    <ia-navbar></ia-navbar>
+    <ia-navbar (newInputSearchBar)="searchBarTextRecieve($event)"></ia-navbar>
 </div>
 
 <div class="container">
-    <div class="w-100 animated-item">
-        <ia-search-bar #searchBar></ia-search-bar>
+    <div class="w-100 animated-item mt-3">
+        <ia-search-bar #searchBar (changeOnInputSearch)="searchBarTextRecieve($event)"></ia-search-bar>
     </div>
 
     <div class="animated-item">
@@ -13,12 +13,13 @@
 
     <p-scrollPanel [style]="{ width: '70%', height: '100%' }" class="animated-item">
         <h2>Articulos</h2> 
-        <ia-card-collection [articles]="articles"></ia-card-collection>
+        <ia-card-collection [articles]="articles" 
+        [searchFilter]="searchBarText"></ia-card-collection>
         <ia-paginator></ia-paginator>
     </p-scrollPanel>
 
     <div class="ia-filters animated-item">
-        <h4>Filters:</h4>
-        <ia-articles-filter></ia-articles-filter>
+        <h4>Filtros:</h4>
+        <ia-articles-filter (topicSelected)="newTopicSelected($event)"></ia-articles-filter>
     </div>
 </div>

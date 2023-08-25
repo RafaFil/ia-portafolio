@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UT } from 'src/app/modules/core/enums/UT';
 
 @Component({
   selector: 'ia-topics',
@@ -19,9 +20,12 @@ export class TopicsComponent implements OnInit {
     "Casos de estudio"
   ]
 
+
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

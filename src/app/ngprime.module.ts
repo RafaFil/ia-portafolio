@@ -12,6 +12,10 @@ import { SplitterModule } from 'primeng/splitter';
 import { InputTextModule } from 'primeng/inputtext';
 import { CarouselModule } from 'primeng/carousel';
 import { ListboxModule } from 'primeng/listbox';
+import { ChipModule } from 'primeng/chip';
+import { SlideMenuModule } from 'primeng/slidemenu';
+import { TagModule } from 'primeng/tag';
+import { AccordionModule } from 'primeng/accordion';
 
 const NgPrimeComponents = [
     ButtonModule,
@@ -25,7 +29,11 @@ const NgPrimeComponents = [
     SplitterModule,
     InputTextModule,
     CarouselModule,
-    ListboxModule
+    ListboxModule,
+    ChipModule,
+    SlideMenuModule,
+    TagModule,
+    AccordionModule
 ];
 
 @NgModule({

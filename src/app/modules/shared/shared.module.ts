@@ -7,13 +7,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { TagsComponent } from './components/tags/tags.component';
+import { ArticleFilterPipe } from './pipes/article-filter.pipe';
 
 @NgModule({
   declarations: [
     BaseChipComponent,
     NavbarComponent,
     SearchBarComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    TagsComponent,
+    ArticleFilterPipe,
   ],
   imports: [
     CommonModule,
@@ -26,7 +30,9 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     BaseChipComponent,
     NavbarComponent,
     SearchBarComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    TagsComponent,
+    ArticleFilterPipe,
   ]
 })
 export class SharedModule { }

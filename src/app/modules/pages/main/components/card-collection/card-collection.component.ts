@@ -10,6 +10,9 @@ export class CardCollectionComponent implements OnInit {
 
   @Input() articles: Article[] = [];
 
+  @Input() searchFilter : string = "";
+  
+
   constructor() { }
 
   ngOnInit(): void {

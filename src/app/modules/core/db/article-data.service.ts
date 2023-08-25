@@ -12,7 +12,7 @@ export class ArticleDataService {
       id: 1,
       title: "¿Qué es “Machine Learning”?",
       category: "Introduccion Machine Learning",
-      ut: "1",
+      topics: "1",
       parapgraph: 
         [
           "Cuando se realiza una busqueda sobre que es machine learning los resultados son tantos y variados e incluso no parece haber concenso sobre una definicion que pueda resumir en palabras a este campo de estudio. Es por esto que varios exponentes de la industria han realizados sus propias ",
@@ -54,27 +54,33 @@ export class ArticleDataService {
             link: "http://localhost:4200/main/article/2"
           }
         ],
-        publishedDate: new Date("2023/08/20")
+        publishedDate: new Date("2023/08/20"),
+        tags : [
+          "Investigacion",
+          "Introduccion a Machine Learning"
+        ]
     },
     {
       id: 2,
       title: "Herramientas para el desarrollo de ML",
       category: "1",
-      ut: "1",
+      topics: "1",
       parapgraph: [],
       callouts: [],
       intrestLinks: [{
           text: "string",
           link: "http://localhost:4200/main/article/3",
-      }]
+      }],
+      tags : []
     },
     {
       id: 3,
       title: "Un primer acercamiento a las herramientas de ML, RapidMiner, Excel, JupyerLabs",
       category: "1",
-      ut: "1",
+      topics: "1",
       parapgraph: [],
-      callouts: []
+      callouts: [],
+      tags: []
     }
   ]
 
