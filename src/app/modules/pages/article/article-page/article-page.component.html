@@ -1,23 +1,28 @@
 <ng-container *ngIf="article">
-
-    <ia-navbar [sectionTitle]="article.title"></ia-navbar>
-    <ia-title-header [title]="article.title"></ia-title-header>
-    <ia-info></ia-info>
-    <p-scrollPanel [style]="{ width: '70%', height: '100%' }">
-        <ia-text-p [textParagraph]="article.parapgraph[0]"></ia-text-p>
-        <div class="callouts">
-            <ia-callout *ngFor="let callout of article.callouts" [callout]="callout"></ia-callout>
+    <ia-navbar [sectionTitle]="article.title" [showSearchButton]="false"></ia-navbar>
+    <div class="container">
+        <ia-title-header [title]="article.title"></ia-title-header>
+        <div class="mt-3 mb-3 ia-tags">
+            <ia-info [tags]="article.tags"></ia-info>
         </div>
-        <ia-text-p *ngFor="let p of article.parapgraph.slice(1)" 
-        [textParagraph]="p"></ia-text-p>
-        <p>Articulos Relacionados: </p>
-        <ul>
-            <li *ngFor="let l of article.intrestLinks">
-                <a [href]="l.link"> {{l.text}}</a>
-            </li>
-          </ul>
-        <p>{{article.publishedDate}}</p>
-    </p-scrollPanel>
-    <ia-topic-related class="mr-5"></ia-topic-related>
-
+        <p-scrollPanel [style]="{ width: '70%', height: '100%' }">
+            <div class="ia-article-text">
+                <ia-text-p [textParagraph]="article.parapgraph[0]"></ia-text-p>
+                <div class="callouts">
+                    <ia-callout *ngFor="let callout of article.callouts" [callout]="callout"></ia-callout>
+                </div>
+                <ia-text-p *ngFor="let p of article.parapgraph.slice(1)" 
+                [textParagraph]="p"></ia-text-p>
+                <h3>Articulos Relacionados: </h3>
+                <ul>
+                    <li *ngFor="let l of article.intrestLinks">
+                        <a [href]="l.link"> {{l.text}}</a>
+                    </li>
+                </ul>
+                <p>Publicado: {{formatDate()}}</p>
+            </div>
+        </p-scrollPanel>
+        <ia-topic-related class="mr-5"></ia-topic-related>
+    </div>
 </ng-container>
+

@@ -34,4 +34,19 @@ export class ArticlePageComponent implements OnInit {
     
   }
 
+  formatDate() {
+    
+    if(this.article?.publishedDate) {
+
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const date = new Date(this.article.publishedDate);
+      const day = date.getDate();
+      const month = months[date.getMonth()];
+      const year = date.getFullYear();
+    
+      return `${day} ${month} ${year}`;
+    }
+    return "";
+  }
+
 }

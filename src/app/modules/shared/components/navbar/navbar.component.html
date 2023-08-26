@@ -4,7 +4,10 @@
     </div>
     <div class="p-toolbar-group-end">
         <div class="custom-bar">
-            <p-button icon="pi pi-search" class="mr-2" (click)="toggleSearchBar()"></p-button>
+            <p-button *ngIf="showSearchButton"
+            icon="pi pi-search" class="mr-2" (click)="toggleSearchBar()"></p-button>
+            <p-button *ngIf="!showSearchButton"
+            icon="pi pi-home" class="mr-2" (click)="redirectHome()"></p-button>
             <div class="search-bar-container" [class.active]="showSearchBar">
                 <ia-search-bar (changeOnInputSearch)="onSearchBarInput($event)"></ia-search-bar>
             </div>

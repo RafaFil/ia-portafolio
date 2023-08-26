@@ -25,6 +25,9 @@ import { ArticlesFilterComponent } from './components/articles-filter/articles-f
     SharedModule,
     MainRoutingModule,
     ReactiveFormsModule
+  ],
+  exports: [
+    CardCollectionComponent
   ]
 })
 export class MainModule { }

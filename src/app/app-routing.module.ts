@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/pages/article/article.module').then( m => m.ArticleModule )
   },
   {
+    path: 'theme/:theme',
+    loadChildren: () => import('./modules/pages/topic-page/topic-page.module').then( m => m.TopicPageModule )
+  },
+  {
     path: '**',
     loadChildren: () => import('./modules/pages/error/error.module').then( m => m.ErrorModule )
   }

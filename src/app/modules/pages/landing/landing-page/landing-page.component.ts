@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+
+  @HostListener('window:scroll', ['$event']) 
+  onScroll() {
+    this.scrollToMain();
+  }
 
   constructor(private router: Router, private elementRef: ElementRef) { }
 

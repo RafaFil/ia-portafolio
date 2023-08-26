@@ -31,4 +31,9 @@ export class ArticleService {
       }
     }
   }
+
+  public getAllArticlesByTopic(topic : string) {
+    
+    return this.articleDb.articlesData.filter(x => x.tags.includes(topic));
+  }
 }

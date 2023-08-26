@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'ia-base-chip',
@@ -10,13 +11,14 @@ export class BaseChipComponent implements OnInit {
   @Input() text!: String;
 
 
-  constructor() { }
+  constructor(private rout : Router) { }
 
   ngOnInit(): void {
   }
 
   goTopic() {
-    console.log(this.text)
+
+    this.rout.navigate(["theme/"+ this.text])
   }
 
 }

@@ -16,6 +16,7 @@ import { ChipModule } from 'primeng/chip';
 import { SlideMenuModule } from 'primeng/slidemenu';
 import { TagModule } from 'primeng/tag';
 import { AccordionModule } from 'primeng/accordion';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 const NgPrimeComponents = [
     ButtonModule,
@@ -33,7 +34,8 @@ const NgPrimeComponents = [
     ChipModule,
     SlideMenuModule,
     TagModule,
-    AccordionModule
+    AccordionModule,
+    ScrollTopModule
 ];
 
 @NgModule({

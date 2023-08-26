@@ -6,3 +6,8 @@
 body {
     font-family: var(--font-family);
 }
+
+:root .p-tag.p-tag-info {
+    background-color: grey;
+    color: white;
+}
