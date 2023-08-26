@@ -11,6 +11,7 @@ import { ImageComponent } from './components/image/image.component';
 import { InfoComponent } from './components/info/info.component';
 import { TopicRelatedComponent } from './components/topic-related/topic-related.component';
 import { CalloutComponent } from './components/callout/callout.component';
+import { ArticleImageComponent } from './components/article-image/article-image.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CalloutComponent } from './components/callout/callout.component';
     ImageComponent,
     InfoComponent,
     TopicRelatedComponent,
-    CalloutComponent
+    CalloutComponent,
+    ArticleImageComponent
   ],
   imports: [
     CommonModule,
