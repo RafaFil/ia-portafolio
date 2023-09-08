@@ -15,5 +15,6 @@ export interface Article {
     }[],
     publishedDate: Date,
     tags : string[],
-    subHeadings?: string[]
+    subHeadings?: string[],
+    destacado?: boolean
 }

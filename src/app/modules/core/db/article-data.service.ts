@@ -571,13 +571,161 @@ export class ArticleDataService {
       ]
     },
     {
-      id: 6,
+      id: 7,
       title: "Analisis del Dataset wine de UCI utilizando RapidMiner y JupyterLabs",
       category: "2",
       topics: "2",
       parapgraph: [
         `
-        
+        <p>La idea principal es dado el dataset wine extraido de UCI (disponible en: https://archive.ics.uci.edu/dataset/109/wine) y dado los conocimientos de operadores de algoritmos y tratamiento previo de los datos realizar:</p>
+
+<ul>
+    <li>Analisis de los datos, estadisticas, atributos, existensia de valores faltantes y outliers</li>
+    <li>En rapidminer se creara un proceso con dos canales en uno se utilizara el dataset tal cual está, y en el otro se aplicara bloques para normalizar y estandarizar los datos</li>
+    <li>Se realizara un split del dataset en test y training</li>
+    <li>Se utilizara un modelo sencillo de Naive Bayes para realizar la clasificación , y bloques de evaluación de la performance pertinentes</li>
+    <li>En jupyter: Maximos y minimos de cada columna</li>
+    <li>Media de cada atributo</li>
+    <li>DESVEST de cada atributo</li>
+    <li>Normalizacion de los valores</li>
+    <li>Realizar un split del dataset</li>
+</ul>
+
+<p>El dataset son los resultados de un análisis químico de vinos cultivados en la misma región de Italia pero procedentes de tres cultivares diferentes. El análisis determinó las cantidades de 13 componentes presentes en cada uno de los tres tipos de vino.
+Nos encontramos ante un dataset con los siguientes atributos: (Extraído de UCI)</p>
+<div class="container mt-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Attribute Name</th>
+                    <th>Role</th>
+                    <th>Type</th>
+                    <th>Missing Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>class</td>
+                    <td>Target</td>
+                    <td>Categorical</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Alcohol</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Malicacid</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Ash</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Alcalinity_of_ash</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Magnesium</td>
+                    <td>Feature</td>
+                    <td>Integer</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Total_phenols</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Flavanoids</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Nonflavanoid_phenols</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Proanthocyanins</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Color_intensity</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Hue</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>0D280_0D315_of_diluted_wines</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Proline</td>
+                    <td>Feature</td>
+                    <td>Integer</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<h2>Análisis en RapidMiner</h2>
+
+<p>Tras un analisis con el Statics de RapidMiner encontramos que:</p>
+<img src="../../../../../../assets/img/ut2_pd2_1.png" alt="Untitled" class="img-fluid mb-4">
+<img src="../../../../../../assets/img/ut2_pd2_2.png" alt="Untitled" class="img-fluid mb-4">
+
+
+<p>Destacando que no hay valores perdidos en el mismo.</p>
+<p>Para los outliers se realizara la siguiente conexion de operadores:</p>
+<img src="../../../../../../assets/img/ut2_pd2_3.png" alt="Untitled" class="img-fluid mb-4">
+<p>Se encuentrarn aproximadamente 10 datos outliers.</p>
+<p>Luego se utiliza un modelo sencillo de Naive Bayes para realizar la clasificación , y bloques de
+evaluación de la performance pertinentes (utilizando el dataset de test) para obtener
+los resultados.
+
+A grosso modo podemos ver que el modelo consiste en el dataset del titanic, el cual se le realiza un parse en el atributo classe, de integer a polinomial (esto debido a que el wizard de rapidminer comprendio mal el dato), luego se establece el rol de la variable objetivo al mismo.
+
+Luego se puede ver que tenemos dos canales uno con un subproceso el cual realiza una normalizacion para luego realizar un filtrado de datos donde se quiten estos outliers para luego realizar un split de esa data en un 70 training 30 test. En el otro canal no hay subproceso y por ende se hace el split sobre el dataset mismo.
+
+A los datos de training se aplica el algoritmo Naive Bayes, para luego aplicar el modelo sobre los datos de training. Por ultimo se utiliza un operador de performance para comparar los resultados de performance de cada canal.</p>
+<img src="../../../../../../assets/img/ut2_pd2_4.png" alt="Untitled" class="img-fluid mb-4">
+<h5>Detección y filtrado de outliers: </h5>
+<img src="../../../../../../assets/img/ut2_pd2_5.png" alt="Untitled" class="img-fluid mb-4">
+<h5>Resultados sin normalizacion:</h5>
+<img src="../../../../../../assets/img/ut2_pd2_6.png" alt="Untitled" class="img-fluid mb-4">
+<h5>Resultado con normalizacion:</h5>
+<img src="../../../../../../assets/img/ut2_pd2_7.png" alt="Untitled" class="img-fluid mb-4">
+<p>Se puede observar que con la normalizacion da una precision del 100%, esto puede deberse a que la normalizacion se realizo antes de realizar el split dataset</p>
+
+<h2>Análisis en Jupyter</h2>
+
+<a href="https://github.com/RafaFil/ia-portafolio/blob/main/docs/ut2/pds/pd3.ipynb">
+Link al Jupyter:
+</a>
+
         `
       ],
       publishedDate: new Date("2023/09/05"),
@@ -593,8 +741,61 @@ export class ArticleDataService {
         "Análisis en Jupyter"
       ]
     },
+    {
+    id: 7,
+    title: "Cálculo de la probabilidad condicional en el titanic",
+    category: "",
+    topics: "1",
+    parapgraph: 
+      [
+        `
+        <p>Tomando como referencia el blog: </p>
+        <p>Se realizaran los siguientes cálculos de probabilidad condicional: </p>
+        <p> los calculos: //TODO </p>
+        <p>Recordando la formula de la probabilidad condicional como: </p>
+        `
+      ],
+      intrestLinks : [
+      ],
+      publishedDate: new Date("2023/09/05"),
+      tags : [
+      ]
+    },
+    {
+    id: 8,
+    title: "Modelo sobre el Titanic",
+    category: "",
+    topics: "1",
+    parapgraph: 
+      [
+        `
+          TBD
+        `
+      ],
+      intrestLinks : [
+      ],
+      publishedDate: new Date("2023/09/05"),
+      tags : [
+      ],
+      destacado: true
+    }
     
   ].reverse()
 
   constructor() { }
 }
+
+
+// id: 1,
+// title: "?",
+// category: "",
+// topics: "1",
+// parapgraph: 
+//   [
+
+//   ],
+//   intrestLinks : [
+//   ],
+//   publishedDate: new Date("2023/08/20"),
+//   tags : [
+//   ]
