@@ -11,7 +11,8 @@ export class ArticleService {
 
   constructor(private articleDb : ArticleDataService) { }
 
-  public getAllArticles() : Article[] {
+  public getAllArticles() : Array<Article> {
+
     return this.articleDb.articlesData;
   }
 
@@ -27,7 +28,8 @@ export class ArticleService {
         category: "string",
         topics: "string",
         parapgraph: [],
-        tags: []
+        tags: [],
+        publishedDate: new Date()
       }
     }
   }

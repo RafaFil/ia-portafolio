@@ -13,7 +13,7 @@
                 </div>
                 <ia-text-p *ngFor="let p of article.parapgraph.slice(1)" 
                 [textParagraph]="p"></ia-text-p>
-                <h3>Articulos Relacionados: </h3>
+                <h3 *ngIf="article?.intrestLinks">Articulos Relacionados: </h3>
                 <ul>
                     <li *ngFor="let l of article.intrestLinks">
                         <a [href]="l.link"> {{l.text}}</a>
@@ -22,7 +22,7 @@
                 <p>Publicado: {{formatDate()}}</p>
             </div>
         </p-scrollPanel>
-        <ia-topic-related class="mr-5"></ia-topic-related>
+        <ia-topic-related class="mr-5" *ngIf="article?.subHeadings" [headings]="article.subHeadings"></ia-topic-related>
     </div>
 </ng-container>
 

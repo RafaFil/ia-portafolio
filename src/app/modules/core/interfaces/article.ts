@@ -13,6 +13,8 @@ export interface Article {
         text: string,
         link: string,
     }[],
-    publishedDate?: Date | string,
-    tags : string[]
+    publishedDate: Date,
+    tags : string[],
+    subHeadings?: string[],
+    destacado?: boolean
 }
