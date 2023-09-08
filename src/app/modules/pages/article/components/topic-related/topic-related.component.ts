@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ia-topic-related',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topic-related.component.css']
 })
 export class TopicRelatedComponent implements OnInit {
+
+  @Input() headings!: string[] | undefined;
 
   constructor() { }
 

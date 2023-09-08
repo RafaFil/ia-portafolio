@@ -27,7 +27,8 @@ import { ArticlesFilterComponent } from './components/articles-filter/articles-f
     ReactiveFormsModule
   ],
   exports: [
-    CardCollectionComponent
+    CardCollectionComponent,
+    MainPageComponent
   ]
 })
 export class MainModule { }

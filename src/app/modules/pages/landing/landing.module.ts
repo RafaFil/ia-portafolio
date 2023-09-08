@@ -7,6 +7,7 @@ import { TopicsComponent } from './components/topics/topics.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LandingRoutingModule } from './landing-routing.module';
 import { NgPrimeModule } from 'src/app/ngprime.module';
+import { MainModule } from '../main/main.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { NgPrimeModule } from 'src/app/ngprime.module';
     LandingRoutingModule,
     NgPrimeModule,
     SharedModule,
+    MainModule
   ]
 })
 export class LandingModule { }
