@@ -14,11 +14,16 @@ export class SearchBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("a")
   }
 
   onChangeInput() {
     
     this.changeOnInputSearch.emit(this.value);
+  }
+
+  keepValueBetweenImplementations(s : string) {
+    this.value = s;
   }
 
 

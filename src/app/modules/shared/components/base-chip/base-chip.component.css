@@ -2,4 +2,15 @@
     margin-bottom: 0.5rem;
     margin-right: 0.5rem;
     background-color: orange;
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+::ng-deep .p-chip.p-component:hover {
+    transform: scale(1.5);
+    z-index: 9999;
+    border-width: thick;
+    cursor: pointer;
+    font-weight: bold;
 }

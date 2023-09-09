@@ -15,10 +15,10 @@
     <p-scrollPanel [@fadeInOut] [style]="{ width: '70%', height: '100%' }" class="animated-item">
         <h2>Articulos</h2> 
         <div style="width: 95%">
-            <ia-card-collection [articles]="articles" 
+            <ia-card-collection [articles]="articlesShown" 
             [searchFilter]="searchBarText"></ia-card-collection>
         </div>
-        <ia-paginator></ia-paginator>
+        <ia-paginator (onChangeOfPage)="changeArticlesPage($event)"></ia-paginator>
     </p-scrollPanel>
 
     <div [@fadeInOut] class="ia-filters animated-item">

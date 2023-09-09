@@ -1,0 +1,12 @@
+::ng-deep .p-toolbar .p-toolbar-group-end span {
+    margin-right: 2rem;
+    font-size: 20px;
+    text-align: right; 
+    transition: font-weight 0.1s; 
+}
+
+
+::ng-deep .p-toolbar .p-toolbar-group-end span:hover {
+    font-weight: bold; 
+    cursor: pointer;
+}

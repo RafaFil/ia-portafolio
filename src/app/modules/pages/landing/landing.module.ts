@@ -8,13 +8,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LandingRoutingModule } from './landing-routing.module';
 import { NgPrimeModule } from 'src/app/ngprime.module';
 import { MainModule } from '../main/main.module';
+import { AboutToolbarComponent } from './components/about-toolbar/about-toolbar.component';
 
 
 @NgModule({
   declarations: [
     TitleLandingComponent,
     TopicsComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    AboutToolbarComponent
   ],
   imports: [
     CommonModule,

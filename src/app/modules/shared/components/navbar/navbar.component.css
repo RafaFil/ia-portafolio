@@ -12,3 +12,8 @@
 .search-bar-container.active {
     width: 25rem;
 }
+
+
+::ng-deep p-toolbar .p-component, .p-component {
+    margin-right: 0rem;
+}

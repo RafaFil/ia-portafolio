@@ -19,6 +19,8 @@ export class MainPageComponent implements OnInit {
 
   articles: Article[] = [];
 
+  articlesShown : Article[] = [];
+
   isNavbarVisible: boolean = true; 
   
   showNavBar = false;
@@ -39,8 +41,9 @@ export class MainPageComponent implements OnInit {
   constructor(private articleService : ArticleService, private el: ElementRef) { }
 
   ngOnInit(): void {
-    console.log("aaaa")
+
     this.articles = this.articleService.getAllArticles();
+    this.getArticlesToShow(0);
   }
 
   searchBarTextRecieve(s : string) {
@@ -53,4 +56,19 @@ export class MainPageComponent implements OnInit {
     this.articles = this.articles
     .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
   }
+
+  changeArticlesPage(page : number) {
+    this.getArticlesToShow(page)
+  }
+
+  getArticlesToShow(page : number) {
+     
+    const itemsPerPage = 10; 
+    const startIndex = page * itemsPerPage; 
+    const endIndex = startIndex + itemsPerPage; 
+
+    this.articlesShown = this.articles.slice(startIndex, endIndex);
+
+  }
+
 }

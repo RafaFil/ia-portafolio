@@ -1,7 +1,41 @@
-:hover .ia-chips {
-    cursor: pointer;
-}
-
 .ia-chips {
     text-align: center;
+    
 }
+
+
+.ia-base-chip {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+@keyframes show-chip {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.ia-chips .ia-base-chip {
+    animation: show-chip 0.5s ease-in-out forwards;
+}
+
+
+.ia-chips .ia-base-chip:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.ia-chips .ia-base-chip:nth-child(2) {
+    animation-delay: 0.5s; 
+}
+
+.ia-chips .ia-base-chip:nth-child(3) {
+    animation-delay: 1s; 
+}
+

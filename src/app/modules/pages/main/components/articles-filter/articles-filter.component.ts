@@ -10,6 +10,8 @@ import { TagsComponent } from 'src/app/modules/shared/components/tags/tags.compo
 })
 export class ArticlesFilterComponent implements OnInit {
 
+  checked : boolean = false;
+
   @Output() topicSelected = new EventEmitter<string>();
 
   filters : string[] = [

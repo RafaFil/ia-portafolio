@@ -778,6 +778,60 @@ Link al Jupyter:
       tags : [
       ],
       destacado: true
+    },
+    {
+      id: 9,
+      title: "Modelo sobre el Titanicfff",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+          `
+            TBD
+          `
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/09/05"),
+        tags : [
+        ],
+        destacado: true
+    },
+    {
+      id: 10,
+      title: "Bondi bonding",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+          `
+            TBD
+          `
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/09/05"),
+        tags : [
+        ],
+        destacado: true
+    },
+    {
+      id: 11,
+      title: "sup",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+          `
+            TBD
+          `
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/09/05"),
+        tags : [
+        ],
+        destacado: true
     }
     
   ].reverse()
