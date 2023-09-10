@@ -12,6 +12,7 @@ export class CardCollectionComponent implements OnInit {
 
   @Input() searchFilter : string = "";
   
+  @Input() allArticles: Article[] = [];
 
   constructor() { }
 

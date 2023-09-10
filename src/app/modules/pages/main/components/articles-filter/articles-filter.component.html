@@ -5,7 +5,7 @@
             #IaTag value="ut"></ia-tags>
         </p-accordionTab>
         <p-accordionTab header="Filtrar por Tipo: ">
-            <ia-tags *ngFor="let tag of TAG" [text]="tag" (click)="AddFilterUT(IaTag)" [severity]="'info'"
+            <ia-tags *ngFor="let tag of TAG | keyvalue" [text]="tag.value" (click)="AddFilterUT(IaTag)" [severity]="'info'"
             #IaTag value="ut"></ia-tags>
         </p-accordionTab>
         <p-accordionTab header="Ordenar por:">

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SharingService } from 'src/app/modules/core/services/sharing.service';
 
 @Component({
   selector: 'ia-search-bar',
@@ -11,19 +12,16 @@ export class SearchBarComponent implements OnInit {
 
   @Output() changeOnInputSearch = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private sharing : SharingService) { }
 
   ngOnInit(): void {
-    console.log("a")
+
+     this.value =  this.sharing.sharedSearch;
   }
 
   onChangeInput() {
     
     this.changeOnInputSearch.emit(this.value);
-  }
-
-  keepValueBetweenImplementations(s : string) {
-    this.value = s;
   }
 
 

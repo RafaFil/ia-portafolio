@@ -29,6 +29,8 @@ export class MainPageComponent implements OnInit {
 
   articleTags : string[] = [];
 
+  @ViewChild('scrollToTop') scrollToTopElement: ElementRef | undefined;
+
   @HostListener('window:scroll', [])
   onScroll(): void {
 
@@ -53,7 +55,7 @@ export class MainPageComponent implements OnInit {
   newTopicSelected(s : string) {
     
     this.articleTags.push(s);
-    this.articles = this.articles
+    this.articlesShown = this.articles
     .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
   }
 
@@ -68,7 +70,13 @@ export class MainPageComponent implements OnInit {
     const endIndex = startIndex + itemsPerPage; 
 
     this.articlesShown = this.articles.slice(startIndex, endIndex);
+    this.scrollToTop()
 
+  }
+
+  scrollToTop() {
+    if (this.scrollToTopElement)
+      this.scrollToTopElement.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
 }

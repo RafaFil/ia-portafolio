@@ -2,7 +2,7 @@
     <ia-navbar (newInputSearchBar)="searchBarTextRecieve($event)"></ia-navbar>
 </div>
 
-<div  class="container">
+<div  class="container" #scrollToTop>
     <div [@fadeInOut] class="w-100 animated-item mt-3">
         <h2>Busca articulos de tu interes: </h2>
         <ia-search-bar #searchBar (changeOnInputSearch)="searchBarTextRecieve($event)"></ia-search-bar>
@@ -15,10 +15,10 @@
     <p-scrollPanel [@fadeInOut] [style]="{ width: '70%', height: '100%' }" class="animated-item">
         <h2>Articulos</h2> 
         <div style="width: 95%">
-            <ia-card-collection [articles]="articlesShown" 
+            <ia-card-collection [articles]="articlesShown"  [allArticles]="articles"
             [searchFilter]="searchBarText"></ia-card-collection>
         </div>
-        <ia-paginator (onChangeOfPage)="changeArticlesPage($event)"></ia-paginator>
+        <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator>
     </p-scrollPanel>
 
     <div [@fadeInOut] class="ia-filters animated-item">
