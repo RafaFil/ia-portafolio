@@ -3,7 +3,6 @@
     *ngFor="let topic of topicOrder; let i = index" 
     [text]="topic" 
     [ngStyle]="{'animation-delay': i * 0.5 + 's'}"
-    pTooltip="{{topics[topic]}}"
     tooltipPosition="bottom"></ia-base-chip>
 </div>
 

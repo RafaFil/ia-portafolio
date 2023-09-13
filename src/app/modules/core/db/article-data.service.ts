@@ -755,7 +755,7 @@ Link al Jupyter:
         `
         <p>Tomando como referencia el blog: http://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html </p>
         <p>Se realizaran los siguientes cálculos de probabilidad condicional: </p>
-        <p> los calculos: </p>
+
         <p>1. P(S = true | G = female, C = 1)</p>
         <p>2. P(S = true | G = female, C = 2)</p>
         <p>3. P(S = true | G = female, C = 3)</p>
@@ -878,7 +878,9 @@ Link al Jupyter:
     parapgraph: 
       [
         `
-          TBD
+          <a href="">
+            Link al Juptyer:
+          </a>
         `
       ],
       intrestLinks : [
