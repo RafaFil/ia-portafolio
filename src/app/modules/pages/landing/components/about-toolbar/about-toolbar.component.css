@@ -10,3 +10,12 @@
     font-weight: bold; 
     cursor: pointer;
 }
+
+
+::ng-deep p-toolbar .p-component, .p-component {
+    margin-right: 0rem;
+}
+
+.p-toolbar {
+    margin: 0 !important;
+}

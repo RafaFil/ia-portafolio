@@ -901,18 +901,3 @@ Link al Jupyter:
 
   constructor() { }
 }
-
-
-// id: 1,
-// title: "?",
-// category: "",
-// topics: "1",
-// parapgraph: 
-//   [
-
-//   ],
-//   intrestLinks : [
-//   ],
-//   publishedDate: new Date("2023/08/20"),
-//   tags : [
-//   ]

@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
   }
 
   redirectHome() {
-    this.router.navigate(["/main"]);
+    this.router.navigate(["/"]);
   }
 
 }
