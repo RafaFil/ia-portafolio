@@ -9,6 +9,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { ArticleFilterPipe } from './pipes/article-filter.pipe';
+import { SwitchThemeBtnComponent } from './components/switch-theme-btn/switch-theme-btn.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ArticleFilterPipe } from './pipes/article-filter.pipe';
     PaginatorComponent,
     TagsComponent,
     ArticleFilterPipe,
+    SwitchThemeBtnComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { ArticleFilterPipe } from './pipes/article-filter.pipe';
     PaginatorComponent,
     TagsComponent,
     ArticleFilterPipe,
+    SwitchThemeBtnComponent
   ]
 })
 export class SharedModule { }

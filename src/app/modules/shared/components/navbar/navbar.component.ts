@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharingService } from 'src/app/modules/core/services/sharing.service';
 
 @Component({
   selector: 'ia-navbar',
@@ -12,10 +13,12 @@ export class NavbarComponent implements OnInit {
   showSearchBar = false;
   @Output() newInputSearchBar = new EventEmitter<string>();
   @Input() showSearchButton = true;
+  sharedText = "";
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private sharingService : SharingService) { }
 
   ngOnInit(): void {
+
   }
 
   
@@ -25,12 +28,13 @@ export class NavbarComponent implements OnInit {
   }
 
   onSearchBarInput(s: string) {
-
+    
+    this.sharingService.sharedSearch = s;
     this.newInputSearchBar.emit(s);
   }
 
   redirectHome() {
-    this.router.navigate(["/main"]);
+    this.router.navigate(["/"]);
   }
 
 }

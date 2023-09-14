@@ -1,6 +1,6 @@
-<p-carousel [value]="studyCasesPreview" [numVisible]="3" [numScroll]="3" [circular]="false">
+<p-carousel [value]="studyCasesPreview" [numVisible]="3" [numScroll]="3" [circular]="false" class="ia-carrousel" (mouseover)="showDescription()" (mouseout)="showDescription()">
     <ng-template let-product pTemplate="item">
-        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3" 
+        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid" 
         [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }">
             <div>
                 <h4 class="mb-1">{{ product.title }}</h4>

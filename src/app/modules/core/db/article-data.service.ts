@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Article } from '../interfaces/article';
+import { Tags } from '../enums/tags';
+import { Tag } from 'primeng/tag';
+
+const genericURL = "";
 
 @Injectable({
   providedIn: 'root'
@@ -742,40 +746,153 @@ Link al Jupyter:
       ]
     },
     {
-    id: 7,
+    id: 8,
     title: "Cálculo de la probabilidad condicional en el titanic",
     category: "",
     topics: "1",
     parapgraph: 
       [
         `
-        <p>Tomando como referencia el blog: </p>
+        <p>Tomando como referencia el blog: http://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html </p>
         <p>Se realizaran los siguientes cálculos de probabilidad condicional: </p>
-        <p> los calculos: //TODO </p>
+
+        <p>1. P(S = true | G = female, C = 1)</p>
+        <p>2. P(S = true | G = female, C = 2)</p>
+        <p>3. P(S = true | G = female, C = 3)</p>
+        <p>4. P(S = true | G = male, C = 1)</p>
+        <p>5. P(S = true | G = male, C = 2)</p>
+        <p>6. P(S = true | G = male, C = 3)</p>
+
         <p>Recordando la formula de la probabilidad condicional como: </p>
+        <h4 class="card-text mb-3 text-center" style="text-align: center">
+        P(A|B) = (P(A ∩ B)) / P(B)
+        </h4>
+
+        <p>Tras realizar un script que consumia el dataset titanic, visto en artículos anteriores se llego a los siguientes resultados: </p>
+
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Condición</th>
+                <th>Probabilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>P(Survived=1 | Sex=female, Pclass=1)</td>
+                <td>0.9680851063829787</td>
+            </tr>
+            <tr>
+                <td>P(Survived=1 | Sex=female, Pclass=2)</td>
+                <td>0.9210526315789473</td>
+            </tr>
+            <tr>
+                <td>P(Survived=1 | Sex=female, Pclass=3)</td>
+                <td>0.5</td>
+            </tr>
+            <tr>
+                <td>P(Survived=1 | Sex=male, Pclass=1)</td>
+                <td>0.36885245901639346</td>
+            </tr>
+            <tr>
+                <td>P(Survived=1 | Sex=male, Pclass=2)</td>
+                <td>0.1574074074074074</td>
+            </tr>
+            <tr>
+                <td>P(Survived=1 | Sex=male, Pclass=3)</td>
+                <td>0.13544668587896252</td>
+            </tr>
+            <tr>
+                <td>P(Survived=1 | Age&lt;=10, Pclass=3)</td>
+                <td>0.4318181818181818</td>
+            </tr>
+        </tbody>
+      </table>
+
+        <p>Al mismo se le puede hacer mediante una sencilla funcion en python graficar los resultados: </p>
+        <code>
+            <p>import matplotlib.pyplot as plt</p>
+
+
+            <p>condiciones = [
+              "Sex=female, Pclass=1",
+              "Sex=female, Pclass=2",
+              "Sex=female, Pclass=3",
+              "Sex=male, Pclass=1",
+              "Sex=male, Pclass=2",
+              "Sex=male, Pclass=3",
+              "Age<=10, Pclass=3"
+          ]</p>
+
+          <p>probabilidades = [
+              0.9680851063829787,
+              0.9210526315789473,
+              0.5,
+              0.36885245901639346,
+              0.1574074074074074,
+              0.13544668587896252,
+              0.4318181818181818
+          ]</p>
+
+
+          <p>plt.figure(figsize=(10, 6))</p>
+          <p>plt.barh(condiciones, probabilidades, color='skyblue')</p>
+          <p>plt.xlabel('Probabilidad')</p>
+          <p>plt.title('Probabilidad de Supervivencia')</p>
+          <p>plt.gca().invert_yaxis()  </p>
+
+          <p>plt.show()</p>
+        
+        
+        </code>
+
+        <img class="img-fluid" src="../../../../../../assets/img/ut2_pd4_2_1.png">
+
+        <p>Como conclusiones se puede notar que el factor mas determinante era el sexo, incluso mas importante que la clase (Al final de cuenta el "mujeres y niños primero" no era ficcion de James Cameroon). Se puede ver como las mujeres sin importar la clase
+        tienen una mayor probabilidad de supervivencia que cualquier hombre. Asi mismo se puede observar como los niños de tercera clase tambien tenian mayor probabilidad de supervivencia que los hombre de primera clase. A ultimo a destacar es que la probabilidad
+        de sobrevivir disminuye con la clase a la que se pertenecia</p>
+
+        <a href="https://github.com/RafaFil/ia-portafolio/blob/main/docs/ut2/pds/pd4_2.ipynb">
+          Link al jupyer notebook
+        </a>
+
         `
       ],
       intrestLinks : [
       ],
       publishedDate: new Date("2023/09/05"),
       tags : [
+        Tags.TratamientoPrevioDeLosDatos,
+        Tags.Herramientas,
+        Tags.Modelo,
+        Tags.MineriaDeDatos,
+        Tags.AplicacionMatematica,
+        Tags.Titanic
       ]
     },
     {
-    id: 8,
+    id: 9,
     title: "Modelo sobre el Titanic",
     category: "",
     topics: "1",
     parapgraph: 
       [
         `
-          TBD
+          <a href="">
+            Link al Juptyer:
+          </a>
         `
       ],
       intrestLinks : [
       ],
       publishedDate: new Date("2023/09/05"),
       tags : [
+        Tags.TratamientoPrevioDeLosDatos,
+        Tags.Herramientas,
+        Tags.Modelo,
+        Tags.MineriaDeDatos,
+        Tags.Titanic
+
       ],
       destacado: true
     }
@@ -784,18 +901,3 @@ Link al Jupyter:
 
   constructor() { }
 }
-
-
-// id: 1,
-// title: "?",
-// category: "",
-// topics: "1",
-// parapgraph: 
-//   [
-
-//   ],
-//   intrestLinks : [
-//   ],
-//   publishedDate: new Date("2023/08/20"),
-//   tags : [
-//   ]

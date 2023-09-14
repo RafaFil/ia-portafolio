@@ -38,4 +38,9 @@ export class ArticleService {
     
     return this.articleDb.articlesData.filter(x => x.tags.includes(topic));
   }
+
+  public getTotalNumberOfArticles() : number {
+
+    return this.articleDb.articlesData.length;
+  }
 }

@@ -1,3 +1,8 @@
 <div class="ia-chips">
-    <ia-base-chip  *ngFor="let topic of topics" [text]="topic"></ia-base-chip>
+    <ia-base-chip class="ia-base-chip" 
+    *ngFor="let topic of topicOrder; let i = index" 
+    [text]="topic" 
+    [ngStyle]="{'animation-delay': i * 0.5 + 's'}"
+    tooltipPosition="bottom"></ia-base-chip>
 </div>
+

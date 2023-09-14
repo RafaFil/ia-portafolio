@@ -17,6 +17,9 @@ import { SlideMenuModule } from 'primeng/slidemenu';
 import { TagModule } from 'primeng/tag';
 import { AccordionModule } from 'primeng/accordion';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { TooltipModule } from 'primeng/tooltip';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { CheckboxModule } from 'primeng/checkbox';
 
 const NgPrimeComponents = [
     ButtonModule,
@@ -35,7 +38,10 @@ const NgPrimeComponents = [
     SlideMenuModule,
     TagModule,
     AccordionModule,
-    ScrollTopModule
+    ScrollTopModule,
+    TooltipModule,
+    InputSwitchModule,
+    CheckboxModule
 ];
 
 @NgModule({

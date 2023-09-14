@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { UT } from 'src/app/modules/core/db/ut-data.service';
+import { Tags } from 'src/app/modules/core/enums/tags';
 import { TagsComponent } from 'src/app/modules/shared/components/tags/tags.component';
 
 @Component({
@@ -9,6 +10,8 @@ import { TagsComponent } from 'src/app/modules/shared/components/tags/tags.compo
   styleUrls: ['./articles-filter.component.css']
 })
 export class ArticlesFilterComponent implements OnInit {
+
+  checked : boolean = false;
 
   @Output() topicSelected = new EventEmitter<string>();
 
@@ -31,11 +34,7 @@ export class ArticlesFilterComponent implements OnInit {
     "Casos de estudio"
   ]
 
-  TAG: string[] = [
-    "Caso de estudio",
-    "Trabajo de investigacion",
-    "Prueba de Herramientas"
-  ]
+  TAG = Tags;
 
   filterForm = this.formBuilder.group({
     UT: new FormControl(this.UTS),

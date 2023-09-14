@@ -1,14 +1,19 @@
 <div class="ia-landing-page">
+    <div class="ia-about">
+        <ia-about-toolbar #aboutToolbar></ia-about-toolbar>
+    </div> 
     <ia-title-landing>
         <ia-topics></ia-topics>
     </ia-title-landing>
 
-    <footer class="ia-footer-see-more mt-5">
+    <footer class="ia-footer-see-more mt-5" #footer>
         <div (click)="scrollToMain()" class = "ia-see-more">
             <p>Scroll to more...</p>
             <i class="pi pi-angle-double-down" style="color: orange"></i>
         </div>
     </footer>
 </div>
+
+<ia-main-page id="mainPage"></ia-main-page>
 
 

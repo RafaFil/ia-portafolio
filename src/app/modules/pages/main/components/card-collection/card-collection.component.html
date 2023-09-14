@@ -1,4 +1,13 @@
-<ia-article-prew-card 
-*ngFor="let article of articles | articleFilter: searchFilter"
-[article]="article"
-></ia-article-prew-card>
+<div *ngIf="searchFilter.length == 0">
+    <ia-article-prew-card 
+    *ngFor="let article of articles"
+    [article]="article"
+    ></ia-article-prew-card>
+</div>
+
+<div *ngIf="searchFilter.length > 0">
+    <ia-article-prew-card 
+    *ngFor="let article of allArticles | articleFilter: searchFilter"
+    [article]="article"
+    ></ia-article-prew-card>
+</div>
