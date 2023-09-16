@@ -14,10 +14,17 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
-    steps:
+       steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
+      - name: Cache Node Modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
       - name: Build And Deploy
