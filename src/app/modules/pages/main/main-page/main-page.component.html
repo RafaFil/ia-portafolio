@@ -1,7 +1,3 @@
-<!-- <div  [@fadeInOut]  class="w-100 animated-item ia-navbar-container" [class.active]="showNavBar">
-    <ia-navbar (newInputSearchBar)="searchBarTextRecieve($event)"></ia-navbar>
-</div>  -->
-
 <div  class="container" #scrollToTop>
     <div [@fadeInOut] class="w-100 animated-item mt-3">
         <h2>Busca articulos de tu interes: </h2>
@@ -12,17 +8,18 @@
         <ia-study-case-carrousel></ia-study-case-carrousel>
     </div>
 
-    <p-scrollPanel [@fadeInOut] [style]="{ width: '70%', height: '100%' }" class="animated-item">
-        <h2>Articulos</h2> 
-        <div style="width: 95%">
-            <ia-card-collection [articles]="articlesShown"  [allArticles]="articles"
-            [searchFilter]="searchBarText"></ia-card-collection>
+    <div class="row" [@fadeInOut]>
+        <div class="col-md-8 col-push">
+            <h2>Articulos</h2> 
+            <div style="width: 95%">
+                <ia-card-collection [articles]="articlesShown"  [allArticles]="articles"
+                [searchFilter]="searchBarText"></ia-card-collection>
+            </div>
         </div>
-        <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator>
-    </p-scrollPanel>
-
-    <div [@fadeInOut] class="ia-filters animated-item">
-        <h4>Filtros:</h4>
-        <ia-articles-filter (topicSelected)="newTopicSelected($event)"></ia-articles-filter>
+        <div class="col-md col-pull">
+                <h4>Filtros:</h4>
+                <ia-articles-filter (topicSelected)="newTopicSelected($event)"></ia-articles-filter> 
+        </div>
     </div>
+    <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator>
 </div>

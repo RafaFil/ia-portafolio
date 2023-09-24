@@ -15,3 +15,10 @@
 ::ng-deep .p-component, .p-component {
     margin-right: 0.2rem;
 }
+
+::ng-deep .p-button {
+    background: orange;
+    color: #ffffff;
+    border-color: orange;
+
+}

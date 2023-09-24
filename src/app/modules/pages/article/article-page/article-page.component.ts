@@ -12,8 +12,10 @@ export class ArticlePageComponent implements OnInit {
 
   article: Article | undefined ;
   articleId = 1;
+  nextArt = "";
+  prevArt = "";
 
-  constructor(private articleService : ArticleService, private router : ActivatedRoute) { }
+  constructor(private articleService : ArticleService, private router : ActivatedRoute, private routerNav : Router) { }
 
   ngOnInit(): void {
     this.router.paramMap.subscribe(param => {
@@ -22,6 +24,8 @@ export class ArticlePageComponent implements OnInit {
         console.log(id);
         this.articleId = parseInt(id);
         this.article = this.articleService.getArticleById(this.articleId);
+        this.nextArt = this.articleService.getArticleById(this.articleId + 1).title;
+        this.prevArt = this.articleService.getArticleById(this.articleId - 1).title;
 
         if (this.article.id === 0) {
           // redirect to page not found
@@ -47,6 +51,29 @@ export class ArticlePageComponent implements OnInit {
       return `${day} ${month} ${year}`;
     }
     return "";
+  }
+
+  nextArticleRedirect() {
+
+    if (this.article) {
+
+      const nextId = this.article.id + 1;
+      const nextUrl = `/main/article/${nextId}`;
+      this.routerNav.navigateByUrl(nextUrl);
+    }
+    
+  }
+
+  prevArticleRedirect() {
+
+    if (this.article) {
+
+      const nextId = this.article.id - 1;
+      const nextUrl = `/main/article/${nextId}`;
+      this.routerNav.navigateByUrl(nextUrl);
+      
+
+    }
   }
 
 }

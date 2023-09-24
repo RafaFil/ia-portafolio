@@ -17,3 +17,10 @@
 ::ng-deep p-toolbar .p-component, .p-component {
     margin-right: 0rem;
 }
+
+::ng-deep .p-button {
+    background: orange;
+    color: #ffffff;
+    border-color: orange;
+
+}

@@ -5,8 +5,8 @@
         <div class="mt-3 mb-3 ia-tags">
             <ia-info [tags]="article.tags"></ia-info>
         </div>
-        <p-scrollPanel [style]="{ width: '70%', height: '100%' }">
-            <div class="ia-article-text">
+        <div class="row">
+            <div class="ia-article-text col-md-10">
                 <ia-text-p [textParagraph]="article.parapgraph[0]"></ia-text-p>
                 <div class="callouts">
                     <ia-callout *ngFor="let callout of article.callouts" [callout]="callout"></ia-callout>
@@ -21,8 +21,18 @@
                 </ul>
                 <p>Publicado: {{formatDate()}}</p>
             </div>
-        </p-scrollPanel>
-        <ia-topic-related class="mr-5" *ngIf="article?.subHeadings" [headings]="article.subHeadings"></ia-topic-related>
+            <div class="col-md-2">
+                <ia-topic-related class="mr-5" *ngIf="article?.subHeadings" [headings]="article.subHeadings"></ia-topic-related>
+            </div>
+        </div>
+        <div class="article-navigation">
+            <h5 (click)="prevArticleRedirect()" class="prev-article">
+                ← {{prevArt}}
+            </h5>
+            <h5 (click)="nextArticleRedirect()" class="next-article">
+                {{nextArt}} →
+            </h5>
+        </div>
     </div>
 </ng-container>
 
