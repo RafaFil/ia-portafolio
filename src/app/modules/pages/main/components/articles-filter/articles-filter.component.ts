@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { UT } from 'src/app/modules/core/db/ut-data.service';
 import { Tags } from 'src/app/modules/core/enums/tags';
 import { TagsComponent } from 'src/app/modules/shared/components/tags/tags.component';
 

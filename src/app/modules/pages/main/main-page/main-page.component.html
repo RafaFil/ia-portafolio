@@ -8,17 +8,18 @@
         <ia-study-case-carrousel></ia-study-case-carrousel>
     </div>
 
-    <p-scrollPanel [@fadeInOut] [style]="{ width: '70%', height: '100%' }" class="animated-item">
-        <h2>Articulos</h2> 
-        <div style="width: 95%">
-            <ia-card-collection [articles]="articlesShown"  [allArticles]="articles"
-            [searchFilter]="searchBarText"></ia-card-collection>
+    <div class="row" [@fadeInOut]>
+        <div class="col-md-8 order-md-1">
+            <h2>Articulos</h2> 
+            <div style="width: 95%">
+                <ia-card-collection [articles]="articlesShown"  [allArticles]="articles"
+                [searchFilter]="searchBarText"></ia-card-collection>
+            </div>
         </div>
-        <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator>
-    </p-scrollPanel>
-
-    <div [@fadeInOut] class="ia-filters animated-item">
-        <h4>Filtros:</h4>
-        <ia-articles-filter (topicSelected)="newTopicSelected($event)"></ia-articles-filter>
+        <div class="col-md order-md-2">
+                <h4>Filtros:</h4>
+                <ia-articles-filter (topicSelected)="newTopicSelected($event)"></ia-articles-filter> 
+        </div>
     </div>
+    <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator>
 </div>

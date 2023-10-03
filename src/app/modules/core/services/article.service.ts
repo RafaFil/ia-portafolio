@@ -29,6 +29,7 @@ export class ArticleService {
         topics: "string",
         parapgraph: [],
         tags: [],
+        intrestLinks: [],
         publishedDate: new Date()
       }
     }
