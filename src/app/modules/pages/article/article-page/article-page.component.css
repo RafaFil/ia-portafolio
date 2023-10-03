@@ -1,0 +1,21 @@
+.article-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prev-article {
+    margin-right: auto; 
+}
+
+.next-article {
+    margin-left: auto; 
+}
+
+.prev-article:hover {
+    cursor: pointer;
+}
+
+.next-article:hover  {
+    cursor: pointer;
+}

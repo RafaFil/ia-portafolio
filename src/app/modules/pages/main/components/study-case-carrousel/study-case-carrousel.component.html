@@ -1,7 +1,13 @@
-<p-carousel [value]="studyCasesPreview" [numVisible]="3" [numScroll]="3" [circular]="false" class="ia-carrousel" (mouseover)="showDescription()" (mouseout)="showDescription()">
+<p-carousel [value]="studyCasesPreview" 
+[numVisible]="3" [numScroll]="3" [circular]="false" 
+class="ia-carrousel">
     <ng-template let-product pTemplate="item">
-        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid" 
-        [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }">
+        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid item-carrousel" 
+        [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+        (mouseover)="showDescription()" 
+        (mouseout)="showDescription()" 
+        (click)="redirectToCase()"
+        >
             <div>
                 <h4 class="mb-1">{{ product.title }}</h4>
                 <h6 class="mt-0 mb-3">{{ product.shortDescripton }}</h6>

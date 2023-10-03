@@ -1,6 +1,6 @@
 export enum Tags {
     Herramientas = "Herramientas",
-    TratamientoPrevioDeLosDatos = "Tratamiento previo de los datos",
+    TratamientoPrevioDeLosDatos = "Tratamiento previo de los datos y fundamentos de los algoritmos de ML",
     MineriaDeDatos = "Mineria de datos",
     CRISPDM = "CRISP-DM",
     RapidMiner = "Rapid Miner",
@@ -10,5 +10,19 @@ export enum Tags {
     PruebaDeHerramientas = "Prueba de Herramientas",
     Modelo = "Modelo",
     Resumen = "Resumen",
-    Titanic = "Titanic"
+    Titanic = "Titanic",
+    AlgoritmosNoLineales = "Algoritmos No Lineales",
+    Teoria = "Teoría",
+    AlgoritmosLineales = "Algoritmos Lineales",
+    KNN = "KNN",
+    NaiveBayes = "Naive Bayes",
+    LDA = "LDA",
+    RegresionLineal = "Regresion Lineal",
+    RegresionLogistica = "Regresion Logistica",
+    Algoritmo = "Algoritmos",
+    Gradiente = "Gradiente",
+    Clasificacion = "Algoritmos Supervisados: de Clasificacion",
+    Regresion= "Algoritmos Supervisados: Regresion",
+    Dimension="Algoritmos no supervisados: Reduccion",
+    Clustering="Algoritmos no supervisados: Clustering"
 }
