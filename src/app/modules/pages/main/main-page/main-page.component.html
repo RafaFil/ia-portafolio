@@ -9,14 +9,14 @@
     </div>
 
     <div class="row" [@fadeInOut]>
-        <div class="col-md-8 col-push">
+        <div class="col-md-8 order-md-1">
             <h2>Articulos</h2> 
             <div style="width: 95%">
                 <ia-card-collection [articles]="articlesShown"  [allArticles]="articles"
                 [searchFilter]="searchBarText"></ia-card-collection>
             </div>
         </div>
-        <div class="col-md col-pull">
+        <div class="col-md order-md-2">
                 <h4>Filtros:</h4>
                 <ia-articles-filter (topicSelected)="newTopicSelected($event)"></ia-articles-filter> 
         </div>

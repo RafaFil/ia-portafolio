@@ -8,7 +8,7 @@
 }
 
 ::ng-deep .p-chip.p-component:hover {
-    transform: scale(1.5);
+    transform: scale(1);
     z-index: 9999;
     border-width: thick;
     cursor: pointer;

@@ -132,7 +132,7 @@ export class ArticleDataService {
       <h3>Excel</h3>
       Los pasos a seguir en el Excel es importar el dataset y realizar las funciones
       <p></p>
-      <a href="https://github.com/RafaFil/ia-portafolio/blob/dev/docs/ut1/pd/PD2.xlsx">Enlace a la plantilla de Excel</a>
+      <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT1%20-%20INTRODUCCION%20A%20MACHINE%20LEARNING/pd/PD2.xslx">Enlace a la plantilla de Excel</a>
       </p>
       <h3>RapidMiner</h3>
       RapidMiner a diferencia de excel se utilizan operadores y se conectan entre ellos, tal como se muestra en la imagen:
@@ -222,7 +222,7 @@ export class ArticleDataService {
       <p>Jupyter Notebooks es un proyecto que coinsiste en </p>
       <p>Se utilizo la libreria pandas para el manejo de los datos</p>
       <p>Se puede observar que los resultados son exactamente los mismos que tanto en excel como en RapidMiner</p>
-      <a href="https://github.com/RafaFil/ia-portafolio/blob/main/docs/ut1/pd/ut1_pd3.ipynb">Enlace al Jupyter</a>
+      <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT1%20-%20INTRODUCCION%20A%20MACHINE%20LEARNING/pd/ut1_pd3.ipynb">Enlace al Jupyter</a>
         `
       ],
       callouts: [],
@@ -232,7 +232,8 @@ export class ArticleDataService {
         "Jupyter Notebooks",
         "RapidMiner"
       ],
-      publishedDate: new Date("2023/08/20")
+      publishedDate: new Date("2023/08/20"),
+      interestLink: []
     },
     {
       id: 4,
@@ -310,6 +311,7 @@ export class ArticleDataService {
         "CRISP-DM"
       ],
       publishedDate: new Date("2023/08/20"),
+      interestLink: []
     },
     {
       id: 5,
@@ -383,12 +385,13 @@ export class ArticleDataService {
       callouts: [],
       tags: [
         "Herramientas",
-        "Tratamiento previo de los datos",
+        "Tratamiento previo de los datos y fundamentos de los algoritmos de ML",
         "Mineria de Datos",
         "CRISP-DM",
         "RapidMiner"
       ],
       publishedDate: new Date("2023/09/05"),
+      interestLink: []
     },
     {
       id: 6,
@@ -560,7 +563,7 @@ export class ArticleDataService {
       ],
       tags: [
         "Herramientas",
-        "Tratamiento previo de los datos",
+        "Tratamiento previo de los datos y fundamentos de los algoritmos de ML",
         "Mineria de Datos",
         "CRISP-DM",
         "RapidMiner"
@@ -572,7 +575,8 @@ export class ArticleDataService {
         "Test Splits y Validación",
         "Validación Cruzada",
         "Comparación Visual de Modelos"
-      ]
+      ],
+      interestLink: []
     },
     {
       id: 7,
@@ -726,7 +730,7 @@ A los datos de training se aplica el algoritmo Naive Bayes, para luego aplicar e
 
 <h2>Análisis en Jupyter</h2>
 
-<a href="https://github.com/RafaFil/ia-portafolio/blob/main/docs/ut2/pds/pd3.ipynb">
+<a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT2%20-%20TRATAMIENTO%20PREVIO%20DE%20DATOS/pd/pd3.ipynb">
 Link al Jupyter:
 </a>
 
@@ -735,7 +739,7 @@ Link al Jupyter:
       publishedDate: new Date("2023/09/05"),
       tags: [
         "Herramientas",
-        "Tratamiento previo de los datos",
+        "Tratamiento previo de los datos y fundamentos de los algoritmos de ML",
         "Mineria de Datos",
         "CRISP-DM",
         "RapidMiner"
@@ -743,7 +747,8 @@ Link al Jupyter:
       subHeadings: [
         "Análisis en RapidMiner",
         "Análisis en Jupyter"
-      ]
+      ],
+      interestLink: []
     },
     {
     id: 8,
@@ -852,7 +857,7 @@ Link al Jupyter:
         tienen una mayor probabilidad de supervivencia que cualquier hombre. Asi mismo se puede observar como los niños de tercera clase tambien tenian mayor probabilidad de supervivencia que los hombre de primera clase. A ultimo a destacar es que la probabilidad
         de sobrevivir disminuye con la clase a la que se pertenecia</p>
 
-        <a href="https://github.com/RafaFil/ia-portafolio/blob/main/docs/ut2/pds/pd4_2.ipynb">
+        <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT2%20-%20TRATAMIENTO%20PREVIO%20DE%20DATOS/pd/pd4_2.ipynb">
           Link al jupyer notebook
         </a>
 
@@ -878,8 +883,8 @@ Link al Jupyter:
     parapgraph: 
       [
         `
-          <a href="">
-            Link al Juptyer:
+          <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT2%20-%20TRATAMIENTO%20PREVIO%20DE%20DATOS/pd/pd4.ipynb">
+            Link al Jupyter:
           </a>
         `
       ],
@@ -895,7 +900,266 @@ Link al Jupyter:
 
       ],
       destacado: true
-    }
+    },
+    {
+      id: 10,
+      title: "Gradiente",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/08/20"),
+        tags : [
+          
+        ]
+    },
+    {
+      id: 11,
+      title: "Tres algortimos lineales: Regresion lineal, Regresion lógistica, Análisis Discriminante Lineal (LDA)",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/08/20"),
+        tags : [
+          Tags.AlgoritmosLineales,
+          Tags.Resumen,
+          Tags.Teoria,
+          Tags.Modelo,
+          Tags.Algoritmo,
+          Tags.RegresionLineal,
+          Tags.RegresionLogistica,
+          Tags.LDA
+        ]
+    },
+    {
+      id: 12,
+      title: "Probabilidad de un segundo ataque cárdiaco utilizando Regresión Logistica",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/08/20"),
+        tags : [
+          Tags.AlgoritmosLineales,
+          Tags.Modelo,
+          Tags.RegresionLogistica,
+          Tags.Clasificacion
+        ]
+    },
+    {
+      id: 13,
+      title: "Clasificacion de talentos deportivos utilizando LDA",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/08/20"),
+        tags : [
+          Tags.AlgoritmosLineales,
+          Tags.Modelo,
+          Tags.LDA,
+          Tags.Clasificacion
+        ]
+    },
+    {
+      id: 14,
+      title: "Algoritmos No Lineales: KNN",
+      category: "",
+      topics: "2",
+      parapgraph: 
+        [
+          `
+          <div class="container">
+          <p>
+              Todo el conjunto de datos de entrenamiento se "memoriza" y, cuando es necesario clasificar registros de ejemplo sin etiquetar, los atributos de entrada de los nuevos registros sin etiquetar se comparan con todo el conjunto de entrenamiento para encontrar la coincidencia más cercana. La etiqueta de clase del registro de entrenamiento más cercano es la etiqueta de clase prevista para el registro de prueba no visto. Se trata de un método no paramétrico, en el que no se generaliza ni se intenta encontrar la distribución del conjunto de datos (Altman, 1992). Una vez que los registros de entrenamiento están en la memoria, la clasificación del registro de prueba es muy sencilla. Hay que encontrar el registro de entrenamiento más cercano para cada registro de prueba.
+          </p>
+  
+          <p>
+              Esta clase de aprendices adopta un enfoque contundente, en el que no se realiza ningún "aprendizaje" a partir de datos de entrenamiento, sino que el conjunto de datos de entrenamiento se utiliza como tabla de consulta para ajustar las variables de entrada y encontrar el resultado. Estos enfoques se denominan aprendices perezosos.
+          </p>
+  
+          <h2 class="mt-5">Cómo funciona:</h2>
+  
+          <p>
+              Cualquier registro de un conjunto de datos puede visualizarse como un punto en un espacio n-dimensional, donde n es el número de atributos. ¿Qué ocurre cuando el punto de datos se encuentra en el límite de dos atributos de clases diferentes? La clasificación puede ser complicada porque en la vecindad hay más de una clase en las proximidades. Necesitamos un algoritmo eficaz para resolver estos casos y medir la proximidad de los puntos de datos con más de dos dimensiones. Una técnica consiste en encontrar el punto de datos de entrenamiento más cercano a un punto de datos de prueba no visto en un espacio multidimensional, y utilizar el valor de la clase objetivo del punto de datos de entrenamiento más cercano como la clase objetivo predicha para el punto de datos de prueba. Esto es similar al funcionamiento del algoritmo k-NN.
+          </p>
+  
+          <p>
+              La k del algoritmo k-NN indica el número de registros de entrenamiento cercanos que deben tenerse en cuenta al realizar la predicción de un registro de prueba sin etiquetar. Cuando k = 1, el modelo intenta encontrar el primer registro más cercano y adopta la etiqueta de clase del primer registro de entrenamiento más cercano como valor de la clase objetivo predicha. Dado que la clase del registro objetivo se evalúa por votación, a k se le suele asignar un número impar para un problema de dos clases.
+          </p>
+  
+          <h2 class="mt-5">Medida de proximidad:</h2>
+  
+          <p>
+              La eficacia del algoritmo k-NN depende de la determinación de la semejanza o desemejanza entre un registro de prueba y el registro de entrenamiento memorizado. Una medida de proximidad entre dos registros es la medida de proximidad de sus atributos.
+          </p>
+  
+      <h4 class="mt-5">Distancia</h4>
+          <ul>
+                      <li>Euclídea</li>
+                      <li>Manhattan</li>
+                      <li>Chebyshev</li>
+                      <li>Minkowski: (Generalizacion de las distancias)</li>
+          </ul>
+          <p>
+          $$
+            d = \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{\frac{1}{p}}
+          $$
+          </p>
+          <p>
+              Cuando p = 1, la medida de distancia es la distancia Manhattan, cuando p = 2 la medida de distancia es la distancia Euclídea, y cuando p = ∞ la medida de distancia es la distancia Chebyshev.
+          </p>
+  
+          <p>
+              <strong>y′ = clase máxima(y1, y2, ⋯ ,yk)</strong>
+          </p>
+  
+          <p><strong>Ponderaciones:</strong> Cuando k es más de uno, se puede argumentar que los vecinos más cercanos deberían tener más peso en el resultado de la clase objetivo predicha que los vecinos más lejanos. Esto se puede conseguir asignando pesos a todos los vecinos, con los pesos aumentando a medida que los vecinos se acercan al punto de datos.</p>
+          <p>
+          w_i=\frac{e^{-d(x_in_i)}}{\sum_{i=1}^k e^{-d(x_in_i)}}
+          </p>
+          <p><strong>y = clase máxima(w1 * y1, w2 * y2, ⋯ , wk * yk)</strong></p>
+  
+  
+              <aside class="alert alert-info">
+            <strong>💡Nota: Un problema de la aproximación por distancia es que depende de la escala y las unidades de los atributos. Para mitigar el problema causado por las diferentes medidas y unidades, todas las entradas de k-NN suelen normalizarse, donde los valores de los datos se reescalan para ajustarse a un rango determinado. La normalización de todos los atributos proporciona una comparación justa entre ellos.
+  </strong>
+          </aside>
+      
+                  <aside class="alert alert-info">
+            <strong>💡Nota: La medida de distancia funciona bien para atributos numéricos. Sin embargo, si el atributo es categórico (nominal), la distancia entre dos puntos es 0 o 1. Si los valores de los atributos son los mismos, la distancia es 0. Si los valores de los atributos son iguales, la distancia es 0 y si los valores de los atributos son diferentes, la distancia es 1. Si el atributo es ordinal con más de dos valores, los valores ordinales se pueden convertirse al tipo de datos entero con los valores 0, 1, 2, ..., n - 1 y el atributo convertido puede tratarse como un atributo numérico para el cálculo de la distancia.
+  </strong>
+          </aside>
+      
+          <h4 class="mt-5">Similitud de Correlación</h4>
+  
+          <p>
+              La correlación entre dos puntos de datos X e Y es la medida de la relación lineal entre los atributos X e Y.
+          </p>
+  
+          <h4 class="mt-5">Coeficiente de Correspondencia Simple</h4>
+  
+          <p>
+              El coeficiente de correspondencia simple (CMS) se utiliza cuando los conjuntos de datos tienen atributos binarios. Por ejemplo, X es (1,1,0,0,1,1,0) e Y es (1,0,0,1,1,0,0). Podemos medir la similitud entre estos dos puntos de datos basándonos en la aparición simultánea de 0 o 1 con respecto al total de apariciones.
+          </p>
+  
+          <h2 class="mt-5">Conclusión:</h2>
+  
+          <p>
+              El modelo k-NN requiere normalización para evitar cualquier sesgo por cualquier atributo que tenga unidades grandes o pequeñas en la escala. El modelo es bastante robusto cuando falta algún valor de atributo en el registro de prueba. Si falta el valor en el registro de prueba, se ignora todo el atributo en el modelo, y aún así el modelo puede funcionar con una precisión razonable. En el ejemplo de aplicación, si la
+  no se conoce la longitud del sépalo de un registro de prueba, el modelo ignora la longitud del sépalo. Cuando falta el valor de un atributo, k-NN se convierte en un modelo tridimensional en lugar de las cuatro dimensiones habituales.
+  Como aprendiz perezoso, la relación entre la entrada y la salida no puede explicarse, ya que el modelo no es más que un conjunto memorizado de todos los registros de entrenamiento. No hay generalización ni abstracción de la relación.
+          </p>
+    </div>
+          `
+        ],
+        intrestLinks : [
+        ],
+        publishedDate: new Date("2023/09/26"),
+        tags : [
+          Tags.AlgoritmosNoLineales,
+          Tags.Resumen,
+          Tags.Teoria
+        ],
+        subHeadings: [
+          "Introduccion",
+          "Como funciona",
+          "Medida de proximidad",
+          "- Distancia",
+          "- Similitud de Correlacion",
+          "- Coeficiente",
+          "Conclusiones",
+          "Articulos Relacionados"
+        ]
+    },
+    {
+      id: 15,
+      title: "Algoritmos No Lineales: Naive Bayes",
+      category: "",
+      topics: "1",
+      parapgraph: 
+        [
+          `
+          <div class="container mt-5">
+          <p>Los algoritmos de minería de datos utilizados para tareas de clasificación son muy diversos. El objetivo de estos algoritmos es el mismo: la predicción de una variable objetivo. Sin embargo, el método de predicción se basa en una serie de técnicas multidisciplinares. El algoritmo ingenuo de Bayes tiene sus raíces en la estadística y la teoría de la probabilidad.
+  
+          <p>Tenemos muchos factores diferentes que afectan al resultado, por lo que a medida que obtenemos más pruebas sobre los factores que afectan al resultado, podemos hacer mejores conjeturas sobre el resultado utilizando la teoría de la probabilidad. El algoritmo bayesiano ingenuo básicamente aprovecha la relación probabilística entre los factores (atributos) y la etiqueta de clase (resultado). El algoritmo hace una suposición fuerte y a veces ingenua de independencia entre los atributos, de ahí su nombre. La suposición de independencia entre atributos puede no ser siempre cierta.
+  
+          <p>En algunos casos, podemos suponer que los ingresos anuales y la puntuación crediticia son independientes entre sí. Sin embargo, en muchos casos simplemente no lo sabemos. Si uno de los factores de la tasa de morosidad es el valor de la vivienda, entonces tenemos un escenario en el que tanto el factor de los ingresos anuales como el del valor de la vivienda están correlacionados y, por tanto, no son independientes. Los propietarios con ingresos elevados tienden a comprar casas más caras. El supuesto de independencia no se cumple siempre, pero la simplicidad y robustez del algoritmo compensan la limitación introducida por el supuesto de independencia.</p>
+          <h2>Cómo funciona:</h2>
+          <p>Supongamos que X es la evidencia (o conjunto de factores o atributos) e Y es el resultado (o clase objetivo o etiqueta). Aquí X es un conjunto, no atributos individuales, por lo tanto X = {X1, X2, X3,..., Xn}, donde Xi es un atributo individual, como la calificación crediticia. La probabilidad del resultado P(Y) se denomina probabilidad a priori y puede calcularse a partir del conjunto de datos. La probabilidad a priori muestra la probabilidad de un resultado en un conjunto de datos determinado. Por ejemplo, en el caso de las hipotecas, P(Y) es la tasa de impago de una hipoteca de vivienda, que es del 2%. P(Y|X) se denomina probabilidad condicional, que proporciona la probabilidad de un resultado dada la evidencia cuando conocemos el valor de X. De nuevo, utilizando el ejemplo de la hipoteca, P(Y|X) es la tasa media de impago dado que se conoce el historial crediticio de un individuo.</p> <p>Si el historial crediticio de un individuo es conocido, P(Y|X) es la tasa media de impago.
+  
+          <p>Si el historial crediticio es excelente, entonces es probable que la probabilidad de impago sea inferior al 2%. P(Y|X) también se denomina probabilidad posterior. Calcular la probabilidad posterior es el objetivo del análisis predictivo mediante el teorema de Bayes. Es la probabilidad de un resultado a medida que aprendemos los valores de los atributos de entrada.</p> 
+  
+          <p>$$
+          P(Y|X) = \frac{P(Y)*P(X|Y)}{P(X)}
+          $$</p>
+  
+          <p>P(X|Y) es otra probabilidad condicional, llamada probabilidad condicional de clase. P(X|Y) es la probabilidad de que un atributo asuma un valor particular dada la etiqueta de clase. Al igual que P(Y), P(X|Y) también se puede calcular a partir del conjunto de datos. Si conocemos el conjunto de entrenamiento de impagos de préstamos, podemos calcular la probabilidad de una calificación crediticia "excelente" dado que el impago es un "sí". Como se indica en el teorema de Bayes, la probabilidad condicional de clase es crucial para calcular la probabilidad posterior. P(X) es básicamente la probabilidad de la evidencia. En el ejemplo de la hipoteca, es simplemente la proporción de individuos con una determinada calificación crediticia.</p> <p>
+  
+          <p>Para clasificar un nuevo registro, podemos calcular P(Y|X) para cada clase de Y y ver qué probabilidad "gana". La etiqueta de clase Y con el valor más alto de P(Y|X) gana para un determinado valor de atributo X. Dado que P(X) es la misma para cada valor de clase del resultado, no tenemos que calcularla y asumirla como una constante. De forma más general, en un conjunto de ejemplo con n atributos X = {X1, X2, X3 ... Xn}</p> <p>
+  
+          <p>$$
+          P(Y|X) = \frac {P(Y)* \prod_{i=1}^n P(X_i| Y)}{P(x)} 
+          $$</p>
+  
+          <p>Si sabemos calcular la probabilidad condicional de clase P(X|Y) o la prod , entonces es fácil calcular la probabilidad posterior P(Y|X). Como P (X) es constante para cada valor de Y, basta con calcular el numerador de la ecuación para cada valor de clase.</p> <p>
+  
+          <h3>Un ejemplo de golf:</h3>
+          <p>Ver video: https://www.youtube.com/embed/IlVINQDk4o8</p>
+  
+          <h3>Limitaciones:</h3>
+          <p>El modelado bayesiano es bastante robusto en el manejo de valores perdidos. Si el conjunto de ejemplos de prueba no contiene un valor, supongamos que la temperatura no se calcula en el conjunto de ejemplos, el modelo bayesiano simplemente omite la probabilidad condicional de clase correspondiente para los resultados. Los valores que faltan en el conjunto de prueba serían difíciles de manejar en los árboles de decisión y los algoritmos de regresión, sobre todo cuando el atributo que falta se utiliza más arriba en el nodo del árbol de decisión o tiene más peso en la regresión. Aunque el algoritmo Bayes ingenuo es bastante robusto frente a los atributos que faltan, tiene algunas limitaciones. Here are couple of the most significant limitations and methods of mitigation.</p>
+  
+          <ul>
+              <li>Incomplete Training Set</li>
+              <li>Continuous Attributes</li>
+              <li>Attribute Independence</li>
+          </ul>
+  
+          <p>One of the fundamental assumptions in the naïve Bayesian model is attribute independence. Bayes’ theorem is guaranteed only for independent attributes. In many real-life cases, this is quite a stringent condition to deal with. This is why the technique is called “naïve” Bayesian, because it assumes attributes independence. Before applying the naïve Bayesian algorithm, it makes sense to remove strongly correlated attributes. In the case of all numeric attributes, this can be achieved by computing a weighted correlation matrix. An advanced application of Bayes’ theorem, called a Bayesian belief network, is designed to handle data sets with attribute dependencies.</p>
+  
+          <h3>Conclusion:</h3>
+          <p>The Bayesian algorithm provides a probabilistic framework for a classification problem. It has a simple and sound foundation for modeling the data and is quite robust to outliers and missing values. This algorithm is deployed widely in text mining and document classification where the application has a large set of attributes and attribute values to compute.</p>
+  
+          <p>La singularidad de la técnica es que aprovecha la nueva información a medida que llega y trata de hacer la mejor predicción teniendo en cuenta las nuevas pruebas. En este sentido, es bastante similar a cómo funciona nuestra mente.</p>
+          `
+        ],
+        intrestLinks : [
+
+        ],
+        publishedDate: new Date("2023/09/26"),
+        tags : [
+          Tags.AlgoritmosNoLineales,
+          Tags.Resumen,
+          Tags.Teoria
+        ],
+        subHeadings: [
+          "Introduccion",
+          "Cómo funciona",
+          "Un ejemplo de golf",
+          "Limitaciones",
+          "Conclusiones",
+          "Articulos Relacionados"
+        ]
+    },
     
   ].reverse()
 

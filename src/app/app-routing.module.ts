@@ -19,9 +19,13 @@ const routes: Routes = [
     loadChildren: () => import('./modules/pages/topic-page/topic-page.module').then( m => m.TopicPageModule )
   },
   {
+    path: 'about',
+    loadChildren: () => import('./modules/pages/about/about-page.module').then( m => m.AboutPageModule )
+  },
+  {
     path: '**',
     loadChildren: () => import('./modules/pages/error/error.module').then( m => m.ErrorModule )
-  }
+  },
 ];
 
 @NgModule({

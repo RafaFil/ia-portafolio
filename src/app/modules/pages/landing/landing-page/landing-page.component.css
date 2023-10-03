@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    font-size: large;
 }
 
 .ia-see-more {
@@ -10,12 +11,12 @@
 }
 
 .ia-footer-see-more {
-    position: fixed; 
     bottom: 0;
     width: 100%;
     background-color: #fff;
     text-align: center;
     padding: 10px;
+    position: absolute;
 }
 
 .ia-landing-page {
@@ -23,9 +24,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-    height: 100vh; 
+    min-height: 100vh; 
 
     overflow-y: hidden !important;
+    position: relative;
 }
 
 .ia-about {

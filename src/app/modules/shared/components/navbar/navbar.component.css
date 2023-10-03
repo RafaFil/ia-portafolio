@@ -1,9 +1,9 @@
-.custom-bar {
+/* .custom-bar {
     display: flex;
     align-items: center;
-}
+} */
 
-.search-bar-container {
+/* .search-bar-container {
     width: 0;
     overflow: hidden;
     transition: width 0.3s ease;
@@ -11,11 +11,12 @@
 
 .search-bar-container.active {
     width: 25rem;
-}
+} */
 
 
 ::ng-deep p-toolbar .p-component, .p-component {
     margin-right: 0rem;
+    font-size: 20px;
 }
 
 ::ng-deep .p-button {
@@ -23,4 +24,27 @@
     color: #ffffff;
     border-color: orange;
 
+}
+
+::ng-deep .p-button:enabled:hover {
+    background: orange;
+    color: #ffffff;
+    border-color: orange;
+}
+
+::ng-deep .p-toolbar .p-toolbar-group-end span {
+    margin-right: 2rem;
+    font-size: 20px;
+    text-align: right; 
+    transition: font-weight 0.1s; 
+}
+
+
+::ng-deep .p-toolbar .p-toolbar-group-end span:hover {
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+.return-land {
+    font-size: 20px;
 }

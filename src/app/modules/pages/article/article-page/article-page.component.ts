@@ -14,6 +14,7 @@ export class ArticlePageComponent implements OnInit {
   articleId = 1;
   nextArt = "";
   prevArt = "";
+  hasIntrestLinks = false;
 
   constructor(private articleService : ArticleService, private router : ActivatedRoute, private routerNav : Router) { }
 
@@ -29,6 +30,11 @@ export class ArticlePageComponent implements OnInit {
 
         if (this.article.id === 0) {
           // redirect to page not found
+        }
+
+        if(this.article.intrestLinks && this.article.intrestLinks.length > 0 ) {
+
+          this.hasIntrestLinks = true;
         }
       }
       else {

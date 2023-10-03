@@ -13,7 +13,7 @@
                 </div>
                 <ia-text-p *ngFor="let p of article.parapgraph.slice(1)" 
                 [textParagraph]="p"></ia-text-p>
-                <h3 *ngIf="article?.intrestLinks">Articulos Relacionados: </h3>
+                <h3 *ngIf="hasIntrestLinks">Articulos Relacionados: </h3>
                 <ul>
                     <li *ngFor="let l of article.intrestLinks">
                         <a [href]="l.link"> {{l.text}}</a>
@@ -26,10 +26,10 @@
             </div>
         </div>
         <div class="article-navigation">
-            <h5 (click)="prevArticleRedirect()" class="prev-article">
+            <h5 (click)="prevArticleRedirect()" class="prev-article" *ngIf="article.id != 1">
                 ← {{prevArt}}
             </h5>
-            <h5 (click)="nextArticleRedirect()" class="next-article">
+            <h5 (click)="nextArticleRedirect()" class="next-article" *ngIf="nextArt != 'string'">
                 {{nextArt}} →
             </h5>
         </div>

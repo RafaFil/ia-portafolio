@@ -21,14 +21,15 @@ export class AboutToolbarComponent implements OnInit {
   redirectTo(value : string) {
 
     const links : linksType = {
-      "Aboutme": "",
-      "Github": "https://github.com/RafaFil",
+      "Github": "https://github.com/RafaFil/ia-portafolio-docs",
       "LinkedIn": "https://uy.linkedin.com/in/rafael-filardi"
     }
 
 
     if (links[value] != null)
       window.open(links[value], '_blank');
+    else
+      this.router.navigate(["/about"]);
   }
 
 }

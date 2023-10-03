@@ -22,3 +22,9 @@
     border-color: orange;
 
 }
+
+::ng-deep .p-button:enabled:hover {
+    background: orange;
+    color: #ffffff;
+    border-color: orange;
+}
