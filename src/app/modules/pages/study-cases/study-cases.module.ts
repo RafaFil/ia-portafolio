@@ -3,16 +3,21 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { NgPrimeModule } from 'src/app/ngprime.module';
+import { StudyCasesRoutingModule } from './study-cases-routing.module';
+import { StudyCasePageComponent } from './study-case-page/study-case-page.component';
 
 
 @NgModule({
   declarations: [
+  
+    StudyCasePageComponent
   ],
   imports: [
     CommonModule,
     NgPrimeModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StudyCasesRoutingModule
   ],
   exports: [
   ]
