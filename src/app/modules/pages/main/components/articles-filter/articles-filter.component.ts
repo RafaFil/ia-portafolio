@@ -11,8 +11,10 @@ import { TagsComponent } from 'src/app/modules/shared/components/tags/tags.compo
 export class ArticlesFilterComponent implements OnInit {
 
   checked : boolean = false;
+  destacadoSelected = false;
 
   @Output() topicSelected = new EventEmitter<string>();
+  @Output() showDestacado = new EventEmitter<boolean>();
 
   filters : string[] = [
     "Por Fecha",
@@ -54,6 +56,20 @@ export class ArticlesFilterComponent implements OnInit {
       tag.severity = "primary"
     else
       tag.severity = "success";
+  }
+
+  showDestacados() {
+
+    if (this.destacadoSelected) {
+      this.destacadoSelected = false;
+      this.showDestacado.emit(false)
+    }
+    else
+    {
+      this.destacadoSelected = true;
+      this.showDestacado.emit(true)
+    }    
+
   }
 
 }

@@ -13,23 +13,27 @@ export class StudyCaseCarrouselComponent implements OnInit {
     {
       title: "Caso: Probabilidad de un ataque cardiaco",
       shortDescripton: "En este caso se estudiara a partir de un dataset de historias clinicas la probabilidad de que un paciente padezca un ataque cardíaco",
-      image: "../../../../../../assets/img/ut2_pd2_4.png"
+      image: "../../../../../../assets/img/ut2_pd2_4.png",
+      cut:"cardio"
     },
     {
-      title: "Caso: Deteccion de casos de fraude de tarjetas de crédito",
+      title: "Caso: Deteccion de una enfermedad renal",
       shortDescripton: "TBD",
-      image: ""
+      image: "",
+      cut: "ckd"
     },
-    // {
-    //   title: "Caso: TBD",
-    //   shortDescripton: "CASOS TBD",
-    //   image: "../../../../../../assets/img/cow.jpg"
-    // },
-    // {
-    //   title: "Caso: TBD",
-    //   shortDescripton: "CASOS TBD",
-    //   image: "../../../../../../assets/img/cow.jpg"
-    // },
+    {
+      title: "Caso: Adopcion de Animales",
+      shortDescripton: "",
+      image:"",
+      cut:"animales"
+    },
+    {
+      title:"Caso: Probabilidad de Titanic",
+      shortDescripton: "",
+      image: "",
+      cut: "titanic"
+    }
   ]
 
   descriptionShown = false;
@@ -51,7 +55,7 @@ export class StudyCaseCarrouselComponent implements OnInit {
   }
 
   redirectToCase(){
-    this.router.navigate(["/studycase"])
+    this.router.navigate(["/studycase/cardio"])
   }
 
 

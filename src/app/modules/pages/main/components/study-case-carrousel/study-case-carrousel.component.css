@@ -3,6 +3,7 @@
 }
 .item-carrousel:hover {
     cursor: pointer;
+    backdrop-filter: blur(100%);
 }
 
 .item-carrousel{

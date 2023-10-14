@@ -1,0 +1,666 @@
+<ia-navbar [sectionTitle]="'Prediccion de padecer una enfermedad cardíaca'"></ia-navbar>
+<div class="container">
+    <h1 [align]="'center'" class="mt-3">Prediccion de padecer una enfermedad cardíaca</h1>
+    <div class="row mt-5">
+        <div class="col-md-8 order-md-1">
+            <p>Objetivo: El objetivo de este caso de estudio es lograr predecir la probabilidad de que una 
+                persona posea una enfermedad cardiaca.
+            </p>
+            <p>El estudio es realizado en el marco del proceso CRISP-DM:</p>
+
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/1.jpg">
+            </p>
+        
+            <h2>Comprension del negocio</h2>
+            <p>Se entiende como necesidad médica la posibilidad de generar algoritmos predictivos que dado 
+                ciertos valores de una persona detecten una enfermedad. En este caso una enfermedad 
+                cardiaca.</p>
+            <h2>Comprensión de la data:</h2>
+            <p>
+                Se obtienen 4 dataset recuperados de:  
+                <a href="https://archive.ics.uci.edu/dataset/45/heart+disease">
+                    https://archive.ics.uci.edu/dataset/45/heart+disease
+                </a>
+            </p>
+            <ol>
+                <li>Cleveland Clinic Foundation (cleveland.data)</li>
+                <li>Hungarian Institute of Cardiology, Budapest</li>
+                <li>V.A. Medical Center, Long Beach, CA</li>
+                <li>University Hospital, Zurich, Switzerland </li>
+            </ol>
+            <p>De acuerdo con el archivo de presentación, se extrae que todos los dataset poseen 76 atributos 
+                por fila (todos con los mismos campos), pero que en los estudios realizados solo son 14. Es 
+                más, incluso destaca que solo el de Cleveland fue utilizado como entrenamiento para 
+                diferentes aplicaciones de ML.
+                Ningún data set posee los 76 atributos.
+            </p>
+            <h5>Los 14 más usados: </h5>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Type</th>
+                        <th>Demographic</th>
+                        <th>Description</th>
+                        <th>Units</th>
+                        <th>Missing Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>age</td>
+                        <td>Feature</td>
+                        <td>Integer</td>
+                        <td>Age</td>
+                        <td>Age</td>
+                        <td>years</td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>sex</td>
+                        <td>Feature</td>
+                        <td>Categorical</td>
+                        <td>Sex</td>
+                        <td></td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>cp</td>
+                        <td>Feature</td>
+                        <td>Categorical</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>trestbps</td>
+                        <td>Feature</td>
+                        <td>Integer</td>
+                        <td></td>
+                        <td>Resting Blood Pressure (on admission to the hospital)</td>
+                        <td>mm Hg</td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>chol</td>
+                        <td>Feature</td>
+                        <td>Integer</td>
+                        <td></td>
+                        <td>Serum Cholestoral</td>
+                        <td>mg/dl</td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>fbs</td>
+                        <td>Feature</td>
+                        <td>Categorical</td>
+                        <td></td>
+                        <td>Fasting Blood Sugar > 120 mg/dl</td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>restecg</td>
+                        <td>Feature</td>
+                        <td>Categorical</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>thalach</td>
+                        <td>Feature</td>
+                        <td>Integer</td>
+                        <td></td>
+                        <td>Maximum Heart Rate Achieved</td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>exang</td>
+                        <td>Feature</td>
+                        <td>Categorical</td>
+                        <td></td>
+                        <td>Exercise Induced Angina</td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>oldpeak</td>
+                        <td>Feature</td>
+                        <td>Integer</td>
+                        <td></td>
+                        <td>ST Depression Induced by Exercise Relative to Rest</td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>slope</td>
+                        <td>Feature</td>
+                        <td>Categorical</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <td>ca</td>
+                        <td>Feature</td>
+                        <td>Integer</td>
+                        <td></td>
+                        <td>Number of Major Vessels (0-3) Colored by Flourosopy</td>
+                        <td></td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>thal</td>
+                        <td>Feature</td>
+                        <td>Categorical</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>num</td>
+                        <td>Target</td>
+                        <td>Integer</td>
+                        <td></td>
+                        <td>Diagnosis of Heart Disease</td>
+                        <td></td>
+                        <td>no</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Age</td>
+                        <td>Age in year</td>
+                    </tr>
+                    <tr>
+                        <td>Sex</td>
+                        <td>Gender</td>
+                    </tr>
+                    <tr>
+                        <td>CP</td>
+                        <td>Chest pain type</td>
+                    </tr>
+                    <tr>
+                        <td>Trestbps</td>
+                        <td>Resting blood pressure</td>
+                    </tr>
+                    <tr>
+                        <td>Chol</td>
+                        <td>Serum cholesterol</td>
+                    </tr>
+                    <tr>
+                        <td>Fbs</td>
+                        <td>Fasting blood sugar</td>
+                    </tr>
+                    <tr>
+                        <td>Resteg</td>
+                        <td>Resting electrographic results</td>
+                    </tr>
+                    <tr>
+                        <td>Talach</td>
+                        <td>Maximum heart rate achieved</td>
+                    </tr>
+                    <tr>
+                        <td>Exang</td>
+                        <td>Exercise induce angina</td>
+                    </tr>
+                    <tr>
+                        <td>Oldpeak</td>
+                        <td>ST depression induced by exercise relative to rest</td>
+                    </tr>
+                    <tr>
+                        <td>Slope</td>
+                        <td>The slope of the peak exercise ST segment</td>
+                    </tr>
+                    <tr>
+                        <td>CA</td>
+                        <td>Number of major vessels coloured by fluoroscopy</td>
+                    </tr>
+                    <tr>
+                        <td>Thal</td>
+                        <td>Thallium heart scan</td>
+                    </tr>
+                    <tr>
+                        <td>Goal</td>
+                        <td>Diagnosis of heart disease</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <p>Podemos observar que de esos 76 hay muchos los cuales o no tienen descripción, o son datos 
+                identificativos (como son nombre, id, etc) los cuales no generan un aporte significativo al 
+                modelo, y deben ser retirados para ahorrar tiempo de ejecución. </p>
+        
+            <p>
+                Para este caso se utilizarán los 14 atributos. Los cuales están disponibles en el repositorio de 
+            UCL como la versión procesada de los datos.
+            </p>
+        
+            <p>
+                Se realizará de la siguiente forma: se verá cada dataset por separado para luego realizarlos 
+            sobre los 4 dataset unidos.
+            </p>
+        
+            <h3>Estadística</h3>
+
+            <h4>Cleveland</h4>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/2.jpg">
+            </p>
+            <p>
+                Como se puede observar se destaca la casi nula presencia de valores faltantes, solo 4 en la columna ca. Los cuales representan un 0.1% del dataset, por lo tanto, se eliminarán.
+            </p>
+            <p>
+                A su vez podemos ver que los atributos tienen una relativa distribución gausiana
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/3.jpg">
+            </p>
+            <p>
+                -	Obs1: La clase num (variable objetivo), está bastante equilibrada con 164 con NO padecieron una enfermedad contraria a los 139 que SI padecieron.<br>
+-	Obs2: Usando un boxplot se ve que hay relativamente pocos outliers, salvo chol el cual tiene valores bastantes grandes
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/4.jpg">
+            </p>
+            <p>
+                -	Obs3: Se puede ver que en thal tenemos dos valores con “?” lo que significa que no son valores verdaderos, también se eliminara pues representa menos del 0.1%
+            </p>
+            <h4>Switzerland</h4>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/9.jpg">
+            </p>
+            <p>
+                -Obs1: faltan muchos datos, una columna no tiene registros (ca) lo cual afecta los datos, mas tras ver que en si es una variable que puede afectar y es condicionante.<br>
+-Obs2: muchos valores faltantes en los demás con “?”<br>
+-Conclusión: Se descarta el dataset para entrenar modelos, puesto que el tratamiento no puede ser el mejor, aun así, no se descarta el hecho de usarlo para evaluar performance del modelo final.<br>
+
+            </p>
+            <h4>Hungary</h4>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/10.jpg">
+            </p>
+            <p>
+                Obs1: Podemos ver que varios de hungary tienen valores faltantes en -9 lo cual hace que el dataset no sea útil para entrenar modelos.
+            </p>
+            <h4>Va</h4>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/11.jpg">
+            </p>
+            <p>
+                -	Obs1: Igual que en los casos anteriores, este dataset tambien tiene muchos valores faltantes, por lo cual su uso podría perjudicar el modelo. 
+            </p>
+            <aside class="alert alert-info">
+                <p>En resumen: Se puede observar que tanto Hungry, Switzerland y VA no son buenos para realizar un modelo debido a la gran cantidad de valores faltantes. </p>
+            </aside>
+            <h3>Visualizacion</h3>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/5.jpg">
+            </p>
+            <p>Se puede observar como en general parece haber mas mujeres sin enfermedad que hombres, y que a su vez no depende tanto de la edad.
+                Lo cual en parte puede explicarse debido a que predominan mas hombres en el dataset que mujeres.
+                </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/6.jpg">
+            </p>
+            <p>
+                Otra forma de visualización, verde representa a las mujeres.
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/7.jpg">
+            </p>
+            <p>Realizando un scatterplot entre oldpeak y chol podemos notar que a medida que oldpeak aumenta más propensos son a tener una enfermedad cardiaca.</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/8.jpg">
+            </p>
+            <p>Se ve que a mayor Ca aumenta considerablemente </p>
+            <h2>Preparacion de los datos</h2>
+            <p>Se van a aplicar los cambios definidos en la parte anterior.</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/12.jpg">
+            </p>
+            <p>Primero se quitan tanto outliers, como valores faltantes y luego se realiza un multiply para tener dos canales posibles: uno donde tenemos las cinco clases y otro donde tenemos solo dos.</p>
+
+            <h2>Modelado</h2>
+        
+            <p>Se va a trabajar tanto sobre Cleveland, debido a que los otros 3 tienen muchos valores 
+                faltantes como para poder trabajar sobre ellos.
+            </p>
+        
+            <p>En esta sección se utilizarán 4 algoritmos de clasificación:</p>
+        
+            <ul>
+                <li>Regresión logística</li>
+                <li>KNN</li>
+                <li>Naive Bayes</li>
+            </ul>
+        
+            <p>En cada modelo se utilizará la misma estructura, primero un tratamiento previo de datos en 
+                donde se trabajará los datos para así poder aplicarlos al algoritmo correspondiente. 
+                Luego se multiplicará el dataset para así tener cuatro canales diferentes uno para un cross 
+                validation común con los 14 atributos y los otros tres con feature selection. Se realizará tanto 
+                en Python como en RM</p>
+        
+            <p>
+                Se probará como una clasificación binomial, así como una clasificación de 4 clases. Para 
+            comparar, aunque se entiende que el problema puede agruparse la variable de objetivo en dos 
+            (como se ve en preparación de los datos).
+            </p>
+        
+            <p>
+                La estructura de RM para cada algoritmo es la siguiente:
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/13.jpg">
+            </p>
+            <p>
+                Donde proceso de datos es el subproceso que realiza el siguiente tratamiento previo:
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/14.jpg">
+            </p>
+            <p>
+                Luego el subproceso tanto de non binary como de binary se componen de:
+            </p>
+            <ul>
+                <li>Cross validation</li>
+                <li>Foward selection</li>
+                <li>Backward Elimination</li>
+                <li>Evolutionary</li>
+            </ul>
+            <p>Los resultados se medirán en performance.</p>
+            <p>Dentro de cada proceso de modelo se vera de esta manera:</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/14.jpg">
+            </p>
+            <p>Bloque de cross validation:</p>
+            <ol>
+                <li>Bloque del algoritmo del modelo: configuración por defecto</li>
+                <li>Bloque de Aplicar modelo</li>
+                <li>Bloque de performance por defecto</li>
+            </ol>
+            <p>Foward y backward selection ambos tienen la configuración por defecto.</p>
+            <p>Optimize selection (Evolutionary) tiene 30 como número máximo de generaciones y 20 de tamaño de población.</p>
+            <p>Paso previo: Puesto que en un caso vamos a trabajar con una clasificación binaria se puede realizar una evaluación ROC. Para eso realizamos lo siguiente:</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/16.jpg">
+            </p>
+            <p>
+            Tenemos dos canales uno con datos sin normalizar y el otro con datos normalizados. En cada ROC se comparará KNN, RL y NB.
+            </p>
+            <p-carousel [value]="roc" 
+            [numVisible]="1" [numScroll]="6" [circular]="false" 
+            class="ia-carrousel">
+                <ng-template let-product pTemplate="item">
+                    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid item-carrousel" 
+                    [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+                    >
+                        <div>
+                            <h6 class="mt-0 mb-3">{{ product.shortDescripton }}</h6>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+            <p>
+                -	Obs1: Knn no esta correcto tras la normalización<br>
+-	Obs2: En ambos casos la regresión logística parece ser el modelo mas efectivo.
+            </p>
+
+            <h3>Regresion Logistica</h3>
+            <aside class="alert alert-info">
+                <strong>
+                    Consideración importante: La regresión logística es un algoritmo de clasificación binaria, lo que significa que solo podemos tener dos clases para clasificar. Esto con nuestro dataset, no es posible debido a que hay cinco clases posibles para una fila. La decisión que se toma es realizar un Discretize y agrupar en dos clases diferentes. Por un lado, las NO = 0 y las SI = 1,2,3,4. Esto no afecta el modelo, puesto que es una agrupación de padecer una enfermedad o no padecer.
+                </strong>
+            </aside>
+            
+            <p-carousel [value]="logreg" 
+            [numVisible]="1" [numScroll]="6" [circular]="false" 
+            class="ia-carrousel">
+                <ng-template let-product pTemplate="item">
+                    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid item-carrousel" 
+                    [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+                    >
+                        <div>
+                            <h6 class="mt-0 mb-3">{{ product.shortDescripton }}</h6>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+
+            <h3>KNN</h3>
+            <h4>Binario</h4>
+            <p-carousel [value]="logreg" 
+            [numVisible]="1" [numScroll]="4" [circular]="true" 
+            class="ia-carrousel">
+                <ng-template let-product pTemplate="item">
+                    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid item-carrousel" 
+                    [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+                    >
+                        <div>
+                            <h6 class="mt-0 mb-3">{{ product.shortDescripton }}</h6>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+            <h4>No Binario</h4>
+            <p-carousel [value]="logreg" 
+            [numVisible]="1" [numScroll]="4" [circular]="true" 
+            class="ia-carrousel">
+                <ng-template let-product pTemplate="item">
+                    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid item-carrousel" 
+                    [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+                    >
+                        <div>
+                            <h6 class="mt-0 mb-3">{{ product.shortDescripton }}</h6>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+            <h3>NB</h3>
+            <h4>Binario</h4>
+            <p-carousel [value]="logreg" 
+            [numVisible]="1" [numScroll]="4" [circular]="true" 
+            class="ia-carrousel">
+                <ng-template let-product pTemplate="item">
+                    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid item-carrousel" 
+                    [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+                    >
+                        <div>
+                            <h6 class="mt-0 mb-3">{{ product.shortDescripton }}</h6>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+            <h4>No Binario</h4>
+            <p-carousel [value]="logreg" 
+            [numVisible]="1" [numScroll]="4" [circular]="true" 
+            class="ia-carrousel">
+                <ng-template let-product pTemplate="item">
+                    <div class="border-1 surface-border border-round m-2 text-center py-5 px-3 img-fluid item-carrousel" 
+                    [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+                    >
+                        <div>
+                            <h6 class="mt-0 mb-3">{{ product.shortDescripton }}</h6>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+            <h3>Resultados en Python</h3>
+            <aside class="alert alert-info">
+                <p>
+                    En Python se realizó el siguiente código disponible en: 
+                    <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/CASOS%20DE%20ESTUDIO/Enfermedad%20Cardiaca/CE_Enfermedad_Cardiaca.ipynb">
+                    https://github.com/RafaFil/ia-portafolio-docs/blob/main/CASOS%20DE%20ESTUDIO/Enfermedad%20Cardiaca/CE_Enfermedad_Cardiaca.ipynb
+                    </a>
+                </p>
+            </aside>
+            <h4>Clasificacion binaria</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LDA</td>
+                        <td>0.875000</td>
+                    </tr>
+                    <tr>
+                        <td>Logistic Regression</td>
+                        <td>0.863636</td>
+                    </tr>
+                    <tr>
+                        <td>Gaussian Naive Bayes</td>
+                        <td>0.852273</td>
+                    </tr>
+                    <tr>
+                        <td>Bernoulli NB</td>
+                        <td>0.818182</td>
+                    </tr>
+                    <tr>
+                        <td>K Nearest Neighbors</td>
+                        <td>0.613636</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Clasificacion no binaria</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LDA</td>
+                        <td>0.590909</td>
+                    </tr>
+                    <tr>
+                        <td>Gaussian Naive Bayes</td>
+                        <td>0.579545</td>
+                    </tr>
+                    <tr>
+                        <td>K Nearest Neighbors</td>
+                        <td>0.534091</td>
+                    </tr>
+                    <tr>
+                        <td>Multinomial NB</td>
+                        <td>0.454545</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Evaluacion</h2>
+            <p>Knn para 4 clases se descarta puesto que el algoritmo no fue preciso para la clase num = 4, se estima que este error es debido a la falta de valores 4 </p>
+            <p>Se llego a los siguientes resultados (comparando entre py y rm), considerando aquellos mayores a 60.</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LDA</td>
+                        <td>87.5</td>
+                    </tr>
+                    <tr>
+                        <td>LR</td>
+                        <td>86.3</td>
+                    </tr>
+                    <tr>
+                        <td>LR</td>
+                        <td>85.7</td>
+                    </tr>
+                    <tr>
+                        <td>LR</td>
+                        <td>85.33</td>
+                    </tr>
+                    <tr>
+                        <td>NB</td>
+                        <td>85.2</td>
+                    </tr>
+                    <tr>
+                        <td>LR</td>
+                        <td>84.99</td>
+                    </tr>
+                    <tr>
+                        <td>LR</td>
+                        <td>82.94</td>
+                    </tr>
+                    <tr>
+                        <td>LR</td>
+                        <td>82.63</td>
+                    </tr>
+                    <tr>
+                        <td>NB</td>
+                        <td>82.62</td>
+                    </tr>
+                    <tr>
+                        <td>NB</td>
+                        <td>81.8</td>
+                    </tr>
+                    <tr>
+                        <td>NB</td>
+                        <td>81.63</td>
+                    </tr>
+                    <tr>
+                        <td>KNN</td>
+                        <td>81</td>
+                    </tr>
+                    <tr>
+                        <td>KNN</td>
+                        <td>61</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Conclusión</h2>
+            <p>RapidMiner: La regresión logística fue la que obtuvo mejores resultados. KNN para 4 clases no es optimo puesto que al disminuir las clases y no tener una distribución uniforme de la misma.</p>
+            <p>Métodos de feature selection: aumentan el rendimiento y el mas efectivo en la gran mayoría de casos fue Foward selection. Aunque en los que Evolutionary no tenia baja performance el modelo mejoraba contra el mencionado anteriormente.</p>
+            <p>Python: LDA fue el mejor, pero la regresión logística dio un resultado muy similar, el cual considerando el margen de error podríamos decir que ambos tienen un rendimiento similar</p>
+            <p>Se puede decir que el mejor algoritmo para enfrentar este caso es la regresión logística si lo vemos como un problema de clasificación binaria, sino en todo caso LDA tiene una eficiencia de casi 60% lo cual considerando que la probabilidad es 20% si se escoge aleatoriamente una clase es para tener en cuenta. Mismo con naive bayes.</p>
+            <p>Los resultados coinciden con UCL, en donde se trataba a RL como el mejor algoritmo para este problema.</p>
+            <p>Se puede observar que se dio que el rendimiento del modelo fue mejor en la clasificación binaria que en la clasificación con varias clases, esto principalmente se puede deber a que la distribución de los datos con varias clases no era la más uniforme, teníamos muchísimos 0 menos 1 y así descendiendo hasta tener unos pocos 4. </p>
+            <p>Como mejora continua se podría partir de la base de la clasificación binaria y a partir de la respuesta de este modelo evaluarlo con uno de 5 clases.</p>
+            <h2>Deploy</h2>
+            <p class="mb-5">Se utilizaría como modelo: LDA, RL, NB y se tomaría como una clasificación binaria.</p>
+        </div>
+        <div class="col-md order-md-2" [align]="'end'">
+            <a href="../../../../../../assets/pdf/CE_ENFERMEDAD_CARDIACA.pdf" download="CE_ENFERMEDAD_CARDIACA.pdf">
+                <div class="w-100 pbu">
+                    <p-button class="w-100 pbu">Descargar pdf</p-button>
+                </div>
+            </a>
+            <div class="me-5 mt-5">
+                <h5>Indice: </h5>
+                <h6>Comprension del negocio</h6>
+                <h6>Comprension de los datos</h6>
+                <h6>Preparacion de los datos</h6>
+                <h6>Modelado</h6>
+                <h6>Evaluacion</h6>
+                <h6>Deploy</h6>
+            </div>
+        </div>
+    </div>
+   
+</div>

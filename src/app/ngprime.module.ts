@@ -20,6 +20,8 @@ import { ScrollTopModule } from 'primeng/scrolltop';
 import { TooltipModule } from 'primeng/tooltip';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ImageModule } from 'primeng/image';
+import { GalleriaModule } from 'primeng/galleria';
 
 const NgPrimeComponents = [
     ButtonModule,
@@ -41,7 +43,9 @@ const NgPrimeComponents = [
     ScrollTopModule,
     TooltipModule,
     InputSwitchModule,
-    CheckboxModule
+    CheckboxModule,
+    ImageModule,
+    GalleriaModule
 ];
 
 @NgModule({

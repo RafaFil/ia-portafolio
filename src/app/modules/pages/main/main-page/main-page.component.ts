@@ -79,4 +79,12 @@ export class MainPageComponent implements OnInit {
       this.scrollToTopElement.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
+  showArticulosDestacados(e : boolean) {
+
+    if (e)
+      this.articlesShown = this.articles.filter(x => x.destacado);
+    else
+      this.articlesShown = this.articles
+  }
+
 }

@@ -5,6 +5,7 @@
     </div>
 
     <div [@fadeInOut] class="animated-item">
+        <h2 class="mt-2">Casos de estudio:</h2>
         <ia-study-case-carrousel></ia-study-case-carrousel>
     </div>
 
@@ -18,7 +19,7 @@
         </div>
         <div class="col-md order-md-2">
                 <h4>Filtros:</h4>
-                <ia-articles-filter (topicSelected)="newTopicSelected($event)"></ia-articles-filter> 
+                <ia-articles-filter (topicSelected)="newTopicSelected($event)" (showDestacado)="showArticulosDestacados($event)"></ia-articles-filter> 
         </div>
     </div>
     <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator>

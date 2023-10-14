@@ -5,12 +5,14 @@ import { SharedModule } from '../../shared/shared.module';
 import { NgPrimeModule } from 'src/app/ngprime.module';
 import { StudyCasesRoutingModule } from './study-cases-routing.module';
 import { StudyCasePageComponent } from './study-case-page/study-case-page.component';
+import { CEENFERMEDADCARDIACAComponent } from './SC/ce-enfermedad-cardiaca/ce-enfermedad-cardiaca.component';
 
 
 @NgModule({
   declarations: [
   
-    StudyCasePageComponent
+    StudyCasePageComponent,
+        CEENFERMEDADCARDIACAComponent
   ],
   imports: [
     CommonModule,
