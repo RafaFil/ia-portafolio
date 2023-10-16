@@ -12,6 +12,8 @@ export class StudyCasePageComponent implements OnInit {
 
   cardio = false;
 
+  ckd = false;
+
   constructor(private router: Router, private actRouter : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -32,7 +34,9 @@ export class StudyCasePageComponent implements OnInit {
           case "cardio":
             this.cardio = true;
             break;
-        
+          case "ckd":
+            this.ckd = true;
+            break
           default:
             break;
         }

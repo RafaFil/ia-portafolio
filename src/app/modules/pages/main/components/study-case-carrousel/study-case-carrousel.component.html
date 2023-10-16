@@ -6,7 +6,7 @@ class="ia-carrousel">
         [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
         (mouseover)="showDescription()" 
         (mouseout)="showDescription()" 
-        (click)="redirectToCase()"
+        (click)="redirectToCase(product.cut)"
         >
             <div>
                 <h4 class="mb-1">{{ product.title }}</h4>

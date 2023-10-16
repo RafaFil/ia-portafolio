@@ -18,19 +18,19 @@ export class StudyCaseCarrouselComponent implements OnInit {
     },
     {
       title: "Caso: Deteccion de una enfermedad renal",
-      shortDescripton: "TBD",
-      image: "",
+      shortDescripton: "El diagnóstico de enfermedades renales crónicas es generalmente invasivo, costoso, lento y a menudo riesgoso. Es por eso que muchos pacientes llegan a etapas tardías sin tratamiento, especialmente en aquellos países donde los recursos son limitados.",
+      image: "../../../../../../assets/img/CKD/bck.jpg",
       cut: "ckd"
     },
     {
       title: "Caso: Adopcion de Animales",
-      shortDescripton: "",
+      shortDescripton: "Se desea analizar los datos de ingresos y salidas del Refugio de Animales de la ciudad de Austin, para comprender las tendencias de adopción de animales, incluyendo qué atributos de estos animales resultan en una probabilidad de adopción mayor.",
       image:"",
       cut:"animales"
     },
     {
       title:"Caso: Probabilidad de Titanic",
-      shortDescripton: "",
+      shortDescripton: "Como caso de prueba se desea analizar la probabilidad de sobrevivir al titanic.",
       image: "",
       cut: "titanic"
     }
@@ -54,8 +54,9 @@ export class StudyCaseCarrouselComponent implements OnInit {
     }
   }
 
-  redirectToCase(){
-    this.router.navigate(["/studycase/cardio"])
+  redirectToCase(s: string){
+
+    this.router.navigate([`/studycase/${s}`])
   }
 
 
