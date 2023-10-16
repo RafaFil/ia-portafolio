@@ -1,4 +1,5 @@
 <p-card header="{{article.title}}" subheader="{{formatDate()}}">
+    <i pTooltip="Articulo destacado" class="pi pi-star-fill" *ngIf="article.destacado"></i>
     <p class="m-0">
         <ia-tags *ngFor="let tag of article.tags" [text]="tag" class="ml-3"></ia-tags>
     </p>

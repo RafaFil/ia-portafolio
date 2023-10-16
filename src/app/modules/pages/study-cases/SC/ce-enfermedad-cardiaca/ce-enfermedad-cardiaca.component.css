@@ -1,0 +1,7 @@
+.item-carrousel{
+    background-size: cover;
+}
+
+::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: orange;
+}

@@ -3,8 +3,9 @@
 }
 .item-carrousel:hover {
     cursor: pointer;
+    backdrop-filter: blur(100%);
 }
 
 .item-carrousel{
-    background-size: 50% 50%;
+    background-size: 100%;
 }

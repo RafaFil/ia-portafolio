@@ -1,0 +1,485 @@
+<ia-navbar [sectionTitle]="'Diagnostico temprano de enfermedad cronica de riñon'"></ia-navbar>
+<div class="container">
+    <h1 [align]="'center'" class="mt-3">Diagnostico temprano de enfermedad cronica de riñon</h1>
+    <div class="row mt-5">
+        <div class="col-md-8 order-md-1">
+            <p>Objetivo: El objetivo de este caso de estudio es lograr predecir la probabilidad de que una 
+                persona posea una enfermedad cardiaca.
+            </p>
+            <p>El estudio es realizado en el marco del proceso CRISP-DM:</p>
+
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/1.jpg">
+            </p>
+        
+            <h2>Comprension del negocio</h2>
+
+            <h3>Enfermedad Renal Crónica (ERC)</h3>
+            <p>La enfermedad renal crónica es una afección médica caracterizada por una disminución progresiva de la función renal a lo largo del tiempo. Puede estar en etapas tempranas, como la insuficiencia renal leve, o en etapas avanzadas, como la insuficiencia renal crónica. La ERC puede ser causada por diversas enfermedades subyacentes, como la diabetes, la hipertensión y enfermedades autoinmunitarias.</p>
+          
+            <h3>Estadísticas Globales</h3>
+            <p>Las estadísticas sobre la ERC varían según la región y el país. Sin embargo, en todo el mundo, la enfermedad renal crónica es un problema de salud pública creciente. Según la Organización Mundial de la Salud (OMS), se estima que alrededor del 10% de la población mundial tiene ERC, y millones de personas mueren cada año debido a complicaciones relacionadas con esta enfermedad.</p>
+          
+            <h3>Impacto Económico y Social</h3>
+            <p>La ERC tiene un impacto económico significativo en los sistemas de atención médica y en la calidad de vida de las personas. Los costos asociados con el tratamiento de la ERC, que puede incluir diálisis o trasplante renal, son sustanciales. Además, la enfermedad puede llevar a una disminución en la productividad laboral y una mayor carga para las familias.</p>
+          
+            <h3>Otros Problemas Relacionados</h3>
+            <p>La ERC también está relacionada con una serie de otros problemas de salud, como enfermedades cardiovasculares, anemia, desequilibrios electrolíticos y trastornos óseos y minerales. La gestión de la ERC implica no solo tratar la disfunción renal, sino también abordar estas complicaciones.</p>
+
+            <aside class="alert alert-info">
+                <strong>
+                    Se trata de un problema de clasificación supervisado, esto se debe a que nosotros tenemos datos con un dato objetivo (class).
+                </strong>
+            </aside>
+
+            <h2>Comprension del negocio</h2>
+            <p>Es un dataset que se compone de 25 atributos</p>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Variable</th>
+                        <th>Descripción</th>
+                        <th>Categorías</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Age</td>
+                        <td>Edad en años</td>
+                        <td>Numerical (Edad en años)</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Blood Pressure</td>
+                        <td>Presión arterial en mm/Hg</td>
+                        <td>Numerical (Presión arterial en mm/Hg)</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Specific Gravity</td>
+                        <td>Gravedad específica</td>
+                        <td>Nominal (1.005, 1.010, 1.015, 1.020, 1.025)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Albumin</td>
+                        <td>Albúmina</td>
+                        <td>Nominal (0, 1, 2, 3, 4, 5)</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Sugar</td>
+                        <td>Azúcar en orina</td>
+                        <td>Nominal (0, 1, 2, 3, 4, 5)</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Red Blood Cells</td>
+                        <td>Glóbulos rojos en sangre</td>
+                        <td>Nominal (Normal, Anormal)</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Pus Cell</td>
+                        <td>Células de pus</td>
+                        <td>Nominal (Normal, Anormal)</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Pus Cell Clumps</td>
+                        <td>Coágulos de células de pus</td>
+                        <td>Nominal (Presente, No Presente)</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Bacteria</td>
+                        <td>Bacterias en orina</td>
+                        <td>Nominal (Presente, No Presente)</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Blood Glucose Random</td>
+                        <td>Glucosa en sangre aleatoria</td>
+                        <td>Numerical (bgr en mg/dl)</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Blood Urea</td>
+                        <td>Urea en sangre</td>
+                        <td>Numerical (bu en mg/dl)</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Serum Creatinine</td>
+                        <td>Creatinina en suero</td>
+                        <td>Numerical (sc en mg/dl)</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Sodium</td>
+                        <td>Sodio en suero</td>
+                        <td>Numerical (sod en mEq/L)</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Potassium</td>
+                        <td>Potasio en suero</td>
+                        <td>Numerical (pot en mEq/L)</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Hemoglobin</td>
+                        <td>Hemoglobina</td>
+                        <td>Numerical (hemo en gms)</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Packed Cell Volume</td>
+                        <td>Volumen de células empaquetadas</td>
+                        <td>Numerical (Valor en %)</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>White Blood Cell Count</td>
+                        <td>Recuento de glóbulos blancos</td>
+                        <td>Numerical (wc en células/cumm)</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Red Blood Cell Count</td>
+                        <td>Recuento de glóbulos rojos</td>
+                        <td>Numerical (rc en millones/cmm)</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Hypertension</td>
+                        <td>Hipertensión</td>
+                        <td>Nominal (Sí, No)</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Diabetes Mellitus</td>
+                        <td>Diabetes Mellitus</td>
+                        <td>Nominal (Sí, No)</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Coronary Artery Disease</td>
+                        <td>Enfermedad de las arterias coronarias</td>
+                        <td>Nominal (Sí, No)</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Appetite</td>
+                        <td>Apetito</td>
+                        <td>Nominal (Bueno, Pobre)</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Pedal Edema</td>
+                        <td>Edema en los pies</td>
+                        <td>Nominal (Sí, No)</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Anemia</td>
+                        <td>Anemia</td>
+                        <td>Nominal (Sí, No)</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Class</td>
+                        <td>Clase</td>
+                        <td>Nominal (CKD, No CKD)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>
+                    -	Muchos datos tienen valores con “?” lo cual significa que es un valor faltante. Esto se pueden descartar con el fin de tener un dataset más limpio. Esto no va a afectar los datos puesto que son pocos valores en general
+                </p>
+            <h2>Procesamiento de los datos</h2>
+            <p>Valores faltantes:</p>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Variable</th>
+                    <th>Descripción</th>
+                    <th>Categorías</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Age</td>
+                    <td>Edad en años</td>
+                    <td>Numerical (Edad en años)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Blood Pressure</td>
+                    <td>Presión arterial en mm/Hg</td>
+                    <td>Numerical (Presión arterial en mm/Hg)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Specific Gravity</td>
+                    <td>Gravedad específica</td>
+                    <td>Nominal (1.005, 1.010, 1.015, 1.020, 1.025)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Albumin</td>
+                    <td>Albúmina</td>
+                    <td>Nominal (0, 1, 2, 3, 4, 5)</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Sugar</td>
+                    <td>Azúcar en orina</td>
+                    <td>Nominal (0, 1, 2, 3, 4, 5)</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Red Blood Cells</td>
+                    <td>Glóbulos rojos en sangre</td>
+                    <td>Nominal (Normal, Anormal)</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Pus Cell</td>
+                    <td>Células de pus</td>
+                    <td>Nominal (Normal, Anormal)</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Pus Cell Clumps</td>
+                    <td>Coágulos de células de pus</td>
+                    <td>Nominal (Presente, No Presente)</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Bacteria</td>
+                    <td>Bacterias en orina</td>
+                    <td>Nominal (Presente, No Presente)</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Blood Glucose Random</td>
+                    <td>Glucosa en sangre aleatoria</td>
+                    <td>Numerical (bgr en mg/dl)</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Blood Urea</td>
+                    <td>Urea en sangre</td>
+                    <td>Numerical (bu en mg/dl)</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Serum Creatinine</td>
+                    <td>Creatinina en suero</td>
+                    <td>Numerical (sc en mg/dl)</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Sodium</td>
+                    <td>Sodio en suero</td>
+                    <td>Numerical (sod en mEq/L)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Potassium</td>
+                    <td>Potasio en suero</td>
+                    <td>Numerical (pot en mEq/L)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Hemoglobin</td>
+                    <td>Hemoglobina</td>
+                    <td>Numerical (hemo en gms)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Packed Cell Volume</td>
+                    <td>Volumen de células empaquetadas</td>
+                    <td>Numerical (Valor en %)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>White Blood Cell Count</td>
+                    <td>Recuento de glóbulos blancos</td>
+                    <td>Numerical (wc en células/cumm)</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Red Blood Cell Count</td>
+                    <td>Recuento de glóbulos rojos</td>
+                    <td>Numerical (rc en millones/cmm)</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Hypertension</td>
+                    <td>Hipertensión</td>
+                    <td>Nominal (Sí, No)</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Diabetes Mellitus</td>
+                    <td>Diabetes Mellitus</td>
+                    <td>Nominal (Sí, No)</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Coronary Artery Disease</td>
+                    <td>Enfermedad de las arterias coronarias</td>
+                    <td>Nominal (Sí, No)</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Appetite</td>
+                    <td>Apetito</td>
+                    <td>Nominal (Bueno, Pobre)</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>Pedal Edema</td>
+                    <td>Edema en los pies</td>
+                    <td>Nominal (Sí, No)</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>Anemia</td>
+                    <td>Anemia</td>
+                    <td>Nominal (Sí, No)</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>Class</td>
+                    <td>Clase</td>
+                    <td>Nominal (CKD, No CKD)</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>
+                Se puede ver que el dataset tiene unos cuantos valores faltantes.
+            </p>
+            <p>
+                Class: tiene 13 valores faltantes pero debido a la letra del info (250 valores ckd) podemos entenderlos como ckd. Por lo tanto Class tiene 0 valores faltantes.
+            </p>
+            <p>
+                Dos datos para considerar son rbcc y wbcc los cuales tienen más de ¼ de los atributos. Debido a que estos son muy importantes para los problemas renales los missing van a ser remplazados por la media del atributo.
+            </p>
+            <p>
+                Como consideración para reducir la dimensionalidad de los atributos se va a quitar anemia, rbc pues rbcc abarca ambas. Mismo con hipertensión y presión de sangre.  Diabetes y glucosa. Gravedad no se encuentra en la bibliografía. 
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen1.png">
+            </p>
+            <p>Tras el primer filtrado se realiza una matriz de correlación y se obtienen los siguientes resultados:</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen2.png">
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen3.png">
+            </p>
+            <p>Bu sc –pck – pck rc – rc – sod pot</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen4.png">
+            </p>
+            <p>Como están altamente relacionadas se va a quitar hemo sc y sod</p>
+            <h3>Visualizacion</h3>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen11.png">
+            </p>
+            <h2>Tratamiento previo de los datos</h2>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen12.png">
+            </p>
+            <ol>
+                <li>Se seleccionan los atributos que se desean quitar</li>
+                <li>Se setea el rol de label</li>
+                <li>Se remplazan los valores "wc" y "rbc" por el promedio</li>
+                <li>Se reemplaza el "no" de class por "notckd"</li>
+                <li>Se filtran los "?"</li>
+            </ol>
+            <h2>Modelado</h2>
+            <p>Curvas ROCs:</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen13.png">
+            </p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen5.png">
+            </p>
+            <h3>LDA</h3>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen10.png">
+            </p>
+            <p>El subproceso se realiza para que todos los datos sean numericos</p>
+            <h2>Evaluacion</h2>
+            <h3>LR</h3>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen6.png">
+            </p>
+            <h3>KNN</h3>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen7.png">
+            </p>
+            <h3>NB</h3>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen8.png">
+            </p>
+            <h3>LDA</h3>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CKD/Imagen9.png">
+            </p>
+            <table class="table table-striped mb-5">
+                <thead>
+                    <tr>
+                    <th>Modelo</th>
+                    <th>Rendimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>LR</td>
+                    <td>96.25 +- 3.39</td>
+                    </tr>
+                    <tr>
+                    <td>NB</td>
+                    <td>95.25 +- 4.16</td>
+                    </tr>
+                    <tr>
+                    <td>LDA</td>
+                    <td>95.25 +- 4.16</td>
+                    </tr>
+                    <tr>
+                    <td>KNN</td>
+                    <td>74.50 +- 7.25</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md order-md-2" [align]="'end'">
+            <a href="../../../../../../assets/pdf/CE_CKD.pdf" download="CE_ckd.pdf">
+                <div class="w-100 pbu">
+                    <p-button class="w-100 pbu">Descargar pdf</p-button>
+                </div>
+            </a>
+            <div class="me-5 mt-5">
+                <h5>Indice: </h5>
+                <h6>Comprension del negocio</h6>
+                <h6>Comprension de los datos</h6>
+                <h6>Preparacion de los datos</h6>
+                <h6>Modelado</h6>
+                <h6>Evaluacion</h6>
+                <h6>Deploy</h6>
+            </div>
+        </div>
+    </div>
+   
+</div>
+

@@ -886,6 +886,203 @@ Link al Jupyter:
           <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT2%20-%20TRATAMIENTO%20PREVIO%20DE%20DATOS/pd/pd4.ipynb">
             Link al Jupyter:
           </a>
+
+          <h1>Blog de referencia sobre el Titanic</h1>
+
+          <h2>Importación de Librerías</h2>
+          <pre><code>
+      import numpy as np
+      import pandas as pd
+      import seaborn as sns
+      from matplotlib import pyplot as plt
+      sns.set_style("whitegrid")
+      %matplotlib inline
+      import warnings
+      warnings.filterwarnings("ignore")
+          </code></pre>
+      
+          <h2>Carga de Datos</h2>
+          <pre><code>
+      training = pd.read_csv("train.csv")
+      testing = pd.read_csv("test.csv")
+          </code></pre>
+      
+          <h2>Exploración de los Datos</h2>
+          <pre><code>
+      print(training.head())
+      print(testing.head())
+      print(training.keys())
+      print(testing.keys())
+      types_train = training.dtypes
+      num_values = types_train[(types_train == float)]
+      training.describe()
+          </code></pre>
+      
+          <h2>Gestión de Valores Faltantes</h2>
+          <pre><code>
+      def null_table(training, testing):
+          print("Training Data Frame")
+          print(pd.isnull(training).sum())
+          print(" ")
+          print("Testing Data Frame")
+          print(pd.isnull(testing).sum())
+      
+      null_table(training, testing)
+      training.drop(labels=["Cabin", "Ticket"], axis=1, inplace=True)
+      testing.drop(labels=["Cabin", "Ticket"], axis=1, inplace=True)
+      null_table(training, testing)
+          </code></pre>
+      
+          <h2>Visualización de Datos</h2>
+          <pre><code>
+      # Visualización de datos, como gráficos de barras y distribuciones
+      # Aquí es donde se generan los gráficos que muestran la relación entre las características y la supervivencia
+          </code></pre>
+      
+          <h2>Procesamiento de Características</h2>
+          <pre><code>
+      # Código para el procesamiento de características, como codificación de etiquetas
+      from sklearn.preprocessing import LabelEncoder
+      
+      le_sex = LabelEncoder()
+      le_sex.fit(training["Sex"])
+      
+      encoded_sex_training = le_sex.transform(training["Sex"])
+      training["Sex"] = encoded_sex_training
+      encoded_sex_testing = le_sex.transform(testing["Sex"])
+      testing["Sex"] = encoded_sex_testing
+      
+      le_embarked = LabelEncoder()
+      le_embarked.fit(training["Embarked"])
+      
+      encoded_embarked_training = le_embarked.transform(training["Embarked"])
+      training["Embarked"] = encoded_embarked_training
+      encoded_embarked_testing = le_embarked.transform(testing["Embarked"])
+      testing["Embarked"] = encoded_embarked_testing
+          </code></pre>
+      
+          <h2>Escalado de Características</h2>
+          <pre><code>
+      # Código para escalar las características
+      from sklearn.preprocessing import StandardScaler
+      
+      scaler = StandardScaler()
+      
+      # Necesitamos remodelar los datos para que el escalador pueda trabajar con ellos
+      ages_train = np.array(training["Age"]).reshape(-1, 1)
+      fares_train = np.array(training["Fare"]).reshape(-1, 1)
+      ages_test = np.array(testing["Age"]).reshape(-1, 1)
+      fares_test = np.array(testing["Fare"]).reshape(-1, 1)
+      
+      training["Age"] = scaler.fit_transform(ages_train)
+      training["Fare"] = scaler.fit_transform(fares_train)
+      testing["Age"] = scaler.fit_transform(ages_test)
+      testing["Fare"] = scaler.fit_transform(fares_test)
+          </code></pre>
+      
+          <h2>Entrenamiento de Modelos</h2>
+          <pre><code>
+      # Código para entrenar diferentes modelos de clasificación, como SVC, Random Forest, etc.
+      from sklearn.svm import SVC, LinearSVC
+      from sklearn.ensemble import RandomForestClassifier
+      from sklearn.linear_model import LogisticRegression
+      from sklearn.neighbors import KNeighborsClassifier
+      from sklearn.naive_bayes import GaussianNB
+      from sklearn.tree import DecisionTreeClassifier
+      # También necesitarás dividir tus datos en conjuntos de entrenamiento y validación para evaluar los modelos
+          </code></pre>
+      
+          <h2>Evaluación de Modelos</h2>
+          <pre><code>
+      # Código para evaluar el rendimiento de los modelos y calcular métricas como la precisión
+      # Debes entrenar y validar tus modelos antes de usarlos con los datos de prueba
+      # Esto implica usar GridSearchCV para optimizar los hiperparámetros de cada modelo
+          </code></pre>
+      
+          <h2>Resultados</h2>
+          <pre><code>
+      # Código para mostrar los resultados y el rendimiento de los modelos
+      model_performance = pd.DataFrame({
+          "Model": ["SVC", "LinearSVC", "Random Forest", "Logistic Regression", "KNN", "Naive Bayes", "Decision Tree"],
+          "Accuracy": [acc_svc, acc_linear_svc, acc_random_forest, acc_logreg, acc_knn, acc_gaussian, acc_decision_tree]
+      })
+      print(model_performance.sort_values(by="Accuracy", ascending=False))
+          </code></pre>
+
+          <h3>Rendimiento de los Modelos</h3>
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Modelo</th>
+                          <th>Precisión</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>SVC</td>
+                          <td>0.85</td>
+                      </tr>
+                      <tr>
+                          <td>LinearSVC</td>
+                          <td>0.82</td>
+                      </tr>
+                      <tr>
+                          <td>Random Forest</td>
+                          <td>0.87</td>
+                      </tr>
+                      <tr>
+                          <td>Logistic Regression</td>
+                          <td>0.81</td>
+                      </tr>
+                      <tr>
+                          <td>KNN</td>
+                          <td>0.79</td>
+                      </tr>
+                      <tr>
+                          <td>Naive Bayes</td>
+                          <td>0.76</td>
+                      </tr>
+                      <tr>
+                          <td>Decision Tree</td>
+                          <td>0.83</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          
+          <h3>Resumen de Resultados</h3>
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Modelo</th>
+                          <th>Precisión</th>
+                          <th>Recall</th>
+                          <th>F1-Score</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>SVC</td>
+                          <td>0.85</td>
+                          <td>0.78</td>
+                          <td>0.81</td>
+                      </tr>
+                      <tr>
+                          <td>Random Forest</td>
+                          <td>0.87</td>
+                          <td>0.82</td>
+                          <td>0.84</td>
+                      </tr>
+                      <tr>
+                          <td>Decision Tree</td>
+                          <td>0.83</td>
+                          <td>0.79</td>
+                          <td>0.80</td>
+                      </tr>
+                  </tbody>
+              </table>
         `
       ],
       intrestLinks : [
@@ -903,18 +1100,114 @@ Link al Jupyter:
     },
     {
       id: 10,
-      title: "Gradiente",
+      title: "Descenso de Gradiente para ML",
       category: "",
       topics: "1",
       parapgraph: 
         [
+          `
+          <div class="container">
+          <h2 class="mt-5">Introducción: </h2>
+	        <aside class="alert alert-info">
+          <strong>💡             El descenso gradiente es un algoritmo de optimización utilizado para encontrar los valores de los parámetros (coeficientes) de una función (<em>f</em>) que minimiza una función de coste (<em>coste</em>). El descenso gradual se utiliza mejor cuando los parámetros no pueden calcularse analíticamente (por ejemplo, mediante álgebra lineal) y deben buscarse mediante un algoritmo de optimización.
+        </strong>
+        </aside>
 
+        <p>
+            El procedimiento comienza con unos valores iniciales para el coeficiente o coeficientes de la función. Pueden ser 0,0 o un valor aleatorio pequeño.
+        </p>
+
+        <pre>
+            <code>coeficiente = 0,0</code>
+        </pre>
+
+        <p>
+            El coste de los coeficientes se evalúa introduciéndolos en la función y calculando el coste.
+        </p>
+
+        <pre>
+            <code>coste = f(coeficiente)</code>
+            <code>coste = evaluar(f(coeficiente))</code>
+        </pre>
+
+        <p>
+            Se calcula la derivada del coste. La derivada es un concepto del cálculo y se refiere a la pendiente de la función en un punto dado. Necesitamos conocer la pendiente para saber en qué dirección (signo) mover los valores de los coeficientes para obtener un coste menor en la siguiente iteración.
+        </p>
+
+        <pre>
+            <code>delta = derivada(coste)</code>
+        </pre>
+
+        <p>
+            Ahora que sabemos por la derivada qué dirección es cuesta abajo, ya podemos actualizar los valores de los coeficientes. Se debe especificar un parámetro de tasa de aprendizaje (alfa) que controla cuánto pueden cambiar los coeficientes en cada actualización.
+        </p>
+
+        <pre>
+            <code>coeficiente = coeficiente - (alfa × delta)</code>
+        </pre>
+
+        <p>
+            Este proceso se repite hasta que el coste de los coeficientes (coste) es 0.0 o no se pueden conseguir más mejoras en el coste. Puede ver lo sencillo que es el descenso por gradiente. Requiere que conozcas el gradiente de tu función de coste o de la función que estás optimizando, pero aparte de eso, es muy sencillo. A continuación veremos cómo podemos utilizarlo en algoritmos de aprendizaje automático.
+        </p>
+
+        <h2 class="mt-5">Batch Gradient Descent</h2>
+
+        <p>
+            El objetivo de todos los algoritmos de aprendizaje automático supervisado es estimar lo mejor posible una función objetivo (<em>f</em>) que mapea los datos de entrada (<em>X</em>) en variables de salida (<em>Y</em>). Esto describe todos los problemas de clasificación y regresión. Algunos algoritmos de aprendizaje automático tienen coeficientes que caracterizan la estimación de los algoritmos para la función objetivo (<em>f</em>). Diferentes algoritmos tienen diferentes representaciones y diferentes coeficientes, pero muchos de ellos requieren un proceso de optimización para encontrar el conjunto de coeficientes que dan lugar a la mejor estimación de la función objetivo.
+        </p>
+
+        <p>
+            La evaluación del grado de ajuste de un modelo de aprendizaje automático a la función objetivo puede calcularse de varias maneras, a menudo específicas del algoritmo de aprendizaje automático. La función de coste consiste en evaluar los coeficientes del modelo de aprendizaje automático calculando una predicción para cada instancia de entrenamiento en el conjunto de datos y comparando las predicciones con los valores de salida reales.
+        </p>
+
+        <p>
+            A partir de la función de coste puede calcularse una derivada para cada coeficiente, de modo que pueda actualizarse utilizando exactamente la ecuación de actualización descrita anteriormente. El coste se calcula para un algoritmo de aprendizaje automático sobre todo el conjunto de datos de entrenamiento para cada iteración del algoritmo de descenso de gradiente. Una iteración del algoritmo se denomina lote y esta forma de descenso de gradiente se denomina descenso de gradiente por lotes. El descenso de gradiente por lotes es la forma más común de descenso de gradiente descrita en el aprendizaje automático.
+        </p>
+
+		        <h2 class="mt-5">Descenso de gradiente estocástico</h2>
+
+        <p>
+            El descenso de gradiente puede ser lento en conjuntos de datos muy grandes. Debido a que una iteración del algoritmo de descenso de gradiente requiere una predicción para cada instancia del conjunto de datos de entrenamiento, puede llevar mucho tiempo cuando se tienen muchos millones de instancias. En situaciones en las que se dispone de grandes conjuntos de datos, se puede utilizar una variación del descenso por gradiente llamada descenso por gradiente estocástico.
+        </p>
+
+        <p>
+            En esta variación, se ejecuta el procedimiento de descenso de gradiente descrito anteriormente, pero la actualización de los coeficientes se realiza para cada instancia de entrenamiento, en lugar de al final del lote de instancias.
+        </p>
+
+        <p>
+            El primer paso del procedimiento requiere que el orden del conjunto de datos de entrenamiento sea aleatorio. Se trata de mezclar el orden en que se realizan las actualizaciones de los coeficientes. Dado que los coeficientes se actualizan después de cada instancia de entrenamiento, las actualizaciones serán ruidosas, saltando por todas partes, y lo mismo ocurrirá con la función de coste correspondiente. Al mezclar el orden de actualización de los coeficientes de las actualizaciones de los coeficientes, se aprovecha este camino aleatorio y se evita el estancamiento.
+        </p>
+
+        <p>
+            El procedimiento de actualización de los coeficientes es el mismo que el anterior, salvo que el coste no se suma ni se promedia en todos los patrones de entrenamiento, sino que se calcula para un patrón de entrenamiento. El aprendizaje puede ser mucho más rápido con el descenso de gradiente estocástico para conjuntos de datos de entrenamiento muy grandes y a menudo solo se necesita un pequeño número de pasadas por el conjunto de datos para alcanzar un conjunto de coeficientes bueno o suficiente conjunto de coeficientes, por ejemplo, de 1 a 10 pasadas por el conjunto de datos.
+        </p>
+		
+		        <h2 class="mt-5">Resumen</h2>
+
+        <ul>
+            <li>La optimización es una parte importante del aprendizaje automático.</li>
+            <li>El descenso de gradiente es un procedimiento de optimización simple que se puede utilizar con muchos algoritmos de aprendizaje automático.</li>
+            <li>El descenso de gradiente por lotes se refiere al cálculo de la derivada de todos los datos de entrenamiento antes de calcular una actualización.</li>
+            <li>El descenso de gradiente estocástico consiste en calcular la derivada de cada instancia de datos de entrenamiento y calcular la actualización inmediatamente.</li>
+        </ul>
+
+    </div>
+          `
         ],
         intrestLinks : [
         ],
         publishedDate: new Date("2023/08/20"),
         tags : [
-          
+          Tags.Gradiente,
+          Tags.Resumen,
+          Tags.Teoria,
+          Tags.TratamientoPrevioDeLosDatos
+        ],
+        subHeadings:[
+          "Introducción",
+          "Batch Gradient Descent",
+          "Descenso de gradiente estocástico",
+          "Resumen"
         ]
     },
     {
@@ -924,7 +1217,211 @@ Link al Jupyter:
       topics: "1",
       parapgraph: 
         [
-
+          `
+          <div class="container">
+          <h1 class="mt-5">Regresión Lineal</h1>
+      
+                      <aside class="alert alert-info">
+            <strong>💡              La regresión lineal es un modelo lineal que asume una relación lineal entre las variables de entrada (x) y la única variable de salida (y). Más específicamente, se asume que y se puede calcular a partir de una combinación lineal de las variables de entrada (x).
+          </strong>
+          </aside>
+  
+          <p>
+              Se pueden utilizar diferentes técnicas para preparar o entrenar la ecuación de regresión lineal a partir de los datos, siendo la más común la llamada Mínimos Cuadrados Ordinarios. Es común referirse a un modelo preparado de esta manera como Regresión Lineal de Mínimos Cuadrados Ordinarios o simplemente Regresión de Mínimos Cuadrados.
+          </p>
+  
+          <p>
+              La ecuación lineal asigna un factor de escala a cada valor de entrada o columna, llamado coeficiente y que comúnmente se representa con la letra griega Beta (β). También se agrega un coeficiente adicional, dando a la línea un grado adicional de libertad y que a menudo se llama la intersección o el coeficiente de sesgo.
+          </p>
+  
+          <pre>
+              <code>y = B0 + B1 × x</code>
+          </pre>
+  
+          <p>
+              Aprender un modelo de regresión lineal significa estimar los valores de los coeficientes utilizados en la representación con los datos que tenemos disponibles.
+          </p>
+      
+              <h2 class="mt-5">Mínimos Cuadrados Ordinarios:</h2>
+  
+          <p>
+              Cuando tenemos más de una variable de entrada, podemos utilizar Mínimos Cuadrados Ordinarios para estimar los valores de los coeficientes. El procedimiento de Mínimos Cuadrados Ordinarios busca minimizar la suma de los residuos cuadrados. Esto significa que, dado una línea de regresión a través de los datos, calculamos la distancia desde cada punto de datos hasta la línea de regresión, la elevamos al cuadrado y sumamos todos los errores cuadrados juntos. Esta es la cantidad que los Mínimos Cuadrados Ordinarios buscan minimizar.
+          </p>
+  
+          <p>
+              Es inusual implementar el procedimiento de Mínimos Cuadrados Ordinarios por sí mismo, a menos que sea como ejercicio de álgebra lineal. Lo más probable es que llames a un procedimiento en una biblioteca de álgebra lineal.
+          </p>
+  
+          <h2 class="mt-5">Descenso de Gradiente:</h2>
+  
+          <p>
+              Cuando hay una o más variables de entrada, puedes utilizar un proceso de optimización de los valores de los coeficientes al minimizar iterativamente el error del modelo en tus datos de entrenamiento. Esta operación se llama Descenso de Gradiente y funciona comenzando con valores de cero para cada coeficiente. La suma de los errores al cuadrado se calcula para cada par de valores de entrada y salida. Se utiliza una tasa de aprendizaje como factor de escala y los coeficientes se actualizan en la dirección que minimiza el error. El proceso se repite hasta que se logra un error cuadrado mínimo o no es posible una mejora adicional.
+          </p>
+      
+      
+          <h2 class="mt-5">Haciendo Predicciones</h2>
+  
+          <p>
+              Dada la representación como una ecuación lineal, hacer predicciones es tan simple como resolver la ecuación para un conjunto específico de entradas. Por ejemplo, supongamos que estamos prediciendo el peso de una persona.
+          </p>
+  
+          <pre>
+              <code>peso = B0 + B1 × altura</code>
+          </pre>
+  
+          <p>
+              Supongamos que utilizamos B0 = 0.1 y B1 = 0.5. Vamos a introducir estos valores y calcular el peso (en kilogramos) para una persona con una altura de 182 centímetros.
+          </p>
+  
+          <pre>
+              <code>peso = 0.1 + 0.05 × 182 = 91.1</code>
+          </pre>
+  
+  
+  
+          <h2 class="mt-5">Preparación de Datos para Regresión Lineal</h2>
+  
+          <ul>
+              <li>Suposición Lineal: La regresión lineal asume que la relación entre tus entradas y la salida es lineal. No soporta ningún otro tipo de relación. Esto puede ser evidente, pero es importante recordarlo cuando tienes muchas características. Puede ser necesario transformar los datos para que la relación sea lineal (por ejemplo, transformación logarítmica para una relación exponencial).</li>
+              <li>Eliminar Ruido: La regresión lineal asume que tus variables de entrada y salida no tienen ruido. Considera usar operaciones de limpieza de datos para mejorar la señal en tus datos. Esto es especialmente importante para la variable de salida, y debes eliminar los valores atípicos en la variable de salida (y) si es posible.</li>
+              <li>Eliminar Colinealidad: La regresión lineal tenderá al sobreajuste de tus datos cuando tengas variables de entrada altamente correlacionadas. Considera calcular las correlaciones pareadas para tus datos de entrada y eliminar las más correlacionadas.</li>
+              <li>Distribuciones Gaussianas: La regresión lineal hará predicciones más fiables si tus variables de entrada y salida tienen una distribución gaussiana. Puedes obtener algún beneficio utilizando transformaciones (por ejemplo, logaritmo o Box-Cox) en tus variables para que su distribución se parezca más a una distribución gaussiana.</li>
+              <li>Reescalar las Entradas: La regresión lineal a menudo hará predicciones más fiables si reescalas las variables de entrada utilizando estandarización o normalización.</li>
+          </ul>
+  
+  
+          <h1 class="mt-5">Regresión Logística</h1>
+  
+          <p>
+              La regresión logística recibe su nombre de la función utilizada en el núcleo del método, la función logística. Es una curva en forma de "S" que puede tomar cualquier número real y mapearlo en un valor entre 0 y 1, pero nunca exactamente en esos límites.
+          </p>
+  
+          <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/ff3d5439-5e08-4704-90e3-ec73267912ea/bce929ad-46d9-41e5-8dde-60591657efe4/Untitled.png" alt="Función Logística">
+  
+          <p>
+              La regresión logística utiliza una ecuación similar a la regresión lineal. Los valores de entrada (x) se combinan linealmente utilizando pesos o coeficientes para predecir un valor de salida (y). Una diferencia clave con respecto a la regresión lineal es que el valor de salida que se modela es binario (0 o 1) en lugar de un valor numérico.
+          </p>
+  
+          <pre>
+              <code>y = 1 / (1 + e^(-1(B0 + B1 * x)))</code>
+          </pre>
+  
+          <p>
+              Donde y es la salida predicha, B0 es el término de sesgo o intercepción y B1 es el coeficiente para el valor de entrada único (x). Cada columna en sus datos de entrada tiene un coeficiente B asociado (un valor real constante) que debe aprenderse a partir de sus datos de entrenamiento.
+          </p>
+      
+      <h2 class="mt-5">Estimación de Coeficientes en Regresión Logística:</h2>
+  
+          <p>
+              Los coeficientes del algoritmo de regresión logística deben ser estimados a partir de tus datos de entrenamiento. Esto se hace utilizando la estimación de máxima verosimilitud. La estimación de máxima verosimilitud es un algoritmo de aprendizaje común utilizado por una variedad de algoritmos de aprendizaje automático, aunque hace suposiciones sobre la distribución de tus datos.
+          </p>
+  
+          <p>
+              Los mejores coeficientes resultarían en un modelo que predice un valor muy cercano a 1 para la clase predeterminada y un valor muy cercano a 0 para la otra clase.
+          </p>
+  
+          <h2 class="mt-5">La Regresión Logística Predice Probabilidades:</h2>
+  
+          <p>
+              La regresión logística modela la probabilidad de la clase predeterminada (por ejemplo, la primera clase). Por ejemplo, si estamos modelando el sexo de las personas como hombre o mujer a partir de su altura, entonces la primera clase podría ser hombre y el modelo de regresión logística podría escribirse como la probabilidad de ser hombre dado la altura de una persona, o más formalmente:
+          </p>
+  
+          <pre>
+              <code>P(sexo = hombre|altura)</code>
+          </pre>
+  
+          <p>
+              Ten en cuenta que la predicción de probabilidad debe transformarse en valores binarios (0 o 1) para hacer una predicción definitiva.
+          </p>
+          </p>
+  
+          <h2 class="mt-5">Preparación de Datos para Regresión Logística</h2>
+  
+          <ul>
+              <li>Variable de Salida Binaria: Esto puede ser obvio ya que lo hemos mencionado, pero la regresión logística está diseñada para problemas de clasificación binaria (dos clases). Predecirá la probabilidad de que una instancia pertenezca a la clase predeterminada, que se puede convertir en una clasificación 0 o 1.</li>
+              <li>Eliminar Ruido: La regresión logística asume que no hay error en la variable de salida (y). Considera eliminar valores atípicos y posiblemente instancias mal clasificadas de tus datos de entrenamiento.</li>
+              <li>Distribución Gaussiana: La regresión logística es un algoritmo lineal (con una transformación no lineal en la salida). Supone una relación lineal entre las variables de entrada y la salida. Las transformaciones de datos de tus variables de entrada que expongan mejor esta relación lineal pueden dar como resultado un modelo más preciso. Por ejemplo, puedes utilizar transformaciones como logaritmo, raíz, Box-Cox y otras transformaciones univariadas para exponer mejor esta relación.</li>
+              <li>Eliminar Entradas Correlacionadas: Al igual que en la regresión lineal, el modelo puede sobreajustar si tienes múltiples entradas altamente correlacionadas. Considera calcular las correlaciones entre todas las entradas y eliminar las más correlacionadas.</li>
+              <li>Falla en Convergencia: Es posible que el proceso de estimación de máxima verosimilitud que aprende los coeficientes falle en converger. Esto puede suceder si tienes muchas entradas altamente correlacionadas en tus datos o si los datos son muy dispersos (por ejemplo, muchos ceros en tus datos de entrada).</li>
+          </ul>
+      
+              <h1 class="mt-5">Análisis Discriminante Lineal (LDA)</h1>
+          
+          
+                  <aside class="alert alert-info">
+            <strong>💡             La regresión logística es un algoritmo de clasificación tradicionalmente limitado a problemas de clasificación de dos clases. Si tienes más de dos clases, entonces el Análisis Discriminante Lineal es la técnica de clasificación lineal preferida.
+          </strong>
+          </aside>
+  
+  
+          <h2 class="mt-5">Limitaciones de la Regresión Logística</h2>
+  
+          <ul>
+              <li>
+                  <p>Problemas de Dos Clases. La regresión logística está destinada a problemas de clasificación de dos clases o binarios. Se puede extender para la clasificación multiclase, pero rara vez se utiliza con ese propósito.</p>
+              </li>
+              <li>
+                  <p>Inestable con Clases Bien Separadas. La regresión logística puede volverse inestable cuando las clases están bien separadas.</p>
+              </li>
+              <li>
+                  <p>Inestable con Pocos Ejemplos. La regresión logística puede volverse inestable cuando hay pocos ejemplos para estimar los parámetros.</p>
+              </li>
+          </ul>
+  
+          <p>
+              La representación de LDA es bastante sencilla. Consiste en propiedades estadísticas de tus datos, calculadas para cada clase. Para una sola variable de entrada (x), esto es la media y la varianza de la variable para cada clase. Para múltiples variables, estas son las mismas propiedades calculadas sobre la gaussiana multivariante, es decir, las medias y la matriz de covarianza.
+          </p>
+  
+          <p>
+              LDA hace algunas suposiciones simplificadas sobre tus datos:
+          </p>
+  
+          <ul>
+              <li>
+                  <p>Que tus datos son Gaussianos, es decir, que cada variable tiene una forma de campana cuando se representa gráficamente.</p>
+              </li>
+              <li>
+                  <p>Que cada atributo tiene la misma varianza, es decir, que los valores de cada variable varían alrededor de la media en la misma cantidad en promedio.</p>
+              </li>
+          </ul>
+  
+          <p>
+              LDA realiza predicciones estimando la probabilidad de que un nuevo conjunto de entradas pertenezca a cada clase. La clase que obtiene la probabilidad más alta es la clase de salida y se realiza una predicción. El modelo utiliza el Teorema de Bayes para estimar las probabilidades.
+          </p>
+  
+          <p>
+              Se calcula para cada clase k y la clase que tiene el valor discriminante más grande hará la clasificación de salida (Y = k):
+          </p>
+  
+          <pre>
+              <code>
+  D_k(x) = x * (mean_k / sigma^2) - (mean_k^2 / (2 * sigma^2)) + ln(P(k))
+              </code>
+          </pre>
+  
+          <p>
+              Donde Dk(x) es la función discriminante para la clase k dada la entrada x, las meank, sigma2 y P(k) se estiman a partir de tus datos. La función ln() es el logaritmo natural.
+          </p>
+  
+          <h2 class="mt-5">Preparación de Datos para LDA</h2>
+  
+          <ul>
+              <li>
+                  <p>Problemas de Clasificación. Esto puede ser obvio, pero LDA está destinado a problemas de clasificación donde la variable de salida es categórica. LDA admite tanto la clasificación binaria como la multiclase.</p>
+              </li>
+              <li>
+                  <p>Distribución Gaussiana. La implementación estándar del modelo asume una distribución gaussiana de las variables de entrada. Considera revisar las distribuciones univariadas de cada atributo y utilizar transformaciones para que parezcan más gaussianas (por ejemplo, logaritmo y raíz para distribuciones exponenciales y Box-Cox para distribuciones sesgadas).</p>
+              </li>
+              <li>
+                  <p>Eliminar Valores Atípicos. Considera eliminar valores atípicos de tus datos. Estos pueden sesgar las estadísticas básicas utilizadas para separar las clases en LDA, como la media y la desviación estándar.</p>
+              </li>
+              <li>
+                  <p>Varianza Uniforme. LDA asume que cada variable de entrada tiene la misma varianza. Es casi siempre una buena idea estandarizar tus datos antes de usar LDA para que tengan una media de 0 y una desviación estándar de 1.</p>
+              </li>
+          </ul>
+  
+      </div>
+          `
         ],
         intrestLinks : [
         ],
@@ -938,6 +1435,20 @@ Link al Jupyter:
           Tags.RegresionLineal,
           Tags.RegresionLogistica,
           Tags.LDA
+        ],
+        subHeadings: [
+          "Regresión Lineal",
+          "Mínimos Cuadrados Ordinarios:",
+          "Descenso de Gradiente:",
+          "Haciendo Predicciones",
+          "Preparación de Datos para Regresión Lineal",
+          "Regresión Logística",
+          "Estimación de Coeficientes en Regresión Logística:",
+          "La Regresión Logística Predice Probabilidades:",
+          "Preparación de Datos para Regresión Logística",
+          "Análisis Discriminante Lineal (LDA)",
+          "Limitaciones de la Regresión Logística",
+          "Preparación de Datos para LDA"
         ]
     },
     {
@@ -947,7 +1458,116 @@ Link al Jupyter:
       topics: "1",
       parapgraph: 
         [
+          `
+          <table border="1">
+  <tr>
+    <th>Atributo</th>
+    <th>Observaciones</th>
+    <th>Tipo</th>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>Entre 42 y 81 años</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>Estado civil</td>
+    <td>2 (56), 1 (50), 3 (24), 0 (8)</td>
+    <td>nominal</td>
+  </tr>
+  <tr>
+    <td>Sexo</td>
+    <td>1 (86), 0 (52)</td>
+    <td>binomial</td>
+  </tr>
+  <tr>
+    <td>Categoria Peso</td>
+    <td>1 (57), 0 (46), 2 (35)</td>
+    <td>polyinomial</td>
+  </tr>
+  <tr>
+    <td>Colesterol</td>
+    <td>122.0 - 239.0</td>
+    <td>int</td>
+  </tr>
+  <tr>
+    <td>Manejo stress</td>
+    <td>0 (77), 1 (61)</td>
+    <td>binomial</td>
+  </tr>
+  <tr>
+    <td>Trat ansiedad</td>
+    <td>35.0 - 80.0</td>
+    <td>nominal</td>
+  </tr>
+  <tr>
+    <td>2do ataque corazon</td>
+    <td>Variable objetivo No (70), Si (68)</td>
+    <td>binomial - categorica</td>
+  </tr>
+</table>
 
+<p>
+Observacion hay mas datos de scoring que de training<br>
+
+Las proporciones son similares, estan en los mismo rangos distribuidos de forma similar<br>
+
+Al utilizar el wizard de rapid miner para importar los dataset de scoring y training toma todos los datos como numericos porque son numeros, pero estos representan otra cosa.<br>
+Datos inecesarios:<br>
+
+- Estado civil: No<br>
+- Manejo de stress: No<br>
+
+Tipo de probelma: clasificación, supervisado.<br>
+</p>
+			<p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/ta41.png">
+            </p>
+						<p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/ta42.png">
+            </p>
+<ul>
+  <li><strong>Solver:</strong> El algoritmo utilizado para resolver el problema de regresión logística.</li>
+  <li><strong>Usar Regularización:</strong> Indica si se debe aplicar regularización en el modelo de regresión logística.</li>
+  <li><strong>Estandarizar:</strong> Determina si se deben estandarizar o normalizar las variables de entrada.</li>
+  <li><strong>Coeficientes no negativos:</strong> Indica si los coeficientes del modelo deben ser restringidos para ser no negativos.</li>
+  <li><strong>Añadir Intercepción:</strong> Si se debe incluir un término de intercepción en el modelo.</li>
+  <li><strong>Calcular Valores p:</strong> Determina si se deben calcular los valores p para los coeficientes del modelo.</li>
+  <li><strong>Eliminar Columnas Colineales:</strong> Si se deben eliminar columnas altamente colineales del conjunto de datos.</li>
+</ul>
+			<p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/ta43.png">
+            </p>
+<table border="1">
+  <tr>
+    <th>Atributo</th>
+    <th>Descripción</th>
+  </tr>
+  <tr>
+    <td>Predicción</td>
+    <td>La predicción resultante del modelo, que puede ser "Si" o "No".</td>
+  </tr>
+  <tr>
+    <td>Confianza (Si)</td>
+    <td>Indica qué tan cercana es la predicción al valor "Si", con un valor numérico que refleja la confianza en la predicción "Si".</td>
+  </tr>
+  <tr>
+    <td>Confianza (No)</td>
+    <td>Indica qué tan cercana es la predicción al valor "No", con un valor numérico que refleja la confianza en la predicción "No".</td>
+  </tr>
+</table>
+<h2>Ejercicio 4:</h2>
+<p><strong>Link Colab:</strong> <a href="https://colab.research.google.com/drive/1Semm2XAYB0hfgAAQ08xJlxrqQK73vIFD?usp=sharing">Colab - Ejercicio 4</a></p>
+
+<h2>Comparación con los resultados análogos obtenidos en RapidMiner:</h2>
+<p>Para comparar los resultados obtenidos en Google Colab con los resultados obtenidos en RapidMiner, se recomienda seguir el enlace proporcionado a Google Colab. Allí, podrás encontrar información detallada sobre la comparación de los resultados y las conclusiones del ejercicio.</p>
+			<p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/ta44.png">
+            </p>
+						<p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/ta45.png">
+            </p>
+          `
         ],
         intrestLinks : [
         ],
@@ -957,7 +1577,8 @@ Link al Jupyter:
           Tags.Modelo,
           Tags.RegresionLogistica,
           Tags.Clasificacion
-        ]
+        ],
+        destacado: true
     },
     {
       id: 13,
@@ -966,7 +1587,83 @@ Link al Jupyter:
       topics: "1",
       parapgraph: 
         [
+          `
+          <p>El “Maestro”, convencido de su capacidad para vislumbrar estrellas deportivas, ha puesto una academia para ayudar a jóvenes deportistas a lograr su mayor desempeño. En esta academia, el Maestro se enfoca particularmente en cuatro deportes: Fútbol, Basketball, Voleibol y Rugby.</p>
+<p>Si bien ha visto que la mayoría de atletas jóvenes disfrutan practicando varios deportes, más adelante podrían preferir especializarse en uno en particular.</p>
 
+<p>Se Trabajo tanto sobre RM como Py</p>
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/ta71.png">
+            </p>
+			<p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/ta72.png">
+            </p>
+			<p>Se puede observar como se obtienen los mismos primeros 4 resultados y los ultimos a excepcion de el 1762 que en RM dice Rugby contra Futbol de sklearn. Esto se puede deber a los diferentes aproaches que realizan los modelos internamente. Aun asi se puede ver que los resultados son identicos</p>
+			    <table>
+        <thead>
+            <tr>
+                <th>DeportePrimario</th>
+                <th>Predicted</th>
+                <th>Expected</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>Basketball</td>
+                <td>Basketball</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rugby</td>
+                <td>Rugby</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Futbol</td>
+                <td>Futbol</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Voleibol</td>
+                <td>Voleibol</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Rugby</td>
+                <td>Rugby</td>
+            </tr>
+            <tr>
+                <td>1836</td>
+                <td>Futbol</td>
+                <td>Futbol</td>
+            </tr>
+            <tr>
+                <td>1837</td>
+                <td>Futbol</td>
+                <td>Futbol</td>
+            </tr>
+            <tr>
+                <td>1838</td>
+                <td>Futbol</td>
+                <td>Futbol</td>
+            </tr>
+            <tr>
+                <td>1839</td>
+                <td>Basketball</td>
+                <td>Basketball</td>
+            </tr>
+            <tr>
+                <td>1840</td>
+                <td>Futbol</td>
+                <td>Futbol</td>
+            </tr>
+        </tbody>
+    </table>
+<aside class="alert alert-info">
+	<p> Disponible en <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT3%20-%20ALGORITMOS%20LINELAES/pd/TA6.ipynb">Jupyter</a></p>
+</aside>
+          `
         ],
         intrestLinks : [
         ],
@@ -976,7 +1673,8 @@ Link al Jupyter:
           Tags.Modelo,
           Tags.LDA,
           Tags.Clasificacion
-        ]
+        ],
+        destacado: true
     },
     {
       id: 14,
