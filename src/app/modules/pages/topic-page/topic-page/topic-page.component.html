@@ -3,4 +3,15 @@
     <h1 class="text-center">{{theme}}</h1>
     <p>{{themeDescription}}</p>
     <ia-card-collection [articles]="articlesArr"></ia-card-collection>
+    <div *ngIf="casoEstudio">
+        <p-card header="{{ce.title}}" *ngFor="let ce of studyCasesPreview">
+            <p>
+                {{ce.shortDescripton}}
+            </p>
+            <ng-template pTemplate="footer" class="ia-prew-footer">
+                <p-button label="Ver mas" icon="pi pi-external-link" (onClick)="goToce(ce.cut)"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
 </div>
+

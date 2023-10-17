@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/modules/core/interfaces/article';
 import { ArticleService } from 'src/app/modules/core/services/article.service';
@@ -15,6 +15,8 @@ export class ArticlePageComponent implements OnInit {
   nextArt = "";
   prevArt = "";
   hasIntrestLinks = false;
+
+  @ViewChild('scrollToTop') scrollToTopElement: ElementRef | undefined;
 
   constructor(private articleService : ArticleService, private router : ActivatedRoute, private routerNav : Router) { }
 
@@ -40,6 +42,8 @@ export class ArticlePageComponent implements OnInit {
       else {
         // redirect to something went wrong
       }
+
+      this.scrollToTop()
     })
     
   }
@@ -82,4 +86,8 @@ export class ArticlePageComponent implements OnInit {
     }
   }
 
+  scrollToTop() {
+    if (this.scrollToTopElement)
+      this.scrollToTopElement.nativeElement.scrollIntoView();
+  }
 }

@@ -3,9 +3,12 @@
 }
 .item-carrousel:hover {
     cursor: pointer;
-    backdrop-filter: blur(100%);
 }
 
-.item-carrousel{
+.item-carrousel {
     background-size: 100%;
+}
+
+.title-car {
+    backdrop-filter: blur(10px);
 }
