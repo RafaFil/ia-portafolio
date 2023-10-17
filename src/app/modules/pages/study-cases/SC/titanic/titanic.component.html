@@ -1,0 +1,22 @@
+<ia-navbar [sectionTitle]="'Probabilidad de sobrevivir al titanic'"></ia-navbar>
+<div class="container">
+    <h1 [align]="'center'" class="mt-3">Probabilidad de sobrevivir al titanic</h1>
+    <div class="row mt-5">
+        <div class="col-md-8 order-md-1">
+            <p>El estudio es realizado en el marco del proceso CRISP-DM:</p>
+
+            <p [align]="'center'">
+                <img class="img-fluid mb-3" src="../../../../../../assets/img/CE_cardaic/1.jpg">
+            </p>
+            <h2>Comprension del negocio:</h2>
+            <div class="embed-responsive embed-responsive-16by9" [align]="'center'">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tA_qMdzvCvk" allowfullscreen></iframe>
+            </div>
+            <div [innerHTML]="htmlText"></div>
+        </div>
+        <div class="col-md order-md-2" [align]="'end'">
+            <img class="img-fluid" src="../../../../../../assets/img/Titanic/titanic2.png">
+        </div>
+    </div>
+</div>
+

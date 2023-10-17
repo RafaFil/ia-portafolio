@@ -1,4 +1,4 @@
-<div  class="container" #scrollToTop>
+<div  class="container">
     <div [@fadeInOut] class="w-100 animated-item mt-3">
         <h2>Busca articulos de tu interes: </h2>
         <ia-search-bar #searchBar (changeOnInputSearch)="searchBarTextRecieve($event)"></ia-search-bar>
@@ -13,7 +13,7 @@
         <div class="col-md-8 order-md-1">
             <h2>Articulos</h2> 
             <div style="width: 95%">
-                <ia-card-collection [articles]="articlesShown"  [allArticles]="articles"
+                <ia-card-collection [articles]="articles"  [allArticles]="articles"
                 [searchFilter]="searchBarText"></ia-card-collection>
             </div>
         </div>
@@ -22,5 +22,5 @@
                 <ia-articles-filter (topicSelected)="newTopicSelected($event)" (showDestacado)="showArticulosDestacados($event)"></ia-articles-filter> 
         </div>
     </div>
-    <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator>
+    <!-- <ia-paginator (onChangeOfPage)="changeArticlesPage($event)" *ngIf="searchBarText.length == 0"></ia-paginator> -->
 </div>

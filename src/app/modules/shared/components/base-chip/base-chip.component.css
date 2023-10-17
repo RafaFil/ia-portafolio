@@ -8,9 +8,10 @@
 }
 
 ::ng-deep .p-chip.p-component:hover {
-    transform: scale(1);
+    /* transform: scale(1); */
     z-index: 9999;
     border-width: thick;
     cursor: pointer;
-    font-weight: bold;
+    /* font-weight: bold; */
+    box-shadow: 5px 5px 5px rgb(255, 119, 0);
 }

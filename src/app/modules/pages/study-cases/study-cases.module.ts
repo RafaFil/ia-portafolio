@@ -7,6 +7,8 @@ import { StudyCasesRoutingModule } from './study-cases-routing.module';
 import { StudyCasePageComponent } from './study-case-page/study-case-page.component';
 import { CEENFERMEDADCARDIACAComponent } from './SC/ce-enfermedad-cardiaca/ce-enfermedad-cardiaca.component';
 import { CkdComponent } from './SC/ckd/ckd.component';
+import { TitanicComponent } from './SC/titanic/titanic.component';
+import { AnimalsComponent } from './SC/animals/animals.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { CkdComponent } from './SC/ckd/ckd.component';
   
     StudyCasePageComponent,
         CEENFERMEDADCARDIACAComponent,
-        CkdComponent
+        CkdComponent,
+        TitanicComponent,
+        AnimalsComponent
   ],
   imports: [
     CommonModule,

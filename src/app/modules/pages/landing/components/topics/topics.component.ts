@@ -17,9 +17,9 @@ export class TopicsComponent implements OnInit {
     "Tratamiento previo de los datos y fundamentos de los algoritmos de ML",
     "Algoritmos Lineales",
     "Algoritmos No Lineales",
-    "Clustering y Modelos Jerárquicos",
-    "Ensambles",
-    "Evaluación",
+    // "Clustering y Modelos Jerárquicos",
+    // "Ensambles",
+    // "Evaluación",
     "Casos de estudio"
   ];
 

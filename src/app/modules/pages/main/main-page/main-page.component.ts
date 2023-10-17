@@ -45,7 +45,7 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.articles = this.articleService.getAllArticles();
-    this.getArticlesToShow(0);
+    //this.getArticlesToShow(0);
   }
 
   searchBarTextRecieve(s : string) {
@@ -55,7 +55,9 @@ export class MainPageComponent implements OnInit {
   newTopicSelected(s : string) {
     
     this.articleTags.push(s);
-    this.articlesShown = this.articles
+    // this.articlesShown = this.articles
+    // .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
+      this.articles = this.articles
     .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
   }
 
@@ -82,9 +84,11 @@ export class MainPageComponent implements OnInit {
   showArticulosDestacados(e : boolean) {
 
     if (e)
-      this.articlesShown = this.articles.filter(x => x.destacado);
+      // this.articlesShown = this.articles.filter(x => x.destacado);
+      this.articles = this.articles.filter(x => x.destacado);
     else
-      this.articlesShown = this.articles
+      // this.articlesShown = this.articles
+      this.articles = this.articles
   }
 
 }

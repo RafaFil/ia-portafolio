@@ -14,6 +14,10 @@ export class StudyCasePageComponent implements OnInit {
 
   ckd = false;
 
+  titanic = false;
+
+  animals = false;
+
   constructor(private router: Router, private actRouter : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -37,7 +41,14 @@ export class StudyCasePageComponent implements OnInit {
           case "ckd":
             this.ckd = true;
             break
+          case "titanic":
+            this.titanic = true;
+            break;
+          case "animals":
+            this.animals = true;
+            break;
           default:
+            this.router.navigate(['/'])
             break;
         }
       }

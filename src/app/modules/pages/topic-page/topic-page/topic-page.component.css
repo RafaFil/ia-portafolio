@@ -1,0 +1,32 @@
+/*Borrar*/
+
+::ng-deep .p-card .p-card-footer {
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+::ng-deep .p-card .p-card-content {
+    padding: 0;
+}
+
+::ng-deep .p-card .p-card-body {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+::ng-deep .p-component, .p-component {
+    margin-right: 0.2rem;
+}
+
+::ng-deep .p-button {
+    background: orange;
+    color: #ffffff;
+    border-color: orange;
+
+}
+
+::ng-deep .p-button:enabled:hover {
+    background: orange;
+    color: #ffffff;
+    border-color: orange;
+}

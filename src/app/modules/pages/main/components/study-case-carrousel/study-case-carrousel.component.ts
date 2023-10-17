@@ -25,13 +25,13 @@ export class StudyCaseCarrouselComponent implements OnInit {
     {
       title: "Caso: Adopcion de Animales",
       shortDescripton: "Se desea analizar los datos de ingresos y salidas del Refugio de Animales de la ciudad de Austin, para comprender las tendencias de adopción de animales, incluyendo qué atributos de estos animales resultan en una probabilidad de adopción mayor.",
-      image:"",
-      cut:"animales"
+      image:"../../../../../../assets/img/Animals/Imagen5.png",
+      cut:"animals"
     },
     {
       title:"Caso: Probabilidad de Titanic",
       shortDescripton: "Como caso de prueba se desea analizar la probabilidad de sobrevivir al titanic.",
-      image: "",
+      image: "../../../../../../assets/img/Titanic/titanic.png",
       cut: "titanic"
     }
   ]
