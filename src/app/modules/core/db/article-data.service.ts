@@ -2193,6 +2193,194 @@ ConfusionMatrix:  </p>
         "Conclusiones/Observaciones"
       ]
     },
+    {
+      id: 17,
+      title: "Caso: Clasificar Mina o Roca",
+      category: "1",
+      topics: "1",
+      parapgraph:
+        [
+          `
+          <section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                Investigación Caso: Dataset Sonar</h2>
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2023-10-18T00:00:00-03:00">
+                mié. 18 Octubre 2023
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/salonso1602.html"> salonso1602</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h2 id="introduccion">Introducción</h2>
+<p>Este dataset recopila una serie de patrones que siguen las señales de sonar aplicadas en el suelo, con el objetivo de detectar minas explosivas de meras rocas. Este caso lo abordaremos de manera breve, ya que nos centraremos en un abordaje de demostración de algoritmos de selección de atributos.    </p>
+<h2 id="datos">Datos</h2>
+<p>Cuenta con 208 ejemplos con 60 atributos los cuales representan los diferentes niveles de energía en las diferentes frecuencias y el atributo objetivo que clasifica entre roca y mina (R y M).<br>
+Todos los valores se encuentran en un rango de 0 a 1.  </p>
+<h2 id="analisis-de-datos">Análisis de datos</h2>
+<ul>
+<li>Tenemos un balance entre datos de minas y de rocas.<br>
+<img alt="Pelican" src="../../../../../../assets/img/sonar/image-2.png">  </li>
+<li>Podemos graficar las relaciones entre minas y rocas para todos los atributos y obtenemos el siguiente resultado <br>
+<img alt="Pelican" src="../../../../../../assets/img/sonar/image.png">  </li>
+<li>Para más claridad podemos usar las desviaciones:<br>
+<img alt="Pelican" src="../../../../../../assets/img/sonar/image-1.png">  </li>
+</ul>
+<p>Se resaltan regiones de atributos que marcan las mayores diferencias entre las dos clases: Atributos del 7 al 15, Atributos del 18 al 25, Atributos del 32 al 38, Atributos del 41 al 50<br>
+Estas areas representan los atributos más importantes o que más caracterizan las clases, por lo que son los atributos que nos servirán más para discernir entre las clases.  </p>
+<h2 id="modelos-a-usarse">Modelos a Usarse</h2>
+<p>Para el presente trabajo utilizaremos 2 modelos para la clasificación: Naive Bayes y Regresión Logística. Para ambos modelos plantearemos un benchmark sin selección de atributos, uno con la selección nuestra (las áreas que resaltamos), y 3 con diferentes algoritmos de selección (Forward Selection, Backward Selection y Evolutionary Selection).  </p>
+<p>Tenemos los siguientes procesos en RapidMiner<br>
+<img alt="Pelican" src="../../../../../../assets/img/sonar/image-3.png"><br>
+<img alt="Pelican" src="../../../../../../assets/img/sonar/image-4.png"><br>
+<img alt="Pelican" src="../../../../../../assets/img/sonar/image-5.png"><br>
+<img alt="Pelican" src="../../../../../../assets/img/sonar/image-6.png">  </p>
+<p>Notas:<br>
+- Todos los cross validations son 5-fold<br>
+- Todos los algoritmos de selección tienen el mismo Subproceso (el cross validation)<br>
+- Los subprocesos de los Cross Validation son iguales para ambos algoritmos. Por brevedad se muestra 1 solo, pero lo único que cambia es el modelo creado.  </p>
+<h2 id="resultados">Resultados</h2>
+<h3 id="naive-bayes">Naive Bayes</h3>
+<h4 id="benchmark">Benchmark</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-7.png">  </p>
+<h4 id="con-seleccion-previa-de-atributos">Con Selección Previa de Atributos</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-8.png">  </p>
+<h4 id="con-forward-selection">Con Forward Selection</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-9.png"><br>
+Atributos:<br>
+- attribute_15<br>
+- attribute_17<br>
+- attribute_18  </p>
+<h4 id="con-backward-selection">Con Backward Selection</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-10.png"><br>
+Atributos <strong>OMITIDOS</strong>:<br>
+- attribute_3<br>
+- attribute_14<br>
+- attribute_20<br>
+- attribute_36<br>
+- attribute_47<br>
+- attribute_48<br>
+- attribute_52<br>
+- attribute_59  </p>
+<h4 id="con-evolutionary-selection">Con Evolutionary Selection</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-11.png"><br>
+Atributos:<br>
+- attribute_6<br>
+- attribute_7<br>
+- attribute_9<br>
+- attribute_11<br>
+- attribute_12<br>
+- attribute_13<br>
+- attribute_15<br>
+- attribute_16<br>
+- attribute_17<br>
+- attribute_18<br>
+- attribute_19<br>
+- attribute_20<br>
+- attribute_24<br>
+- attribute_25<br>
+- attribute_27<br>
+- attribute_31<br>
+- attribute_35<br>
+- attribute_36<br>
+- attribute_37<br>
+- attribute_41<br>
+- attribute_43<br>
+- attribute_44<br>
+- attribute_46<br>
+- attribute_49<br>
+- attribute_54  </p>
+<h3 id="regresion-logistica">Regresión Logística</h3>
+<h4 id="benchmark_1">Benchmark</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-12.png">  </p>
+<h4 id="con-seleccion-previa-de-atributos_1">Con Selección Previa de Atributos</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-13.png">  </p>
+<h4 id="con-forward-selection_1">Con Forward Selection</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-14.png"><br>
+Atributos:<br>
+- attribute_4<br>
+- attribute_11<br>
+- attribute_32<br>
+- attribute_36<br>
+- attribute_45<br>
+- attribute_54  </p>
+<h4 id="con-backward-selection_1">Con Backward Selection</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-15.png"><br>
+Atributos <strong>OMITIDOS</strong>:<br>
+- attribute_1<br>
+- attribute_19<br>
+- attribute_20<br>
+- attribute_22<br>
+- attribute_44<br>
+- attribute_47<br>
+- attribute_54<br>
+- attribute_57  </p>
+<h4 id="con-evolutionary-selection_1">Con Evolutionary Selection</h4>
+<p><img alt="Pelican" src="../../../../../../assets/img/sonar/image-16.png"><br>
+Atributos:<br>
+- attribute_6<br>
+- attribute_7<br>
+- attribute_10<br>
+- attribute_11<br>
+- attribute_12<br>
+- attribute_13<br>
+- attribute_15<br>
+- attribute_18<br>
+- attribute_19<br>
+- attribute_20<br>
+- attribute_24<br>
+- attribute_25<br>
+- attribute_27<br>
+- attribute_32<br>
+- attribute_37<br>
+- attribute_38<br>
+- attribute_41<br>
+- attribute_44<br>
+- attribute_46<br>
+- attribute_49<br>
+- attribute_54<br>
+- attribute_55  </p>
+<h2 id="conclusiones">Conclusiones</h2>
+<ul>
+<li>Se nota que el algoritmo Evolutionary se aproxima bastante a los atributos que nosotros tomamos como los más relevantes, forward selection toma pocos atributos que a veces coinciden y backward toma casi todos, pero omitiendo algunos de los que elegimos.  </li>
+<li>El modelo más performante es Regresión Logística con Backward selection (~83%) , pero dada la enorme cantidad de atributos que toma se puede sospechar de cierto sobre-ajuste, por lo que decidimos confiar en el modelo construido por Evolutionary selection, que tiene una precisión similar (~82%) y se aproxima más a lo investigado de los datos (los atributos que elegimos).  </li>
+<li>Los algoritmos de selección pueden dar mejoras de hasta 10% de precisión, lo cual es muy útil cuando no se posee muchos detalles de los atributos o lo que describen.  </li>
+<li>Estos algoritmos se deben usar con cuidado ya que pueden terminar en sobre-ajuste que no representa las relaciones entre variables en la realidad.  </li>
+</ul>
+
+</section>
+
+          `
+        ],
+      intrestLinks: [
+
+      ],
+      publishedDate: new Date("2023/10/18"),
+      tags: [
+        Tags.CRISPDM,
+        Tags.CasoDeEstudio,
+        Tags.Clasificacion
+      ],
+      subHeadings: [
+        "Introduccion",
+        "Resumen y Estadísticas del Set",
+        "Revisión de Datos",
+        "Procesamiento de Datos",
+        "Elección de Modelo",
+        "Definición de proceso de entrenamiento",
+        "Procesos",
+        "Performance",
+        "Conclusiones/Observaciones"
+      ]
+    },
 
   ].reverse()
 
