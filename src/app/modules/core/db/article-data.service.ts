@@ -11,13 +11,13 @@ const genericURL = "";
 export class ArticleDataService {
 
 
-  articlesData : Article[] = [
+  articlesData: Article[] = [
     {
       id: 1,
       title: "¿Qué es “Machine Learning”?",
       category: "Introduccion Machine Learning",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           "<p>Cuando se realiza una busqueda sobre que es machine learning los resultados son tantos y variados e incluso no parece haber concenso sobre una definicion que pueda resumir en palabras a este campo de estudio. Es por esto que varios exponentes de la industria han realizados sus propias definiciones</p>",
           "<p>En resumen podemos decir que cuando preguntamos que es machine learnig podemos estar de acuerdo que se trata de una rama de la Inteligencia artificial en la cual los sistemas y las máquinas aprenden automáticamente a partir de los datos en lugar de ser programados explícitamente. En el campo del machine learning, se desarrollan algoritmos y modelos estadísticos que permiten a las máquinas procesar grandes cantidades de datos históricos para identificar patrones y realizar inferencias. Estos patrones y conocimientos adquiridos a partir de los datos les permiten a las máquinas realizar tareas y tomar decisiones con mayor precisión.</p>",
@@ -54,17 +54,17 @@ export class ArticleDataService {
             paragraph: "El ‘machine learning’ –aprendizaje automático– es una rama de la inteligencia artificial que permite que las máquinas aprendan sin ser expresamente programadas para ello. Una habilidad indispensable para hacer sistemas capaces de identificar patrones entre los datos para hacer predicciones"
           }
         ],
-        intrestLinks : [
-          {
-            text: "Herramientas para el desarrollo de ML",
-            link: "http://localhost:4200/main/article/2"
-          }
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          "Investigacion",
-          "Introduccion a Machine Learning"
-        ]
+      intrestLinks: [
+        {
+          text: "Herramientas para el desarrollo de ML",
+          link: "http://localhost:4200/main/article/2"
+        }
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        "Investigacion",
+        "Introduccion a Machine Learning"
+      ]
     },
     {
       id: 2,
@@ -105,10 +105,10 @@ export class ArticleDataService {
       ],
       callouts: [],
       intrestLinks: [{
-          text: "string",
-          link: "http://localhost:4200/main/article/3",
+        text: "string",
+        link: "http://localhost:4200/main/article/3",
       }],
-      tags : [
+      tags: [
         "Investigacion",
         "Introduccion a Machine Learning",
         "RapidMiner",
@@ -315,7 +315,7 @@ export class ArticleDataService {
     },
     {
       id: 5,
-      title : "Manejo de datos en RapidMiner",
+      title: "Manejo de datos en RapidMiner",
       category: "2",
       topics: "2",
       parapgraph: [
@@ -395,7 +395,7 @@ export class ArticleDataService {
     },
     {
       id: 6,
-      title : "Construir un modelo en RapidMiner",
+      title: "Construir un modelo en RapidMiner",
       category: "2",
       topics: "2",
       parapgraph: [
@@ -743,7 +743,7 @@ Link al Jupyter:
         "Mineria de Datos",
         "CRISP-DM",
         "RapidMiner"
-      ] ,
+      ],
       subHeadings: [
         "Análisis en RapidMiner",
         "Análisis en Jupyter"
@@ -751,13 +751,13 @@ Link al Jupyter:
       interestLink: []
     },
     {
-    id: 8,
-    title: "Cálculo de la probabilidad condicional en el titanic",
-    category: "",
-    topics: "1",
-    parapgraph: 
-      [
-        `
+      id: 8,
+      title: "Cálculo de la probabilidad condicional en el titanic",
+      category: "",
+      topics: "1",
+      parapgraph:
+        [
+          `
         <p>Tomando como referencia el blog: http://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html </p>
         <p>Se realizaran los siguientes cálculos de probabilidad condicional: </p>
 
@@ -862,11 +862,11 @@ Link al Jupyter:
         </a>
 
         `
-      ],
-      intrestLinks : [
+        ],
+      intrestLinks: [
       ],
       publishedDate: new Date("2023/09/05"),
-      tags : [
+      tags: [
         Tags.TratamientoPrevioDeLosDatos,
         Tags.Herramientas,
         Tags.Modelo,
@@ -876,13 +876,13 @@ Link al Jupyter:
       ]
     },
     {
-    id: 9,
-    title: "Modelo sobre el Titanic",
-    category: "",
-    topics: "1",
-    parapgraph: 
-      [
-        `
+      id: 9,
+      title: "Modelo sobre el Titanic",
+      category: "",
+      topics: "1",
+      parapgraph:
+        [
+          `
           <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT2%20-%20TRATAMIENTO%20PREVIO%20DE%20DATOS/pd/pd4.ipynb">
             Link al Jupyter:
           </a>
@@ -1084,11 +1084,11 @@ Link al Jupyter:
                   </tbody>
               </table>
         `
-      ],
-      intrestLinks : [
+        ],
+      intrestLinks: [
       ],
       publishedDate: new Date("2023/09/05"),
-      tags : [
+      tags: [
         Tags.TratamientoPrevioDeLosDatos,
         Tags.Herramientas,
         Tags.Modelo,
@@ -1103,7 +1103,7 @@ Link al Jupyter:
       title: "Descenso de Gradiente para ML",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container">
@@ -1194,28 +1194,28 @@ Link al Jupyter:
     </div>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.Gradiente,
-          Tags.Resumen,
-          Tags.Teoria,
-          Tags.TratamientoPrevioDeLosDatos
-        ],
-        subHeadings:[
-          "Introducción",
-          "Batch Gradient Descent",
-          "Descenso de gradiente estocástico",
-          "Resumen"
-        ]
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.Gradiente,
+        Tags.Resumen,
+        Tags.Teoria,
+        Tags.TratamientoPrevioDeLosDatos
+      ],
+      subHeadings: [
+        "Introducción",
+        "Batch Gradient Descent",
+        "Descenso de gradiente estocástico",
+        "Resumen"
+      ]
     },
     {
       id: 11,
       title: "Tres algortimos lineales: Regresion lineal, Regresion lógistica, Análisis Discriminante Lineal (LDA)",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container">
@@ -1423,40 +1423,40 @@ Link al Jupyter:
       </div>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.AlgoritmosLineales,
-          Tags.Resumen,
-          Tags.Teoria,
-          Tags.Modelo,
-          Tags.Algoritmo,
-          Tags.RegresionLineal,
-          Tags.RegresionLogistica,
-          Tags.LDA
-        ],
-        subHeadings: [
-          "Regresión Lineal",
-          "Mínimos Cuadrados Ordinarios:",
-          "Descenso de Gradiente:",
-          "Haciendo Predicciones",
-          "Preparación de Datos para Regresión Lineal",
-          "Regresión Logística",
-          "Estimación de Coeficientes en Regresión Logística:",
-          "La Regresión Logística Predice Probabilidades:",
-          "Preparación de Datos para Regresión Logística",
-          "Análisis Discriminante Lineal (LDA)",
-          "Limitaciones de la Regresión Logística",
-          "Preparación de Datos para LDA"
-        ]
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.AlgoritmosLineales,
+        Tags.Resumen,
+        Tags.Teoria,
+        Tags.Modelo,
+        Tags.Algoritmo,
+        Tags.RegresionLineal,
+        Tags.RegresionLogistica,
+        Tags.LDA
+      ],
+      subHeadings: [
+        "Regresión Lineal",
+        "Mínimos Cuadrados Ordinarios:",
+        "Descenso de Gradiente:",
+        "Haciendo Predicciones",
+        "Preparación de Datos para Regresión Lineal",
+        "Regresión Logística",
+        "Estimación de Coeficientes en Regresión Logística:",
+        "La Regresión Logística Predice Probabilidades:",
+        "Preparación de Datos para Regresión Logística",
+        "Análisis Discriminante Lineal (LDA)",
+        "Limitaciones de la Regresión Logística",
+        "Preparación de Datos para LDA"
+      ]
     },
     {
       id: 12,
       title: "Probabilidad de un segundo ataque cárdiaco utilizando Regresión Logistica",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <table border="1">
@@ -1569,23 +1569,23 @@ Tipo de probelma: clasificación, supervisado.<br>
             </p>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.AlgoritmosLineales,
-          Tags.Modelo,
-          Tags.RegresionLogistica,
-          Tags.Clasificacion
-        ],
-        destacado: true
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.AlgoritmosLineales,
+        Tags.Modelo,
+        Tags.RegresionLogistica,
+        Tags.Clasificacion
+      ],
+      destacado: true
     },
     {
       id: 13,
       title: "Clasificacion de talentos deportivos utilizando LDA",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <p>El “Maestro”, convencido de su capacidad para vislumbrar estrellas deportivas, ha puesto una academia para ayudar a jóvenes deportistas a lograr su mayor desempeño. En esta academia, el Maestro se enfoca particularmente en cuatro deportes: Fútbol, Basketball, Voleibol y Rugby.</p>
@@ -1665,23 +1665,23 @@ Tipo de probelma: clasificación, supervisado.<br>
 </aside>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.AlgoritmosLineales,
-          Tags.Modelo,
-          Tags.LDA,
-          Tags.Clasificacion
-        ],
-        destacado: true
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.AlgoritmosLineales,
+        Tags.Modelo,
+        Tags.LDA,
+        Tags.Clasificacion
+      ],
+      destacado: true
     },
     {
       id: 14,
       title: "Algoritmos No Lineales: KNN",
       category: "",
       topics: "2",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container">
@@ -1768,31 +1768,31 @@ Tipo de probelma: clasificación, supervisado.<br>
     </div>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/09/26"),
-        tags : [
-          Tags.AlgoritmosNoLineales,
-          Tags.Resumen,
-          Tags.Teoria
-        ],
-        subHeadings: [
-          "Introduccion",
-          "Como funciona",
-          "Medida de proximidad",
-          "- Distancia",
-          "- Similitud de Correlacion",
-          "- Coeficiente",
-          "Conclusiones",
-          "Articulos Relacionados"
-        ]
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/09/26"),
+      tags: [
+        Tags.AlgoritmosNoLineales,
+        Tags.Resumen,
+        Tags.Teoria
+      ],
+      subHeadings: [
+        "Introduccion",
+        "Como funciona",
+        "Medida de proximidad",
+        "- Distancia",
+        "- Similitud de Correlacion",
+        "- Coeficiente",
+        "Conclusiones",
+        "Articulos Relacionados"
+      ]
     },
     {
       id: 15,
       title: "Algoritmos No Lineales: Naive Bayes",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container mt-5">
@@ -1840,25 +1840,360 @@ Tipo de probelma: clasificación, supervisado.<br>
           <p>La singularidad de la técnica es que aprovecha la nueva información a medida que llega y trata de hacer la mejor predicción teniendo en cuenta las nuevas pruebas. En este sentido, es bastante similar a cómo funciona nuestra mente.</p>
           `
         ],
-        intrestLinks : [
+      intrestLinks: [
 
-        ],
-        publishedDate: new Date("2023/09/26"),
-        tags : [
-          Tags.AlgoritmosNoLineales,
-          Tags.Resumen,
-          Tags.Teoria
-        ],
-        subHeadings: [
-          "Introduccion",
-          "Cómo funciona",
-          "Un ejemplo de golf",
-          "Limitaciones",
-          "Conclusiones",
-          "Articulos Relacionados"
-        ]
+      ],
+      publishedDate: new Date("2023/09/26"),
+      tags: [
+        Tags.AlgoritmosNoLineales,
+        Tags.Resumen,
+        Tags.Teoria
+      ],
+      subHeadings: [
+        "Introduccion",
+        "Cómo funciona",
+        "Un ejemplo de golf",
+        "Limitaciones",
+        "Conclusiones",
+        "Articulos Relacionados"
+      ]
     },
-    
+    {
+      id: 16,
+      title: "Caso: Predecir Cáncer de Pulmón",
+      category: "1",
+      topics: "1",
+      parapgraph:
+        [
+          `
+          <section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h1 class="entry-title">
+                Investigación Caso: Cáncer de Pulmón</h1>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2023-10-11T00:00:00-03:00">
+                mié. 11 Octubre 2023
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/salonso1602.html"> salonso1602</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h3 id="de-uci-dataset-lung-cancer">de UCI Dataset: <a href="https:/archive.ics.uci.edu/dataset/62/lung+cancer">Lung Cancer</a></h3>
+<h2 id="introduccion">Introducción</h2>
+<p>Este caso plantea un problema particular, al contarse con muy poca información respecto el contexto y significado de los datos, el amplio numero de atributos y los desbalanceos en los datos de cada atributo. Este ejercicio de clasificación presenta el problema de identificar entre 3 tipos de Cancer de Pulmón a partir de un conjunto reducido de datos pero con muchos atributos.  </p>
+<h2 id="resumen-y-estadisticas-del-set">Resumen y Estadísticas del Set</h2>
+<table>
+  <tr>
+    <th><strong>Característica</strong>  </th>
+    <th><strong>Descripción</strong>  </th>
+  </tr>
+  <tr>
+    <td>Cant. de Ejemplos  </td>
+    <td>32  </td>
+  </tr>
+  <tr>
+    <td>Cant. de Atributos  </td>
+    <td>56  </td>
+  </tr>
+  <tr>
+    <td>Tipo Ejercicio  </td>
+    <td>Clasificación  </td>
+  </tr>
+  <tr>
+    <td>Variable Objetivo  </td>
+    <td>att1: Tipo categórico (1 al 3)  </td>
+  </tr>
+  <tr>
+    <td>Tipos Atributos  </td>
+    <td>Todos los atributos son categóricos, con valores entre 0 y 3  </td>
+  </tr>
+</table>
+
+<p><strong>Estadísticas</strong><br>
+<img alt="Pelican" src="../../../../../../assets/img/lungCancer/image.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-1.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-2.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-3.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-5.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-6.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-7.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-8.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-9.png"><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-10.png">  </p>
+<h2 id="revision-de-datos">Revisión de Datos</h2>
+<p>En esta sección elaboraríamos en el significado, implicancias y características de los datos en el contexto del problema, pero para este caso no contamos con la información específica para estos datos.<br>
+Resaltamos únicamente que todos los datos son categóricos y aunque tengan valores numéricos no podemos asumir naturaleza ordinal de estos. Similarmente en varios atributos se resaltan cantidades dispares de las diferentes categorías de cada uno.  </p>
+<h2 id="procesamiento-de-datos">Procesamiento de Datos</h2>
+<p>El procesamiento de datos es complejo ya que no tenemos el contexto para discernir de manera racional que atributos aportan o no a la predicción que buscamos hacer, por lo que debemos soportarnos por heurísticas y estadísticas de los datos de por sí. Para el presente caso evaluaremos las diferencias de performance dadas las heurísticas más usadas: Forward Selection, Backward Selection y Evolutionary Selection.<br>
+Por otro lado, hay 5 ejemplos con valores faltantes. Normalmente este es un numero insignificante pero dado el reducido numero de ejemplos disponibles decidimos tolerarlos y no eliminarlos. En algunos casos los algoritmos de Feature Selection omiten los atributos que contienen estos valores faltantes (att5 y att39), por lo que el impacto no es muy grave.  </p>
+<h2 id="eleccion-de-modelo">Elección de Modelo</h2>
+<p>Para el presente ejercicio nos planteamos 2 modelos como pretendientes: Naive Bayes y K-NN.<br>
+Ambos son buenos algoritmos de clasificación. Elegimos Naive Bayes ya que se especializa en atributos categóricos que en este caso son todos nuestros atributos. K-NN nos permite obtener un modelo performante para el conjunto de datos pequeños, aunque con este arriesgamos introducir la asunción de que nuestras variables categóricas son ordinales, debido al parseo necesario y el calculo de distancia entre puntos. En otros casos la cantidad de atributos sería detrimental al modelo, pero para este caso donde reducimos los atributos a los significativos no es tan fuerte la sobre-dimensionalidad.  </p>
+<h2 id="definicion-de-proceso-de-entrenamiento">Definición de proceso de entrenamiento</h2>
+<p>Para el entrenamiento utilizaremos Cross-validation de 10 folds, ya que es una bastante estándar de medir el performance de nuestros modelos y debido al poco pre-procesamiento es fácil de implementar.<br>
+Por el lado de la Feature Selection, compararemos las heurísticas con los siguientes parámetros:<br>
+- Forward Selection: n° máximo de atributos: 30, Criterio de Detención: Sin Mejora.<br>
+- Backward Selection: n° máximo de eliminaciones: 10, Criterio de Detención: Sin Mejora.<br>
+- Evolutionary Selection: Población: 9, n° máx de generaciones: 30, n° mínimo de atributos: 1.  </p>
+<h2 id="procesos">Procesos</h2>
+<p><img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-11.png"><br>
+Subproceso "naive Feat Select":<br>
+<img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-12.png"><br>
+Subproceso "Evolutionary":<br>
+<img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-13.png"><br>
+Subproceso "Cross Validation":<br>
+<img alt="Pelican" src="../../../../../../assets/img/lungCancer/image-14.png">  </p>
+<p><em>Es análogo para las otras heurísticas y modelo, solo se sustituye el bloque correspondiente</em>  </p>
+<h2 id="performance">Performance</h2>
+<h3 id="naive-bayes">Naive Bayes</h3>
+<h4 id="forward-selection">Forward Selection</h4>
+<p>Atributos Seleccionados:<br>
+att20, att21, att24, att54 <br>
+Total: 4  </p>
+<p>PerformanceVector:
+- accuracy: 81.67% +/- 25.40% (micro average: 81.25%)  </p>
+<p>ConfusionMatrix:  </p>
+<table>
+  <tr>
+    <th>  </th>
+    <th>True: 1  </th>
+    <th>True: 2  </th>
+    <th>True: 3  </th>
+  </tr>
+  <tr>
+    <td>1:  </td>
+    <td>8  </td>
+    <td>2  </td>
+    <td>0  </td>
+  </tr>
+  <tr>
+    <td>2:  </td>
+    <td>1  </td>
+    <td>10  </td>
+    <td>2  </td>
+  </tr>
+  <tr>
+    <td>3:  </td>
+    <td>0  </td>
+    <td>1  </td>
+    <td>8  </td>
+  </tr>
+</table>
+
+<h4 id="backward-selection">Backward Selection</h4>
+<p>Atributos Seleccionados:<br>
+att2, att3, att5, att7, att8, att9, att11, att12, att13, att14, att15, att17, att18, att19, att20, att21, att22, att24, att25, att26, att27, att28, att29, att30, att31, att32, att33, att34, att36, att37, att38, att39, att40, att41, att42, att43, att44, att45, att46, att47, att48, att49, att51, att52, att53, att54, att55, att57 <br>
+Total: 48   </p>
+<p>PerformanceVector:<br>
+accuracy: 75.83% +/- 28.45% (micro average: 75.00%)  </p>
+<p>ConfusionMatrix:  </p>
+<table>
+  <tr>
+    <th>True:  </th>
+    <th>1  </th>
+    <th>2  </th>
+    <th>3  </th>
+  </tr>
+  <tr>
+    <td>1:  </td>
+    <td>8  </td>
+    <td>2  </td>
+    <td>0  </td>
+  </tr>
+  <tr>
+    <td>2:  </td>
+    <td>1  </td>
+    <td>9  </td>
+    <td>3  </td>
+  </tr>
+  <tr>
+    <td>3:  </td>
+    <td>0  </td>
+    <td>2  </td>
+    <td>7  </td>
+  </tr>
+</table>
+
+<h4 id="evolutionary-selection">Evolutionary Selection</h4>
+<p>Atributos Seleccionados:<br>
+att2, att3, att6, att7, att9, att11, att14, att17, att19, att20, att22, att24, att26, att29, att30, att32, att34, att36, att37, att39, att42, att44, att47, att48, att49, att53, att54, att55, att57 <br>
+Total: 29 atributos  </p>
+<p>PerformanceVector:<br>
+accuracy: 84.17% +/- 16.87% (micro average: 84.38%)   </p>
+<p>ConfusionMatrix:  </p>
+<table>
+  <tr>
+    <th>True:  </th>
+    <th>1  </th>
+    <th>2  </th>
+    <th>3  </th>
+  </tr>
+  <tr>
+    <td>1:  </td>
+    <td>8  </td>
+    <td>1  </td>
+    <td>0  </td>
+  </tr>
+  <tr>
+    <td>2:  </td>
+    <td>1  </td>
+    <td>11  </td>
+    <td>2  </td>
+  </tr>
+  <tr>
+    <td>3:  </td>
+    <td>0  </td>
+    <td>1  </td>
+    <td>8  </td>
+  </tr>
+</table>
+
+<h3 id="k-nn">K-NN</h3>
+<h4 id="forward-selection_1">Forward Selection</h4>
+<p>Atributos Seleccionados:<br>
+att7, att41<br>
+Total: 2  </p>
+<p>PerformanceVector:<br>
+accuracy: 67.50% +/- 26.77% (micro average: 65.62%)<br>
+ConfusionMatrix:  </p>
+<table>
+  <tr>
+    <th>True:  </th>
+    <th>1  </th>
+    <th>2  </th>
+    <th>3  </th>
+  </tr>
+  <tr>
+    <td>1:  </td>
+    <td>8  </td>
+    <td>3  </td>
+    <td>1  </td>
+  </tr>
+  <tr>
+    <td>2:  </td>
+    <td>1  </td>
+    <td>10  </td>
+    <td>6  </td>
+  </tr>
+  <tr>
+    <td>3:  </td>
+    <td>0  </td>
+    <td>0  </td>
+    <td>3  </td>
+  </tr>
+</table>
+
+<h4 id="backward-selection_1">Backward Selection</h4>
+<p>Atributos Seleccionados:<br>
+att3, att4, att5, att7, att8, att9, att10, att11, att13, att14, att16, att17, att18, att19, att20, att21, att22, att23, att24, att25, att26, att27, att28, att29, att30, att31, att32, att33, att34, att35, att36, att37, att38, att39, att40, att41, att42, att43, att44, att45, att46, att47, att48, att49, att50, att51, att52, att53, att54, att55, att56 <br>
+Total: 51 </p>
+<p>PerformanceVector:<br>
+accuracy: 63.33% +/- 34.29% (micro average: 62.50%)<br>
+ConfusionMatrix:  </p>
+<table>
+  <tr>
+    <th>True:  </th>
+    <th>1  </th>
+    <th>2  </th>
+    <th>3  </th>
+  </tr>
+  <tr>
+    <td>1:  </td>
+    <td>7  </td>
+    <td>2  </td>
+    <td>1  </td>
+  </tr>
+  <tr>
+    <td>2:  </td>
+    <td>1  </td>
+    <td>9  </td>
+    <td>5  </td>
+  </tr>
+  <tr>
+    <td>3:  </td>
+    <td>1  </td>
+    <td>2  </td>
+    <td>4  </td>
+  </tr>
+</table>
+
+<h4 id="evolutionary-selection_1">Evolutionary Selection</h4>
+<p>Atributos Seleccionados:<br>
+att2, att3, att6, att8, att9, att11, att14, att17, att19, att20, att24, att30, att33, att34, att35, att36, att38, att40, att42, att46, att53, att54, att55, att56, att57 <br>
+Total: 25   </p>
+<p>PerformanceVector:<br>
+accuracy: 73.33% +/- 25.09% (micro average: 71.88%)<br>
+ConfusionMatrix:  </p>
+<table>
+  <tr>
+    <th>True:  </th>
+    <th>1  </th>
+    <th>2  </th>
+    <th>3  </th>
+  </tr>
+  <tr>
+    <td>1:  </td>
+    <td>6  </td>
+    <td>3  </td>
+    <td>0  </td>
+  </tr>
+  <tr>
+    <td>2:  </td>
+    <td>3  </td>
+    <td>10  </td>
+    <td>3  </td>
+  </tr>
+  <tr>
+    <td>3:  </td>
+    <td>0  </td>
+    <td>0  </td>
+    <td>7  </td>
+  </tr>
+</table>
+
+<h2 id="conclusionesobservaciones">Conclusiones/Observaciones</h2>
+<ul>
+<li>Considerando una base de predicción de 33% por elección aleatoria, se lograron buenos modelos con precisiones que superan el 60%  </li>
+<li>Se notan en todos los modelos indices sumamente altos de error (+/- 16% hasta +/- 34%). <ul>
+<li>Esto puede ser producto de la falta de expresividad y contexto de las variables. Al no poder nosotros trazarles las relaciones correctas dependemos unicamente de los conjuntos optimizados de las heurísticas, los cuales tienen mayor o menor éxito.</li>
+</ul>
+</li>
+<li>Los Forward Selection tienden a usar muy pocos atributos, mientras que Backward tiende a utilizar todos. Evolutionary suele ser más balanceado.  </li>
+<li>El modelo mejor adaptado es Naive Bayes utilizando Evolutionary Selection con una precisión de 84.17% +/- 16.87%   <ul>
+<li>Este modelo se acopla bien al problema caracterizado por tener todas las variables de tipo categórica, y el método de selección nos permite eliminar el grueso de atributos ruidosos y enfocarnos los más relacionados con la clasificación final.  </li>
+</ul>
+</li>
+<li>El modelo peor adaptado al problema es K-NN con Backward Selection, con una precisión de 63.33% +/- 34.29%  <ul>
+<li>Esto puede ser dado por la dificultad del calculo de distancias para variables categóricas y debido a que la Backward Selection mantuvo casi todos los atributos, resultando en un modelo que sufre de la Maldición de la Dimensionalidad.  </li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+          `
+        ],
+      intrestLinks: [
+
+      ],
+      publishedDate: new Date("2023/10/11"),
+      tags: [
+        Tags.CRISPDM,
+        Tags.CasoDeEstudio,
+        Tags.Clasificacion
+      ],
+      subHeadings: [
+        "Introduccion",
+        "Resumen y Estadísticas del Set",
+        "Revisión de Datos",
+        "Procesamiento de Datos",
+        "Elección de Modelo",
+        "Definición de proceso de entrenamiento",
+        "Procesos",
+        "Performance",
+        "Conclusiones/Observaciones"
+      ]
+    },
+
   ].reverse()
 
   constructor() { }
