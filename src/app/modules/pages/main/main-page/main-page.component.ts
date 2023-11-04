@@ -3,6 +3,8 @@ import { Article } from 'src/app/modules/core/interfaces/article';
 import { ArticleService } from 'src/app/modules/core/services/article.service';
 import { fadeInUpAnimation } from '../animations/animationFadeIn';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { StudyCase } from 'src/app/modules/core/interfaces/studyCase';
+import { StudyCaseService } from 'src/app/modules/core/services/study-case.service';
 
 
 @Component({
@@ -18,6 +20,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class MainPageComponent implements OnInit {
 
   articles: Article[] = [];
+
+  sc: StudyCase[] = [];
 
   articlesShown : Article[] = [];
 
@@ -40,12 +44,12 @@ export class MainPageComponent implements OnInit {
   }
 
 
-  constructor(private articleService : ArticleService, private el: ElementRef) { }
+  constructor(private articleService : ArticleService, private el: ElementRef, private scService : StudyCaseService) { }
 
   ngOnInit(): void {
 
     this.articles = this.articleService.getAllArticles();
-    //this.getArticlesToShow(0);
+    this.sc = this.scService.getAllArticles();
   }
 
   searchBarTextRecieve(s : string) {
