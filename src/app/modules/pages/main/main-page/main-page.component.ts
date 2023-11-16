@@ -6,6 +6,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { StudyCase } from 'src/app/modules/core/interfaces/studyCase';
 import { StudyCaseService } from 'src/app/modules/core/services/study-case.service';
 
+interface PageEvent {
+  first: number;
+  rows: number;
+  page: number;
+  pageCount: number;
+}
 
 @Component({
   selector: 'ia-main-page',
@@ -93,6 +99,16 @@ export class MainPageComponent implements OnInit {
     else
       // this.articlesShown = this.articles
       this.articles = this.articles
+  }
+
+
+  first: number = 0;
+
+  rows: number = 10;
+
+  onPageChange(event: PageEvent) {
+    this.first = event.first;
+    this.rows = event.rows;
   }
 
 }

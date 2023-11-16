@@ -22,4 +22,7 @@
                 <ia-articles-filter (topicSelected)="newTopicSelected($event)" (showDestacado)="showArticulosDestacados($event)"></ia-articles-filter> 
         </div>
     </div>
+    <div class="">
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"></p-paginator>
+    </div>
 </div>
