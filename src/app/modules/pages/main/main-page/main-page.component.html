@@ -1,4 +1,4 @@
-<div  class="container">
+<div class="container">
     <div [@fadeInOut] class="w-100 animated-item mt-3">
         <h2>Busca articulos de tu interes: </h2>
         <ia-search-bar #searchBar (changeOnInputSearch)="searchBarTextRecieve($event)"></ia-search-bar>
@@ -9,17 +9,22 @@
         <ia-study-case-carrousel [studyCasesPreview]="sc"></ia-study-case-carrousel>
     </div>
 
-    <div class="row" [@fadeInOut]>
+    <div class="row" [@fadeInOut] #scrollToTop>
         <div class="col-md-8 order-md-1">
-            <h2>Articulos</h2> 
+            <h2>Artículos</h2>
             <div style="width: 95%">
-                <ia-card-collection [articles]="articles"  [allArticles]="articles"
-                [searchFilter]="searchBarText"></ia-card-collection>
+                <ia-card-collection #articleCards [articles]="articlesRows" [allArticles]="articlesShown"
+                    [searchFilter]="searchBarText"></ia-card-collection>
             </div>
         </div>
         <div class="col-md order-md-2">
-                <h4>Filtros:</h4>
-                <ia-articles-filter (topicSelected)="newTopicSelected($event)" (showDestacado)="showArticulosDestacados($event)"></ia-articles-filter> 
+            <h4>Filtros:</h4>
+            <ia-articles-filter (topicSelected)="newTopicSelected($event)"
+                (showDestacado)="showArticulosDestacados($event)"></ia-articles-filter>
         </div>
+    </div>
+    <div class="">
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+            [totalRecords]="articlesShown.length"></p-paginator>
     </div>
 </div>

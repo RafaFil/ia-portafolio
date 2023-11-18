@@ -1,0 +1,10 @@
+.social-cards {
+    display: flex;
+    justify-content: center;
+}
+
+.ia-back-to-home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
