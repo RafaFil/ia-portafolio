@@ -1,0 +1,16 @@
+<div class="social-card">
+    <div class="pfp-picture">
+        <img class="img-fluid" src="{{userInfo.linkedinPfp}}">
+    </div>
+    <div class="name mt-3">
+        <h5>{{userInfo.name}}</h5>
+    </div>
+    <div class="social-buttons mt-3 mb-5">
+        <span (click)="redirectToLn()">
+            <i class="pi pi-linkedin"></i>
+        </span>
+        <span (click)="redirectTogh()">
+            <i class="pi pi-github"></i>
+        </span>
+    </div>
+</div>

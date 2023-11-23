@@ -5,7 +5,7 @@ import { StudyCasePageComponent } from './study-case-page/study-case-page.compon
 
 const routes: Routes = [
   {
-    path: ':id', component: StudyCasePageComponent 
+    path: ':cat', component: StudyCasePageComponent 
   }
 ]
 

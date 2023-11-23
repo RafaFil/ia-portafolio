@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CkdComponent } from './ckd.component';
+import { LinkedinPagesComponent } from './linkedin-pages.component';
 
-describe('CkdComponent', () => {
-  let component: CkdComponent;
-  let fixture: ComponentFixture<CkdComponent>;
+describe('LinkedinPagesComponent', () => {
+  let component: LinkedinPagesComponent;
+  let fixture: ComponentFixture<LinkedinPagesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CkdComponent ]
+      declarations: [ LinkedinPagesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CkdComponent);
+    fixture = TestBed.createComponent(LinkedinPagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
