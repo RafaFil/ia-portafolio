@@ -507,6 +507,590 @@ Atributos:<br>
           `,
           image: ""
     },
+    {
+      title: "Caso: Ecoli",
+      cut: "ecoli",
+      shortDescripton: "",
+      html: 
+      `
+    <div class="container">
+  <h1>Informe de Análisis de Dataset Ecoli</h1>
+
+<img
+  class="img-fluid mb-3"
+  src="../../../../../../assets/img/ecoli/ecoli-reference.jpg"
+/>
+
+<h2>Relevancia y objetivo del caso de estudio</h2>
+<br>
+  La bacteria Escherichia coli (E. coli) es comúnmente hallada en los intestinos
+  de personas y animales sanos, siendo la mayoría de sus cepas inofensivas o
+  causantes de diarrea breve. </br>Sin embargo, ciertas variantes, como la
+  Escherichia coli O157:H7, pueden provocar síntomas más severos como cólicos
+  abdominales intensos, diarrea con sangre y vómitos. </br>La exposición a esta
+  bacteria puede ocurrir a través de agua o alimentos contaminados,
+  especialmente vegetales crudos y carne de res poco cocida. En el contexto del
+  estudio sobre bacterias gramnegativas, se busca predecir la localización de
+  proteínas utilizando algoritmos de machine learning.</br> Este enfoque implica
+  clasificar las proteínas según su ubicación en el organismo. La aplicación de
+  diversos algoritmos contribuirá a este proceso de clasificación, permitiendo
+  una mejor comprensión de la distribución y función de las proteínas en
+  bacterias gramnegativas.
+</p>
+
+<h2>Referencia:</h2>
+<p>
+  "Un Sistema de Clasificación Probabilística para Predecir los Sitios de
+  Localización Celular de Proteínas", Paul Horton y Kenta Nakai, Sistemas
+  Inteligentes en Biología Molecular, 109-115. St. Louis, EE. UU. 1996.
+</p>
+
+<p>El estudio es realizado en el marco del proceso CRISP-DM:</p>
+<img class="img-fluid mb-3" src="../../../../../../assets/img/ecoli/1.jpg" />
+
+<h2>Comprensión del negocio</h2>
+<p>
+  El objetivo principal es analizar y predecir la localización de las proteínas
+  de Escherichia coli (E.Coli) en células bacterianas. Este dataset contiene
+  diversas características que representan propiedades fisicoquímicas de las
+  proteínas, con el fin de desarrollar modelos que puedan identificar la
+  localización subcelular de dichas proteínas.
+</p>
+
+<h2>Comprensión de los datos</h2>
+<p>
+  El dataset contiene 336 registros, cada uno de ellos con 8 atributos y una
+  clase predictora. Los atributos son:
+</p>
+<ul>
+  <li>
+    <strong>Nombre de la Secuencia:</strong> Número de acceso para la base de
+    datos SWISS-PROT
+  </li>
+  <li>
+    <strong>mcg:</strong> Método de McGeoch para reconocimiento de secuencias de
+    señal.
+  </li>
+  <li>
+    <strong>gvh:</strong> Método de von Heijne para reconocimiento de secuencias
+    de señal.
+  </li>
+  <li>
+    <strong>lip:</strong> Puntuación de secuencia de consenso de la Señal
+    Peptidasa II de von Heijne. Atributo binario.
+  </li>
+  <li>
+    <strong>chg:</strong> Presencia de carga en el N-terminal de lipoproteínas
+    predichas. Atributo binario.
+  </li>
+  <li>
+    <strong>aac:</strong> Puntuación del análisis discriminante del contenido de
+    aminoácidos de proteínas de la membrana externa y periplásmicas.
+  </li>
+  <li>
+    <strong>alm1:</strong> Puntuación del programa de predicción de región de
+    membrana ALOM.
+  </li>
+  <li>
+    <strong>alm2:</strong> Puntuación del programa ALOM después de excluir
+    regiones de señal presuntamente escindibles de la secuencia.
+  </li>
+</ul>
+<p>
+  Un dato no menor de este dataset es que no contiene valores nulos o faltantes,
+  lo que vuelve el caso de estudio y los resultados más realistas.
+</p>
+<p>
+  En cuanto a sus atributos son en su gran mayoría del tipo numérico a excepción
+  del nombre de la secuencia y de la Clase predictora.
+</p>
+<p>La clase predictora es la localización de la proteína, la cual puede ser:</p>
+
+<table border="1">
+  <tr>
+    <th>NOMBRE ATRIBUTO</th>
+    <th>DESCRIPCIÓN</th>
+    <th>CANTIDAD</th>
+    <th>TIPO DE DATOS</th>
+    <th>FALTANTES</th>
+    <th>ROL</th>
+  </tr>
+  <tr>
+    <td>SequenceName</td>
+    <td>Nombre de la secuencia</td>
+    <td>336</td>
+    <td>Polinomial</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>cp (citoplasma)</td>
+    <td>Citoplasma</td>
+    <td>143</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>im</td>
+    <td>Membrana interna sin secuencia de señal</td>
+    <td>77</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>pp</td>
+    <td>Periplasma</td>
+    <td>52</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>imU</td>
+    <td>Membrana interna, secuencia de señal no clivada</td>
+    <td>35</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>om</td>
+    <td>Membrana externa</td>
+    <td>20</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>omL</td>
+    <td>Membrana externa lipoproteica</td>
+    <td>5</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>imL</td>
+    <td>Membrana interna lipoproteica</td>
+    <td>2</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+  <tr>
+    <td>imS</td>
+    <td>Membrana interna, secuencia de señal clivada</td>
+    <td>2</td>
+    <td>Entero</td>
+    <td>no</td>
+    <td>regular</td>
+  </tr>
+</table>
+
+<h2>Interpretación Preliminar:</h2>
+<p>
+  El conjunto de datos está orientado a la predicción de la localización
+  subcelular de proteínas de E.Coli. Los atributos representan diversos métodos
+  de puntuación y análisis de secuencias de proteínas, mientras que la variable
+  objetivo son las diferentes localizaciones subcelulares.
+</p>
+
+<h2>Estadísticas de los datos</h2>
+
+<img src="../../../../../../assets/img/ecoli/2.jpg" />
+
+<p>
+  Como se puede apreciar en la tabla anterior las Estadísticas de los datos
+  mostrados por Rapidminer, indican que los datos no tienen valores nulos o
+  faltantes, así como también los minimos y máximos de los atributos, junto con
+  su media.
+</p>
+
+<p>
+  A fin de comprender mejor como es que se comportan los datos tenemos la opción
+  de poder visualizarlos en un gráfico de barras, en el cual podemos ver como se
+  comportan los datos en cada uno de los atributos.
+</p>
+
+<img src="../../../../../../assets/img/ecoli/3.jpg" />
+
+<h2>Visualización:</h2>
+<p>
+  A continuación se reflejaran los comportamientos de los atributos más
+  importantes para determinar la localización de las proteínas de E.Coli, en
+  función de la clase objetivo.
+</p>
+
+<h3>mcg</h3>
+<img src="../../../../../../assets/img/ecoli/4.jpg" />
+<p>
+  En el gráfico anterior se puede apreciar que el atributo mcg tiene un
+  comportamiento un tanto variable, ya que la distinción ofrecida por la clase
+  objetivo nos indica que a pesar de encontrar un rango especifico en cual
+  acotar las fluctuaciones de los datos, estos se encuentran muy dispersos, por
+  lo que no se puede determinar una tendencia clara.
+</p>
+
+<h3>gvh</h3>
+<img src="../../../../../../assets/img/ecoli/5.jpg" />
+<p>
+  Los valores de gvh presentan un comportamiento similar al atributo mcg, ya que
+  a pesar de que se puede apreciar una tendencia de comportamiento para los
+  valores de la clase objetivo, estos se encuentran muy dispersos, pero a
+  diferencia del atributo mcg, los valores de gvh se encuentran más acotados.
+</p>
+
+<h3>alm1</h3>
+<img src="../../../../../../assets/img/ecoli/6.jpg" />
+<p>
+  Al analizar el gráfico anterior se aprecian como este atributo presenta un
+  comportamiento más acotado, ya que los valores de la clase objetivo se
+  encuentran en un rango más reducido. Lo que nos indica que este atributo es
+  más determinante para la predicción de la clase objetivo, esto es de gran
+  importancia teniendo en cuenta que el objetivo es buscar la clasificación de
+  las proteínas de E.Coli.
+</p>
+
+<h2>Preparación de los datos</h2>
+<p>
+  Utilizando un subproceso denominado "Data Preparation" en RapidMiner, se
+  realizaron las tareas de acondicionamiento del dataset. El dataset no presenta
+  valores nulos o faltantes, por lo que no es necesario realizar una limpieza de
+  datos. </br>Lo que si es necesario hacer es acotar aquellos valores que se
+  encuentran fuera de rango, para ello se utilizó el operador "Filter Examples"
+  de Rapidminer, el cual nos permite acotar los valores de los atributos que se
+  encuentran fuera de rango después de utilizar el operador "Detect Outliers".
+</p>
+
+<img src="../../../../../../assets/img/ecoli/7.jpg" />
+
+<p>
+  También es preciso indicar cual es el atributo que se desea predecir, para
+  ello se utilizó el operador "Set Role" de Rapidminer, el cual nos permite
+  indicar cual es el atributo que se desea predecir, en este caso LSOP
+  (Localización de los Sitios de Proteína, del inglés Localization Sites Of
+  Proteins).
+</p>
+
+<p>
+  Otra de las tareas que se realiza para la preparación de los datos es la
+  normalización de los mismos, para ello se utilizó el operador "Normalize" de
+  Rapidminer, el cual nos permite normalizar los datos de los atributos, para
+  que estos se encuentren en un rango de 0 a 1.
+</p>
+
+<p>
+  Finalmente se utilizó el operador "Attribute Weights (Weight by Gini Index)"
+  de Rapidminer, el cual nos permite asignar un peso a cada uno de los
+  atributos, en función de su importancia para la predicción de la clase
+  objetivo. El resultado de este operador se puede apreciar en la siguiente
+  gráfica:
+</p>
+<img src="../../../../../../assets/img/ecoli/8.jpg" />
+
+<h2>Modelado</h2>
+
+<p>
+  El problema que presenta el data set es de clasificación, ya que se busca
+  predecir la localización de las proteínas de E.Coli, por lo que se utilizaron
+  los algoritmos de clasificación que se vieron en el curso de Inteligencia
+  Artificial, los cuales son:
+</p>
+
+<ul>
+  <li>Naive Bayes</li>
+  <li>Árbol de Decisión (y su versión optimizada)</li>
+  <li>K-NN</li>
+  <li>Regresión Logística</li>
+</ul>
+
+<img src="../../../../../../assets/img/ecoli/modelo.jpg" />
+
+<p>
+  Para cada uno de los algoritmos se utilizó el operador "Cross Validation" de
+  Rapidminer, el cual nos permite realizar una validación cruzada de los datos,
+  para así poder obtener una mejor precisión de los resultados. </br>Las
+  configuraciones utilizada en el operador "Cross Validation" fueron las
+  siguientes: - Número de folds: 10 - Sampling Type: Stratified Sampling - Local
+  random seed: 1992
+</p>
+
+<p>
+  A continuación se procederá a explicar el funcionamiento de cada uno de los
+  algoritmos utilizados, así como también se explicará el funcionamiento de los
+  operadores utilizados para cada uno de ellos.
+</p>
+
+<h3>Naive Bayes</h3>
+
+<p>
+  El algoritmo de Naive Bayes es un algoritmo de clasificación que se basa en el
+  teorema de Bayes, el cual establece que la probabilidad de que ocurra un
+  evento A, dado que ha ocurrido un evento B, es igual a la probabilidad de que
+  ocurra el evento B, dado que ha ocurrido el evento A, multiplicado por la
+  probabilidad de que ocurra el evento A, dividido por la probabilidad de que
+  ocurra el evento B.
+</p>
+
+<p>
+  Como ya se mencionó anteriormente, el modelado de este algoritmo se realizó en
+  un "Corss Validation",como se puede apreciar en la imagen inferior:
+</p>
+
+<img src="../../../../../../assets/img/ecoli/9.jpg" />
+
+<p>
+  Ahora bien, el unico ajuste realizado fue colocar un check en el "laplace
+  correction" del operador, y para poder conocer más en detalle los resultados
+  obtenidos por el algoritmo, se utilizó el operador "Performance
+  (Classification)", el cual nos permite obtener la precisión. </br>Los resultados
+  son presentados en la siguiente tabla:
+</p>
+
+<img src="../../../../../../assets/img/ecoli/10.jpg" />
+
+<p>
+  Como se puede apreciar no es posible predecir las clases "imL", "imS" y "omL",
+  ya que que el porcentaje de precisión es igual a 0. Esto se debe a que no se
+  cuenta con suficientes datos para poder predecir dichas clases.
+</p>
+
+<h3>Árbol de Decisión</h3>
+
+<p>
+  El algoritmo de Árbol de Decisión es un algoritmo de clasificación que se basa
+  en la creación de un árbol de decisión, el cual se va creando a partir de los
+  atributos que se encuentran en el dataset, para así poder predecir la clase
+  objetivo.
+</p>
+
+<p>
+  La configuración del operador "Decision Tree" se realizó de la siguiente
+  manera:
+</p>
+
+<ul>
+  <li>Criterion: Gain Ratio</li>
+  <li>Maximal Depth: 10</li>
+  <li>Apply prepruning: true</li>
+  <li>Minimal gain: 0.01</li>
+  <li>Minimal leaf size: 2</li>
+  <li>Minimal size for split : 4</li>
+  <li>Number of prepruning alternatives: 3</li>
+</ul>
+
+<p>
+  Como ya se mencionó anteriormente, el modelado de este algoritmo se realizó en
+  un "Cross Validation", así como también el operador "Optimize Parameters
+  (Grid)", el cual nos permite optimizar los parámetros del algoritmo.
+</p>
+
+<img src="../../../../../../assets/img/ecoli/11.jpg" />
+
+<p>
+  El operador "Optimize Parameters (Grid)" se configuro con los siguientes
+  parámetros:
+</p>
+<img src="../../../../../../assets/img/ecoli/12.jpg" />
+<img src="../../../../../../assets/img/ecoli/13.jpg" />
+
+<p>
+  Ahora bien, para poder conocer más en detalle los resultados obtenidos por el
+  algoritmo, se utilizó el operador "Performance (Classification)", el cual como
+  ya vimos nos permite obtener la precisión. Los resultados son presentados en
+  las siguientes tablas (una para el árbol de decisión y otra para el árbol de
+  decisión optimizado):
+</p>
+
+<img src="../../../../../../assets/img/ecoli/14.jpg" />
+<img src="../../../../../../assets/img/ecoli/15.jpg" />
+
+<p>
+  Como se puede apreciar en las tablas anteriores, el árbol de decisión
+  optimizado obtuvo mejores resultados que el árbol de decisión, ya que la
+  precisión del árbol de decisión optimizado es de 86.22%, mientras que la
+  precisión del árbol de decisión es de 83.14%.
+</p>
+
+<h3>K-NN</h3>
+
+<p>
+  El algoritmo de K-NN es un algoritmo de clasificación que se basa en la
+  cercanía de los datos, para así poder predecir la clase objetivo. </br>Este
+  algoritmo se basa en la distancia euclidiana, la cual nos permite conocer la
+  distancia entre dos puntos.
+</p>
+
+<p>La configuración del operador "K-NN" se realizó de la siguiente manera:</p>
+
+<ul>
+  <li>Number of neighbors: 5</li>
+  <li>Weight vote: checked</li>
+  <li>Measure types: Mixed Measures</li>
+  <li>Mixed measure: Mixed Euclidean Distance</li>
+</ul>
+
+<p>
+  Como ya se mencionó anteriormente, el modelado de este algoritmo se realizó en
+  un "Cross Validation", lo cual nos permite realizar una validación cruzada de
+  los datos, para así poder obtener una mejor precisión de los resultados.
+</p>
+
+<img src="../../../../../../assets/img/ecoli/16.jpg" />
+
+<p>
+  Siguiendo el mismo procedimiento que con los algoritmos anteriores, se utilizó
+  el operador "Performance (Classification)". Los resultados son presentados en
+  la siguiente tabla:
+</p>
+
+<img src="../../../../../../assets/img/ecoli/17.jpg" />
+
+<p>
+  Como se puede apreciar en la tabla anterior, el algoritmo de K-NN obtuvo una
+  precisión de 86.52%, lo cual es un resultado bastante bueno, ya que es el
+  segundo mejor resultado obtenido. Y el error de aproximación es de +/- 4.52%,
+  lo cual es un resultado bastante bueno, ya que es el segundo mejor resultado
+  obtenido.
+</p>
+
+<h3>Regresión Logística</h3>
+
+<p>
+  El algoritmo de Regresión Logística es un algoritmo de clasificación que se
+  basa en la regresión logística, la cual nos permite conocer la probabilidad de
+  que ocurra un evento, en función de una o más variables independientes.
+</p>
+
+<p>
+  La configuración del operador "Logistic Regression" se realizó de la siguiente
+  manera:
+</p>
+
+<ul>
+  <li>Family: AUTO</li>
+  <li>Solver: AUTO</li>
+  <li>Reproducible: checked</li>
+  <li>Maximum number of threads: 4</li>
+  <li>Use regularization: checked</li>
+  <li>Add intercept (Incluye las variables constantes): checked</li>
+</ul>
+
+<p>
+  Como ya se mencionó anteriormente, el modelado de este algoritmo se realizó en
+  un "Cross Validation", lo cual nos permite realizar una validación cruzada de
+  los datos, para así poder obtener una mejor precisión de los resultados.
+</p>
+
+<img src="../../../../../../assets/img/ecoli/18.jpg" />
+
+<p>
+  Siguiendo el mismo procedimiento que con los algoritmos anteriores, se utilizó
+  el operador "Performance (Classification)". Los resultados son presentados en
+  la siguiente tabla:
+</p>
+
+<img src="../../../../../../assets/img/ecoli/19.jpg" />
+
+<p>
+  Como se puede apreciar en la tabla anterior, el algoritmo de Regresión
+  Logística obtuvo una precisión de 87.77%, lo cual es el mejor resultado
+  obtenido. Y el error de aproximación es de +/- 7.57%, el cual es el peor
+  resultado obtenido.
+</p>
+
+<h2>Evaluación</h2>
+
+<p>
+  Para cada uno de los algoritmos se utilizó el operador "Performance
+  (Classification)" de Rapidminer, el cual nos permite obtener la precisión de
+  los resultados obtenidos por cada uno de los algoritmos, estableciendo que su
+  criterio principal de evaluación sea la precisión.
+</p>
+
+<p>
+  Los resultados obtenidos por cada uno de los algoritmos se pueden apreciar en
+  la siguiente tabla:
+</p>
+
+<table border="1">
+  <tr>
+    <th>Algoritmo</th>
+    <th>Precisión</th>
+    <th>Error de aproximación</th>
+  </tr>
+  <tr>
+    <td>Naive Bayes</td>
+    <td>77.37%</td>
+    <td>+/- 6.28%</td>
+  </tr>
+  <tr>
+    <td>Árbol de Decisión</td>
+    <td>83.14%</td>
+    <td>+/- 5.37%</td>
+  </tr>
+  <tr>
+    <td>Árbol de Decisión (Optimizado)</td>
+    <td>86.22%</td>
+    <td>+/- 5.35%</td>
+  </tr>
+  <tr>
+    <td>K-NN</td>
+    <td>86.52%</td>
+    <td>+/- 4.52%</td>
+  </tr>
+  <tr>
+    <td>Regresión Logística</td>
+    <td>87.77%</td>
+    <td>+/- 7.57%</td>
+  </tr>
+</table>
+
+<p>
+  Como se puede apreciar en la tabla anterior, el algoritmo que obtuvo mejores
+  resultados fue el de Regresión Logística, con una precisión de 87.77% y un
+  error de aproximación de +/- 7.57%. Sin embargo, el algoritmo que obtuvo
+  mejores resultados en cuanto a precisión y error de aproximación fue el de
+  K-NN, con una precisión de 86.52% y un error de aproximación de +/- 4.52%.
+</p>
+
+<h2>Conclusiones</h2>
+
+<p>
+  El objetivo principal de este caso de estudio es analizar y predecir la
+  localización de las proteínas de Escherichia coli (E.Coli), una de las
+  bacterias más comunes en el intestino de personas y animales sanos. Para ello
+  se utilizó un dataset que contiene diversas características que representan
+  propiedades fisicoquímicas de las proteínas, con el fin de desarrollar modelos
+  que puedan identificar la localización subcelular de dichas proteínas.
+</p>
+
+<p>
+  El estudio se realizó en el marco del proceso CRISP-DM, el cual nos permite
+  realizar un estudio de minería de datos, el cual se divide en 6 fases, las
+  cuales vimos a lo largo del caso de estudio.
+</p>
+
+<p>
+  En cuanto a los resultados obtenidos, se puede concluir que el algoritmo que
+  obtuvo mejores resultados fue el de Regresión Logística, con una precisión de
+  87.77% y un error de aproximación de +/- 7.57%. Sin embargo, el algoritmo que
+  obtuvo mejores resultados en cuanto a precisión y error de aproximación fue el
+  de K-NN, con una precisión de 86.52% y un error de aproximación de +/- 4.52%.
+</p>
+
+<p>
+  Finalmente, se puede concluir que el objetivo principal del caso de estudio se
+  cumplió, ya que se logró analizar y predecir la localización de las proteínas
+  de Escherichia coli (E.Coli), una de las bacterias más comunes en el intestino
+  de personas y animales sanos.
+</p>
+</div>
+      `,
+      image: ""
+    }
   ].reverse();
 
   constructor() { }
