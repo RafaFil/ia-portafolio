@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StudyCase } from 'src/app/modules/core/interfaces/studyCase';
+import { StudyCaseService } from 'src/app/modules/core/services/study-case.service';
 
 @Component({
   selector: 'ia-study-case-page',
@@ -7,6 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./study-case-page.component.css']
 })
 export class StudyCasePageComponent implements OnInit {
+
+  studyCase!: StudyCase;
+
+  htmlRender!: SafeHtml;
+
+  title = "";
 
   remainingTime: number = 3;  
 
@@ -18,39 +27,28 @@ export class StudyCasePageComponent implements OnInit {
 
   animals = false;
 
-  constructor(private router: Router, private actRouter : ActivatedRoute) { }
+  constructor(private router: Router, private actRouter : ActivatedRoute, private sc : StudyCaseService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    // const timerInterval = setInterval(() => {
-    //   this.remainingTime--;
-    //   if (this.remainingTime <= 0) {
-    //     clearInterval(timerInterval); 
-    //     this.goBack();
-    //   }
-    // }, 1000);
 
     this.actRouter.paramMap.subscribe( param => {
       
-      const id = param.get("id");
+      const cat = param.get("cat");
 
-      if (id != null) {
-        switch (id) {
-          case "cardio":
-            this.cardio = true;
-            break;
-          case "ckd":
-            this.ckd = true;
-            break
-          case "titanic":
-            this.titanic = true;
-            break;
-          case "animals":
-            this.animals = true;
-            break;
-          default:
-            this.router.navigate(['/'])
-            break;
+      if (cat != null && typeof cat != undefined) {
+        
+        const res = this.sc.getArticleByCat(cat);
+
+        if (res) {
+
+          this.studyCase = res;
+          this.htmlRender =     this.htmlRender = this.sanitizer.bypassSecurityTrustHtml(res.html);
+          this.title = res.title;
         }
+      }
+      else {
+
+        this.router.navigate(['/**'])
       }
     })
   }
