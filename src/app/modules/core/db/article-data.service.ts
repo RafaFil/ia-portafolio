@@ -1866,10 +1866,8 @@ Tipo de probelma: clasificación, supervisado.<br>
       parapgraph: 
       [
         `
-        <head>
-          <title>Informe de Análisis de Dataset Iris</title>
-        </head>
-
+        <div class="container">
+        <h1>Informe de Análisis de Dataset Iris</h1>
           <h2>Objetivo:</h2>
           <p>
               Si bien el dataset Iris es usado con frecuencia para problemas de clasificación, en este caso decidí abordar un problema de agrupamiento usando este mismo. Por lo tanto, el objetivo principal del problema de clustering en este contexto es agrupar las observaciones en función de similitudes en las características morfológicas, sin tener en cuenta las etiquetas de clase. Es decir, explorar y descubrir patrones de agrupamiento que pueden ayudar en la comprensión de la variabilidad de las características en el conjunto de datos.
@@ -1988,6 +1986,7 @@ Tipo de probelma: clasificación, supervisado.<br>
               <li>Validación cruzada: La validación cruzada, como la validación cruzada k-fold o la validación cruzada leave-one-out, puede ayudarte a evaluar la estabilidad del modelo y reducir el riesgo de sobreajuste. Esto es especialmente útil cuando tienes un conjunto de datos pequeño.</li>
               <li>Selección de características: Si estás trabajando con conjuntos de datos de alta dimensionalidad, considera técnicas de selección de características o reducción de dimensionalidad, como PCA (Análisis de Componentes Principales) o LDA (Análisis de Discriminante Lineal), para mejorar la precisión del modelo y reducir el tiempo de entrenamiento.</li>
           </ul>
+          </div>
         `
       ],
       publishedDate: new Date("2023/10/24"),
