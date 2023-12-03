@@ -1,0 +1,38 @@
+.social-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 1 1 1;
+    border: 0.5px solid whitesmoke;
+}
+
+.name {
+    text-align: center;
+}
+
+.social-card .pfp-picture {
+    /* background-image: url("https://media.licdn.com/dms/image/D4D16AQEA1HIIxO-j5g/profile-displaybackgroundimage-shrink_350_1400/0/1685401764507?e=1705536000&v=beta&t=tW9UFonEsaSfBIa1aydTLqLAXKL6fDqrcZo9RVvV4Bk"); */
+    /* padding: 20%; */
+}
+
+img {
+    border-radius: 50%;
+}
+
+.social-card :nth-child(n) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.social-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-buttons span :hover {
+    cursor: pointer;
+}

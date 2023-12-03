@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+/**
+ * @deprecated
+ */
 @Component({
   selector: 'ia-ce-enfermedad-cardiaca',
   templateUrl: './ce-enfermedad-cardiaca.component.html',

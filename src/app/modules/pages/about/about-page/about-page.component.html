@@ -1,17 +1,31 @@
 <ia-navbar [sectionTitle]="'Acerca del portafolio'"></ia-navbar>
-<div class="container mt-5">
-    <h4>Organizacion del portafolio: </h4>
-    <p>Este portafolio se organiza de la siguiente manera:</p>
-    <p>
-        Articulos: Los articulos consisten en pequeños resumenes, y aplicaciones 
-        acerca diferentes temas de ML concretos. Cada articulo tiene tags los cuales
-        representan los temas tratados.
-    </p>
-    <p>
-        Casos de estudios: Son articulos mas extensos que involucran diferentes temas
-        tratado a lo largo de articulos.
-    </p>
-    <div class="mt-5 ia-back-to-home">
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h4>Somos un grupo de estudiantes de Ingenieria en Informatica de la UCU.</h4>
+            <p>Actualmente estamos cursando la materia Introducción a los metodos de aprendizaje automático.</p>
+            <h4>Organizacion del portafolio: </h4>
+            <p>Este portafolio se organiza de la siguiente manera:</p>
+            <p>
+                Articulos: Los articulos consisten en pequeños resumenes, y aplicaciones 
+                acerca diferentes temas de ML concretos. Cada articulo tiene tags los cuales
+                representan los temas tratados.
+            </p>
+            <p>
+                Casos de estudios: Son articulos mas extensos que involucran diferentes temas
+                tratado a lo largo de articulos.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-fluid" src="https://s3.us-east-1.wasabisys.com/imasd/2022/10/Logo-UCU-001-FINAL-03_ID_Uruguay.jpg">
+        </div>
+    </div>
+    <h4>Colaboradores: </h4>
+    <div>
+        <ia-linkedin-pages></ia-linkedin-pages>
+    </div>
+
+    <div class="mt-3 ia-back-to-home mb-3">
         <p-button (onClick)="redirectHome()">Volver al inicio</p-button>
     </div>
 

@@ -11,13 +11,13 @@ const genericURL = "";
 export class ArticleDataService {
 
 
-  articlesData : Article[] = [
+  articlesData: Article[] = [
     {
       id: 1,
       title: "¿Qué es “Machine Learning”?",
       category: "Introduccion Machine Learning",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           "<p>Cuando se realiza una busqueda sobre que es machine learning los resultados son tantos y variados e incluso no parece haber concenso sobre una definicion que pueda resumir en palabras a este campo de estudio. Es por esto que varios exponentes de la industria han realizados sus propias definiciones</p>",
           "<p>En resumen podemos decir que cuando preguntamos que es machine learnig podemos estar de acuerdo que se trata de una rama de la Inteligencia artificial en la cual los sistemas y las máquinas aprenden automáticamente a partir de los datos en lugar de ser programados explícitamente. En el campo del machine learning, se desarrollan algoritmos y modelos estadísticos que permiten a las máquinas procesar grandes cantidades de datos históricos para identificar patrones y realizar inferencias. Estos patrones y conocimientos adquiridos a partir de los datos les permiten a las máquinas realizar tareas y tomar decisiones con mayor precisión.</p>",
@@ -54,17 +54,17 @@ export class ArticleDataService {
             paragraph: "El ‘machine learning’ –aprendizaje automático– es una rama de la inteligencia artificial que permite que las máquinas aprendan sin ser expresamente programadas para ello. Una habilidad indispensable para hacer sistemas capaces de identificar patrones entre los datos para hacer predicciones"
           }
         ],
-        intrestLinks : [
-          {
-            text: "Herramientas para el desarrollo de ML",
-            link: "http://localhost:4200/main/article/2"
-          }
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          "Investigacion",
-          "Introduccion a Machine Learning"
-        ]
+      intrestLinks: [
+        {
+          text: "Herramientas para el desarrollo de ML",
+          link: "http://localhost:4200/main/article/2"
+        }
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        "Investigacion",
+        "Introduccion a Machine Learning"
+      ]
     },
     {
       id: 2,
@@ -105,10 +105,10 @@ export class ArticleDataService {
       ],
       callouts: [],
       intrestLinks: [{
-          text: "string",
-          link: "http://localhost:4200/main/article/3",
+        text: "string",
+        link: "http://localhost:4200/main/article/3",
       }],
-      tags : [
+      tags: [
         "Investigacion",
         "Introduccion a Machine Learning",
         "RapidMiner",
@@ -315,7 +315,7 @@ export class ArticleDataService {
     },
     {
       id: 5,
-      title : "Manejo de datos en RapidMiner",
+      title: "Manejo de datos en RapidMiner",
       category: "2",
       topics: "2",
       parapgraph: [
@@ -395,7 +395,7 @@ export class ArticleDataService {
     },
     {
       id: 6,
-      title : "Construir un modelo en RapidMiner",
+      title: "Construir un modelo en RapidMiner",
       category: "2",
       topics: "2",
       parapgraph: [
@@ -743,7 +743,7 @@ Link al Jupyter:
         "Mineria de Datos",
         "CRISP-DM",
         "RapidMiner"
-      ] ,
+      ],
       subHeadings: [
         "Análisis en RapidMiner",
         "Análisis en Jupyter"
@@ -751,13 +751,13 @@ Link al Jupyter:
       interestLink: []
     },
     {
-    id: 8,
-    title: "Cálculo de la probabilidad condicional en el titanic",
-    category: "",
-    topics: "1",
-    parapgraph: 
-      [
-        `
+      id: 8,
+      title: "Cálculo de la probabilidad condicional en el titanic",
+      category: "",
+      topics: "1",
+      parapgraph:
+        [
+          `
         <p>Tomando como referencia el blog: http://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html </p>
         <p>Se realizaran los siguientes cálculos de probabilidad condicional: </p>
 
@@ -862,11 +862,11 @@ Link al Jupyter:
         </a>
 
         `
-      ],
-      intrestLinks : [
+        ],
+      intrestLinks: [
       ],
       publishedDate: new Date("2023/09/05"),
-      tags : [
+      tags: [
         Tags.TratamientoPrevioDeLosDatos,
         Tags.Herramientas,
         Tags.Modelo,
@@ -876,13 +876,13 @@ Link al Jupyter:
       ]
     },
     {
-    id: 9,
-    title: "Modelo sobre el Titanic",
-    category: "",
-    topics: "1",
-    parapgraph: 
-      [
-        `
+      id: 9,
+      title: "Modelo sobre el Titanic",
+      category: "",
+      topics: "1",
+      parapgraph:
+        [
+          `
           <a href="https://github.com/RafaFil/ia-portafolio-docs/blob/main/UT2%20-%20TRATAMIENTO%20PREVIO%20DE%20DATOS/pd/pd4.ipynb">
             Link al Jupyter:
           </a>
@@ -1084,11 +1084,11 @@ Link al Jupyter:
                   </tbody>
               </table>
         `
-      ],
-      intrestLinks : [
+        ],
+      intrestLinks: [
       ],
       publishedDate: new Date("2023/09/05"),
-      tags : [
+      tags: [
         Tags.TratamientoPrevioDeLosDatos,
         Tags.Herramientas,
         Tags.Modelo,
@@ -1103,7 +1103,7 @@ Link al Jupyter:
       title: "Descenso de Gradiente para ML",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container">
@@ -1194,28 +1194,28 @@ Link al Jupyter:
     </div>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.Gradiente,
-          Tags.Resumen,
-          Tags.Teoria,
-          Tags.TratamientoPrevioDeLosDatos
-        ],
-        subHeadings:[
-          "Introducción",
-          "Batch Gradient Descent",
-          "Descenso de gradiente estocástico",
-          "Resumen"
-        ]
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.Gradiente,
+        Tags.Resumen,
+        Tags.Teoria,
+        Tags.TratamientoPrevioDeLosDatos
+      ],
+      subHeadings: [
+        "Introducción",
+        "Batch Gradient Descent",
+        "Descenso de gradiente estocástico",
+        "Resumen"
+      ]
     },
     {
       id: 11,
       title: "Tres algortimos lineales: Regresion lineal, Regresion lógistica, Análisis Discriminante Lineal (LDA)",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container">
@@ -1423,40 +1423,40 @@ Link al Jupyter:
       </div>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.AlgoritmosLineales,
-          Tags.Resumen,
-          Tags.Teoria,
-          Tags.Modelo,
-          Tags.Algoritmo,
-          Tags.RegresionLineal,
-          Tags.RegresionLogistica,
-          Tags.LDA
-        ],
-        subHeadings: [
-          "Regresión Lineal",
-          "Mínimos Cuadrados Ordinarios:",
-          "Descenso de Gradiente:",
-          "Haciendo Predicciones",
-          "Preparación de Datos para Regresión Lineal",
-          "Regresión Logística",
-          "Estimación de Coeficientes en Regresión Logística:",
-          "La Regresión Logística Predice Probabilidades:",
-          "Preparación de Datos para Regresión Logística",
-          "Análisis Discriminante Lineal (LDA)",
-          "Limitaciones de la Regresión Logística",
-          "Preparación de Datos para LDA"
-        ]
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.AlgoritmosLineales,
+        Tags.Resumen,
+        Tags.Teoria,
+        Tags.Modelo,
+        Tags.Algoritmo,
+        Tags.RegresionLineal,
+        Tags.RegresionLogistica,
+        Tags.LDA
+      ],
+      subHeadings: [
+        "Regresión Lineal",
+        "Mínimos Cuadrados Ordinarios:",
+        "Descenso de Gradiente:",
+        "Haciendo Predicciones",
+        "Preparación de Datos para Regresión Lineal",
+        "Regresión Logística",
+        "Estimación de Coeficientes en Regresión Logística:",
+        "La Regresión Logística Predice Probabilidades:",
+        "Preparación de Datos para Regresión Logística",
+        "Análisis Discriminante Lineal (LDA)",
+        "Limitaciones de la Regresión Logística",
+        "Preparación de Datos para LDA"
+      ]
     },
     {
       id: 12,
       title: "Probabilidad de un segundo ataque cárdiaco utilizando Regresión Logistica",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <table border="1">
@@ -1569,23 +1569,23 @@ Tipo de probelma: clasificación, supervisado.<br>
             </p>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.AlgoritmosLineales,
-          Tags.Modelo,
-          Tags.RegresionLogistica,
-          Tags.Clasificacion
-        ],
-        destacado: true
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.AlgoritmosLineales,
+        Tags.Modelo,
+        Tags.RegresionLogistica,
+        Tags.Clasificacion
+      ],
+      destacado: true
     },
     {
       id: 13,
       title: "Clasificacion de talentos deportivos utilizando LDA",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <p>El “Maestro”, convencido de su capacidad para vislumbrar estrellas deportivas, ha puesto una academia para ayudar a jóvenes deportistas a lograr su mayor desempeño. En esta academia, el Maestro se enfoca particularmente en cuatro deportes: Fútbol, Basketball, Voleibol y Rugby.</p>
@@ -1665,23 +1665,23 @@ Tipo de probelma: clasificación, supervisado.<br>
 </aside>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/08/20"),
-        tags : [
-          Tags.AlgoritmosLineales,
-          Tags.Modelo,
-          Tags.LDA,
-          Tags.Clasificacion
-        ],
-        destacado: true
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/08/20"),
+      tags: [
+        Tags.AlgoritmosLineales,
+        Tags.Modelo,
+        Tags.LDA,
+        Tags.Clasificacion
+      ],
+      destacado: true
     },
     {
       id: 14,
       title: "Algoritmos No Lineales: KNN",
       category: "",
       topics: "2",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container">
@@ -1768,31 +1768,31 @@ Tipo de probelma: clasificación, supervisado.<br>
     </div>
           `
         ],
-        intrestLinks : [
-        ],
-        publishedDate: new Date("2023/09/26"),
-        tags : [
-          Tags.AlgoritmosNoLineales,
-          Tags.Resumen,
-          Tags.Teoria
-        ],
-        subHeadings: [
-          "Introduccion",
-          "Como funciona",
-          "Medida de proximidad",
-          "- Distancia",
-          "- Similitud de Correlacion",
-          "- Coeficiente",
-          "Conclusiones",
-          "Articulos Relacionados"
-        ]
+      intrestLinks: [
+      ],
+      publishedDate: new Date("2023/09/26"),
+      tags: [
+        Tags.AlgoritmosNoLineales,
+        Tags.Resumen,
+        Tags.Teoria
+      ],
+      subHeadings: [
+        "Introduccion",
+        "Como funciona",
+        "Medida de proximidad",
+        "- Distancia",
+        "- Similitud de Correlacion",
+        "- Coeficiente",
+        "Conclusiones",
+        "Articulos Relacionados"
+      ]
     },
     {
       id: 15,
       title: "Algoritmos No Lineales: Naive Bayes",
       category: "",
       topics: "1",
-      parapgraph: 
+      parapgraph:
         [
           `
           <div class="container mt-5">
@@ -1840,23 +1840,23 @@ Tipo de probelma: clasificación, supervisado.<br>
           <p>La singularidad de la técnica es que aprovecha la nueva información a medida que llega y trata de hacer la mejor predicción teniendo en cuenta las nuevas pruebas. En este sentido, es bastante similar a cómo funciona nuestra mente.</p>
           `
         ],
-        intrestLinks : [
+      intrestLinks: [
 
-        ],
-        publishedDate: new Date("2023/09/26"),
-        tags : [
-          Tags.AlgoritmosNoLineales,
-          Tags.Resumen,
-          Tags.Teoria
-        ],
-        subHeadings: [
-          "Introduccion",
-          "Cómo funciona",
-          "Un ejemplo de golf",
-          "Limitaciones",
-          "Conclusiones",
-          "Articulos Relacionados"
-        ]
+      ],
+      publishedDate: new Date("2023/09/26"),
+      tags: [
+        Tags.AlgoritmosNoLineales,
+        Tags.Resumen,
+        Tags.Teoria
+      ],
+      subHeadings: [
+        "Introduccion",
+        "Cómo funciona",
+        "Un ejemplo de golf",
+        "Limitaciones",
+        "Conclusiones",
+        "Articulos Relacionados"
+      ]
     },
     {
       id: 16,
@@ -2006,7 +2006,6 @@ Tipo de probelma: clasificación, supervisado.<br>
         "Posibles mejoras por evaluar"
       ]
     }
-    
   ].reverse()
 
   constructor() { }

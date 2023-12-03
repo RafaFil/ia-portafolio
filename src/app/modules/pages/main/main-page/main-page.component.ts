@@ -3,77 +3,90 @@ import { Article } from 'src/app/modules/core/interfaces/article';
 import { ArticleService } from 'src/app/modules/core/services/article.service';
 import { fadeInUpAnimation } from '../animations/animationFadeIn';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { StudyCase } from 'src/app/modules/core/interfaces/studyCase';
+import { StudyCaseService } from 'src/app/modules/core/services/study-case.service';
+import { CardCollectionComponent } from '../components/card-collection/card-collection.component';
 
+interface PageEvent {
+  first: number;
+  rows: number;
+  page: number;
+  pageCount: number;
+}
 
 @Component({
   selector: 'ia-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css'],
-  animations: [  trigger('fadeInOut', [
-      state('void', style({ opacity: 0, transform: 'translateY(20px)' })),
-      state('*', style({ opacity: 1, transform: 'translateY(0)' })),
-      transition(':enter, :leave', animate('1s ease')),
-    ])],
+  animations: [trigger('fadeInOut', [
+    state('void', style({ opacity: 0, transform: 'translateY(20px)' })),
+    state('*', style({ opacity: 1, transform: 'translateY(0)' })),
+    transition(':enter, :leave', animate('1s ease')),
+  ])],
 })
 export class MainPageComponent implements OnInit {
 
   articles: Article[] = [];
 
-  articlesShown : Article[] = [];
+  sc: StudyCase[] = [];
 
-  isNavbarVisible: boolean = true; 
-  
+  articlesShown: Article[] = [];
+
+  articlesRows: Article[] = [];
+
+  isNavbarVisible: boolean = true;
+
   showNavBar = false;
 
   searchBarText = "";
 
-  articleTags : string[] = [];
+  articleTags: string[] = [];
 
   @ViewChild('scrollToTop') scrollToTopElement: ElementRef | undefined;
 
   @HostListener('window:scroll', [])
   onScroll(): void {
 
-    const scrollThreshold = 100; 
+    const scrollThreshold = 100;
 
     this.showNavBar = window.pageYOffset >= scrollThreshold;
   }
 
 
-  constructor(private articleService : ArticleService, private el: ElementRef) { }
+  constructor(private articleService: ArticleService, private el: ElementRef, private scService: StudyCaseService) { }
 
   ngOnInit(): void {
 
     this.articles = this.articleService.getAllArticles();
-    //this.getArticlesToShow(0);
+    this.articlesShown = this.articles;
+    this.sc = this.scService.getAllArticles();
+    this.turnToFirstPage()
   }
 
-  searchBarTextRecieve(s : string) {
+  searchBarTextRecieve(s: string) {
     this.searchBarText = s;
   }
 
-  newTopicSelected(s : string) {
-    
+  newTopicSelected(s: string) {
     this.articleTags.push(s);
     // this.articlesShown = this.articles
     // .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
-      this.articles = this.articles
-    .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
+    this.articlesShown = this.articles
+      .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
+    
+    this.turnToFirstPage()
   }
 
-  changeArticlesPage(page : number) {
+  changeArticlesPage(page: number, first : number) {
+    this.first = first
     this.getArticlesToShow(page)
   }
 
-  getArticlesToShow(page : number) {
-     
-    const itemsPerPage = 10; 
-    const startIndex = page * itemsPerPage; 
-    const endIndex = startIndex + itemsPerPage; 
+  getArticlesToShow(page: number) {
+    const startIndex = page * this.rows;
+    const endIndex = startIndex + this.rows;
 
-    this.articlesShown = this.articles.slice(startIndex, endIndex);
-    this.scrollToTop()
-
+    this.articlesRows = this.articlesShown.slice(startIndex, endIndex);
   }
 
   scrollToTop() {
@@ -81,14 +94,30 @@ export class MainPageComponent implements OnInit {
       this.scrollToTopElement.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
-  showArticulosDestacados(e : boolean) {
-
-    if (e)
+  showArticulosDestacados(e: boolean) {
+    if (e){
       // this.articlesShown = this.articles.filter(x => x.destacado);
-      this.articles = this.articles.filter(x => x.destacado);
-    else
+      this.articlesShown = this.articles.filter(x => x.destacado);
+    }
+    else{
       // this.articlesShown = this.articles
-      this.articles = this.articles
+      this.articlesShown = this.articles
+    }
+    this.turnToFirstPage()
+  }
+
+  first: number = 0;
+  rows: number = 10;
+
+  onPageChange(event: PageEvent) {
+    this.changeArticlesPage(event.page, event.first)
+    this.scrollToTop()
+    console.log(this.first)
+    console.log(event.page)
+  }
+
+  turnToFirstPage(){
+    this.changeArticlesPage(0,0)
   }
 
 }

@@ -21,7 +21,7 @@ export class AboutToolbarComponent implements OnInit {
   redirectTo(value : string) {
 
     const links : linksType = {
-      "Github": "https://github.com/RafaFil/ia-portafolio-docs",
+      "Github": "https://github.com/RafaFil/ia-portafolio",
       "LinkedIn": "https://uy.linkedin.com/in/rafael-filardi"
     }
 
