@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Article } from '../interfaces/article';
 import { Tags } from '../enums/tags';
-import { Tag } from 'primeng/tag';
+
 
 const genericURL = "";
 
@@ -1857,8 +1857,155 @@ Tipo de probelma: clasificación, supervisado.<br>
         "Conclusiones",
         "Articulos Relacionados"
       ]
-    }
+    },
+    {
+      id: 16,
+      title: "Dataset Iris orientado al clustering",
+      category: "Clustering",
+      topics: "1",
+      parapgraph: 
+      [
+        `
+        <head>
+          <title>Informe de Análisis de Dataset Iris</title>
+        </head>
 
+          <h2>Objetivo:</h2>
+          <p>
+              Si bien el dataset Iris es usado con frecuencia para problemas de clasificación, en este caso decidí abordar un problema de agrupamiento usando este mismo. Por lo tanto, el objetivo principal del problema de clustering en este contexto es agrupar las observaciones en función de similitudes en las características morfológicas, sin tener en cuenta las etiquetas de clase. Es decir, explorar y descubrir patrones de agrupamiento que pueden ayudar en la comprensión de la variabilidad de las características en el conjunto de datos.
+          </p>
+      
+          <h2>Tipo de problema:</h2>
+          <p>
+              Este enfoque, cuando se utiliza el conjunto de datos Iris enfocado en el clustering, pertenece al tipo de problema de clustering no supervisado. Es importante tener en cuenta que:
+          </p>
+          <ul>
+              <li>En este enfoque, el objetivo no es predecir una etiqueta de clase específica, sino descubrir patrones y estructuras ocultas en los datos mediante la formación de grupos (clusters) de observaciones similares.</li>
+              <li>Los datos conservan su naturaleza original, que consta de cuatro características numéricas continuas: longitud y ancho del sépalo, longitud y ancho del pétalo. Sin embargo, las etiquetas de clase (especies de iris) se eliminan, ya que en un problema de clustering no se utilizan.</li>
+          </ul>
+      
+          <h2>Entorno de desarrollo:</h2>
+          <p>
+              En este caso optaremos por el uso de la herramienta RapidMiner. Esta nos permitirá llevar a cabo el análisis de datos y la implementación de diversos modelos. Esto con el fin de obtener una solución lo más acertada posible a nuestro objetivo.
+          </p>
+          <p>
+              Sobre RapidMiner:
+              RapidMiner es utilizado en una variedad de industrias, desde la salud y las finanzas hasta la fabricación y la investigación académica, para abordar una amplia gama de problemas de análisis de datos y aprendizaje automático. Es una plataforma de código abierto y una suite de software para la ciencia de datos, el aprendizaje automático y el análisis avanzado de datos. Fue desarrollada para facilitar y acelerar el proceso de análisis de datos y la construcción de modelos predictivos, lo que la convierte en una herramienta valiosa para científicos de datos, analistas y profesionales en el campo de la inteligencia empresarial. Cabe destacar, que además de su edición de código abierto, también existe una versión comercial con características adicionales y soporte profesional.
+              Para más información puede visitar el sitio oficial: <a href="https://rapidminer.com/">https://rapidminer.com/</a>
+          </p>
+      
+          <h2>Análisis del dataset, preparación de datos y selección de atributos:</h2>
+          <p>
+              Antes que nada, es vital saber, que para abordar el conjunto de datos Iris como un problema de agrupamiento, se deben suprimir las etiquetas de clase (las especies de iris) en el conjunto de datos para que el algoritmo de agrupamiento no tenga acceso a esta información. Para eso usaremos el operador “Select Atributes”
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_1.png">
+      
+          <p>
+              Algo que siempre queremos hacer al momento de trabajar con análisis de clustering o cualquier otro método que trabaje con distancias es normalizar los datos. Esto nos ayuda a evitar que se dé un “peso” no correspondiente en el análisis a las variables que se miden en una escala mucho mayor. Un buen ejemplo de esto es la variable “Petal.Length” (el cual se mide en la escala más grande).
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_2.png">
+      
+          <p>
+              En este caso usaremos el operador “Normalize” (Z-transformation) para solucionar este problema.
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_3.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_4.png">
+      
+          <p>
+              Otra observación relevante dentro de esta sección del caso de prueba es que se puede observar, que este dataset no contiene ningún Missing Value. Por lo tanto, usar algún operador relacionado a los mismos no es necesario, pues no jugaría un papel relevante en el análisis.
+          </p>
+      
+          <h2>Modelo elegido:</h2>
+          <p>
+              Usaremos el operador enfocado en clustering llamado “k-Means”. Este operador, tiene como objetivo principal agrupar un conjunto de datos en "K" clusters, donde "K" es un número predefinido. Cada cluster representa un grupo de puntos de datos que son similares entre sí en función de las características utilizadas en el análisis.
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_5.png">
+      
+          <p>
+              Con este nos centraremos en probar con diversos valores de k (modificable en los parámetros del operador).
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_6.png">
+      
+          <p>
+              También recurriremos al operador “Cluster Distance Performance”, este se utiliza para evaluar el rendimiento de un modelo de clustering, como K-Means, en función de cómo los datos se agrupan en diferentes clusters. Proporciona métricas que evalúan la calidad de los clusters formados por el modelo.
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_7.png">
+      
+          <h2>La estructura final del proceso debería ser la siguiente:</h2>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_8.png">
+      
+          <p>
+              Probaremos el proceso con diversos valores de k, esto con la finalidad de ver para qué valor del mismo se ajusta mejor en relación a nuestro objetivo.
+          </p>
+          
+          <p>
+            K = 2
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_9.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_10.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_11.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_12.png">
+
+          <p>
+            K = 3
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_13.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_14.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_15.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_16.png">
+
+          <p>
+            K = 4
+          </p>
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_17.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_18.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_19.png">
+          <img src="../../../../../../assets/img/clustering_iris/clustering_iris_20.png">
+      
+          <h2>Análisis de Resultados:</h2>
+          <p>
+              En el caso del dataset Iris, sabemos de antemano que tienes tres tipos de flores (setosa, versicolor y virginica) como etiquetas o clases. Si realizamos un análisis de clustering sin utilizar esta información de clase y tratar de descubrir agrupamientos naturales basados solo en las características, no tendría sentido probar con un número de clusters "k" mayor a 3.
+          </p>
+          <p>
+              El algoritmo k-Means agrupa datos en un número específico de clusters, y en este caso, lo lógico sería configurar "k" en 3, ya que sabes que hay tres clases reales en el conjunto de datos. Utilizar un número mayor de clusters solo dividiría los datos en grupos adicionales que no tienen un significado intrínseco en el contexto de las especies de iris (incluso los resultados para k= 3 son muy acordes a lo que refleja el dataset original sin eliminar las clases).
+          </p>
+      
+          <p>
+              Sin embargo, hacer esto se podría considerar “trampa”, o una ventaja un tanto injusta, pues no siempre sabremos de antemano cuántas clases tendremos en el dataset. Por lo tanto, para ser objetivos tomaremos dos métricas relevantes: el promedio de la distancia dentro del centroide (Avg. within centroid distance) y el índice Davies-Bouldin (Davies Bouldin):
+          </p>
+          
+          <p>
+              Teniendo esto en cuenta y que las distancias deben ser medidas en valor absoluto (pues no tiene sentido que sean negativas):
+          </p>
+          <ul>
+              <li>En términos del índice Davies-Bouldin, un valor más bajo en términos absolutos indica un mejor rendimiento del modelo de clustering. Por lo tanto, "PerformanceVector(k=2)" con un valor absoluto de 0.598 es el mejor, seguido por "PerformanceVector(k=3)" con un valor absoluto de 0.834 y luego "PerformanceVector(k=4)" con un valor absoluto de 0.866.</li>
+              <li>En cuanto al promedio de la distancia dentro del centroide, un valor más bajo en términos absolutos indica un mejor rendimiento. En este aspecto, "PerformanceVector(k=4)" con un valor absoluto de 0.758 es el mejor, seguido por "PerformanceVector(k=3)" con un valor absoluto de 0.935 y luego "PerformanceVector(k=2)" con un valor absoluto de 1.482.</li>
+          </ul>
+      
+          <h2>Posibles mejoras por evaluar:</h2>
+          <ul>
+              <li>Uso de métricas múltiples: En lugar de depender de una sola métrica, considera utilizar varias métricas de evaluación para obtener una imagen más completa del rendimiento de tu modelo. Algunas métricas pueden ser más apropiadas para ciertos tipos de datos o problemas.</li>
+              <li>Validación cruzada: La validación cruzada, como la validación cruzada k-fold o la validación cruzada leave-one-out, puede ayudarte a evaluar la estabilidad del modelo y reducir el riesgo de sobreajuste. Esto es especialmente útil cuando tienes un conjunto de datos pequeño.</li>
+              <li>Selección de características: Si estás trabajando con conjuntos de datos de alta dimensionalidad, considera técnicas de selección de características o reducción de dimensionalidad, como PCA (Análisis de Componentes Principales) o LDA (Análisis de Discriminante Lineal), para mejorar la precisión del modelo y reducir el tiempo de entrenamiento.</li>
+          </ul>
+        `
+      ],
+      publishedDate: new Date("2023/10/24"),
+      tags : [
+        Tags.Clustering,
+        Tags.CasoDeEstudio,
+        Tags.RapidMiner
+      ],
+      subHeadings: [
+        "Objetivo",
+        "Tipo de problema",
+        "Entorno de desarrollo",
+        "Análisis del dataset, preparación de datos y selección de atributos",
+        "Modelo elegido",
+        "Análisis de Resultados",
+        "Posibles mejoras por evaluar"
+      ]
+    }
   ].reverse()
 
   constructor() { }
