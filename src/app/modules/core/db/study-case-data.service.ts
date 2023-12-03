@@ -1089,7 +1089,21 @@ Atributos:<br>
 </p>
 </div>
       `,
-      image: ""
+      image: "../../../../assets/img/ecoli/ecoli-reference.jpg"
+    },
+    {
+      title: "Indian Liver Patient",
+      cut: "liver",
+      html: `
+      
+      `,
+      shortDescripton: `
+      Los pacientes con enfermedad hepática han aumentado continuamente debido al consumo 
+      excesivo de alcohol, la inhalación de gases nocivos, la ingesta de alimentos contaminados, 
+      encurtidos y drogas. El objetivo de este trabajo es evaluar algoritmos de predicción en un 
+      esfuerzo por reducir la carga sobre los médicos
+      `,
+      image:""
     }
   ].reverse();
 
