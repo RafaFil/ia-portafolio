@@ -26,13 +26,11 @@ export class ArticlesFilterComponent implements OnInit {
 
   UTS: string[] = [
     "Introduccion a Machine Learning",
-    "Tratamiento previo de los datos",
     "Algoritmos Lineales",
     "Algoritmos No Lineales",
     "Clustering y Modelos Jerárquicos",
     "Ensambles",
-    "Evaluación",
-    "Casos de estudio"
+    "Evaluación"
   ]
 
   TAG = Tags;
@@ -52,10 +50,14 @@ export class ArticlesFilterComponent implements OnInit {
 
     this.topicSelected.emit(tag.text);
 
-    if(tag.selected)
-      tag.severity = "primary"
-    else
+    if(tag.selected){
+      tag.severity = "info"
+      tag.selected = false
+    }
+    else{
       tag.severity = "success";
+      tag.selected = true
+    }
   }
 
   showDestacados() {
