@@ -8,7 +8,7 @@
             <ia-tags *ngFor="let tag of TAG | keyvalue" [text]="tag.value" (click)="AddFilterUT(IaTag)" [severity]="'info'"
             #IaTag value="ut" class="ia-tag"></ia-tags>
         </p-accordionTab>
-        <p-accordionTab header="Ordenar por:">
+        <p-accordionTab header="Mostrar Solo:">
             <p-checkbox value="des" inputId="dest" (onChange)="showDestacados()"></p-checkbox>
             <label for="ny">Mostrar solo Destacados</label>
         </p-accordionTab>

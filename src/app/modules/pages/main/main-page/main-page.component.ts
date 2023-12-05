@@ -68,12 +68,21 @@ export class MainPageComponent implements OnInit {
   }
 
   newTopicSelected(s: string) {
-    this.articleTags.push(s);
-    // this.articlesShown = this.articles
-    // .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
-    this.articlesShown = this.articles
-      .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
+    if(!this.articleTags.includes(s)){
+      this.articleTags.push(s);
+    } else {
+      this.articleTags.splice(this.articleTags.findIndex(x => x===s),1)
+    }
+
+    if(this.articleTags.length > 0){
+      this.articlesShown = this.articles
+        .filter(article => article.tags.some(tag => this.articleTags.includes(tag)));
+    }
+    else{
+      this.articlesShown = this.articles
+    }
     
+
     this.turnToFirstPage()
   }
 
