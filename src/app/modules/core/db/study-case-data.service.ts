@@ -33,7 +33,7 @@ export class StudyCaseDataService {
       cut: "lung",
       shortDescripton: "Este caso plantea un problema particular, al contarse con muy poca información respecto el contexto y significado de los datos, el amplio numero de atributos y los desbalanceos en los datos de cada atributo. Este ejercicio de clasificación presenta el problema de identificar entre 3 tipos de Cancer de Pulmón a partir de un conjunto reducido de datos pero con muchos atributos.",
       html:
-          `
+        `
           <section id="content" class="body container">
 
    <div class="row">
@@ -339,14 +339,14 @@ ConfusionMatrix:  </p>
 </section>
 
           `,
-          image: "../../../../../../assets/img/lungCancer/image-12.png",
+      image: "../../../../../../assets/img/lungCancer/image-12.png",
     },
     {
       title: "Caso: Clasificar Mina o Roca",
       cut: "minas",
       shortDescripton: "Este dataset recopila una serie de patrones que siguen las señales de sonar aplicadas en el suelo, con el objetivo de detectar minas explosivas de meras rocas. Este caso lo abordaremos de manera breve, ya que nos centraremos en un abordaje de demostración de algoritmos de selección de atributos",
       html:
-          `
+        `
           <section id="content" class="body container">
 
    <div class="row">
@@ -505,7 +505,7 @@ Atributos:<br>
 </section>
 
           `,
-          image: "../../../../../../assets/img/sonar/image.png"
+      image: "../../../../../../assets/img/sonar/image.png"
     },
     {
       title: "Caso: Ecoli",
@@ -519,8 +519,8 @@ Atributos:<br>
   una mejor comprensión de la distribución y función de las proteínas en
   bacterias gramnegativas.
       `,
-      html: 
-      `
+      html:
+        `
     <div class="container">
   <h1>Informe de Análisis de Dataset Ecoli</h1>
 
@@ -1100,18 +1100,249 @@ Atributos:<br>
       image: "../../../../../../assets/img/ecoli/5.jpg"
     },
     {
-      title: "Indian Liver Patient",
-      cut: "liver",
+      title: "Clustering de Clientes",
+      cut: "clients cluster",
       html: `
-      
+      <div class="container">
+      <h1>Clustering de Clientes</h1>
+
+<p>En este proyecto, nos sumergimos en el análisis de datos utilizando técnicas de agrupamiento para segmentar a los clientes de un supermercado. La agrupación consiste en reunir puntos de datos similares según una métrica de similitud seleccionada, revelando patrones y estructuras inherentes en el conjunto de datos sin depender de categorías predefinidas.</p>
+
+<h2>Conjunto de Datos</h2>
+<p>La fuente de nuestros datos proviene de un centro comercial de supermercados y se recopila a través de tarjetas de membresía. La información sobre los clientes incluye el ID del cliente, edad, género, ingreso anual y puntaje de gasto. Estos atributos proporcionan una visión integral de cada perfil de cliente, estableciendo la base para un análisis perspicaz.</p>
+
+<h2>Objetivo</h2>
+<p>El propósito principal de este proyecto es identificar y definir diferentes segmentos de clientes mediante el uso de algoritmos de agrupamiento. Estos segmentos se convertirán en la base para adaptar estrategias de marketing que se alineen con las necesidades y preferencias únicas de cada grupo, mejorando en última instancia la experiencia general del cliente.</p>
+
+<h2>Análisis de Datos</h2>
+<p>Este conjunto de datos consta de 2000 filas y 8 columnas, donde cada columna contiene exclusivamente datos enteros. Es importante destacar que el conjunto de datos está completo, sin valores faltantes en ninguna de sus entradas.</p>
+<h2>Explicación de Cada Columna</h2>
+
+<ul>
+  <li><strong>Sexo:</strong> Género biológico del cliente</li>
+  <ul>
+    <li>0: Masculino</li>
+    <li>1: Femenino</li>
+  </ul>
+
+  <li><strong>Estado civil:</strong> Estado civil del cliente</li>
+  <ul>
+    <li>0: Soltero</li>
+    <li>1: No soltero (divorciado/separado/casado/viudo)</li>
+  </ul>
+
+  <li><strong>Edad:</strong> Edad del cliente en años</li>
+
+  <li><strong>Educación:</strong> Nivel educativo del cliente</li>
+  <ul>
+    <li>0: Otro/Desconocido</li>
+    <li>1: Escuela secundaria</li>
+    <li>2: Universidad</li>
+    <li>3: Posgrado</li>
+  </ul>
+
+  <li><strong>Ingresos:</strong> Ingresos anuales autoinformados en dólares estadounidenses del cliente</li>
+
+  <li><strong>Ocupación:</strong> Categoría de ocupación del cliente</li>
+  <ul>
+    <li>0: Desempleado/No calificado</li>
+    <li>1: Empleado cualificado/Funcionario</li>
+    <li>2: Gestión/Independiente/Empleado altamente calificado/Funcionario</li>
+  </ul>
+
+  <li><strong>Tamaño de la ciudad:</strong> Tamaño de la ciudad donde reside el cliente</li>
+  <ul>
+    <li>0: Ciudad pequeña</li>
+    <li>1: Ciudad mediana</li>
+    <li>2: Gran ciudad</li>
+  </ul>
+</ul>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/img1.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen2.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen3.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen4.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen5.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen6.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen7.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen8.jpg" />
+
+<h2>Análisis de las Columnas Numéricas</h2>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/Imagen9.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen10.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen11.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen12.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen13.jpg" />
+
+<p>Como se puede observar en ambos histogramas, las distribuciones presentan una clara asimetría hacia la derecha. Esta característica indica una distribución con una cola más extensa que se extiende hacia los valores más altos. La naturaleza sesgada hacia la derecha sugiere que, aunque la mayoría de los datos tiende a agruparse a la izquierda, no se esperan otras características destacadas. En cuanto a la edad, el conjunto de datos está predominantemente conformado por individuos con edades comprendidas entre los 25 y 35 años. En lo que respecta a los ingresos, la mayoría se encuentra en el rango de 100,000 a 120,000. Más allá de este intervalo, el número de personas disminuye a medida que aumentan los niveles de ingresos.</p>
+
+<h2>Exploración de Datos</h2>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/Imagen16.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen17.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen18.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen19.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen20.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen21.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen22.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen23.jpg" />
+
+
+<p>El conjunto de datos está mayoritariamente conformado por hombres, representando la mayoría con 1,086 filas. Existe una paridad notable entre individuos solteros y no solteros. En cuanto a los niveles educativos, la categoría de "Escuela Secundaria" lidera con la mayor proporción, seguida por "Universidad" y "Otro". Los trabajadores cualificados encabezan la clasificación ocupacional, seguidos de cerca por los desempleados. En términos de residencia, la mayoría de los individuos en el conjunto de datos residen en ciudades pequeñas, seguidas por ciudades medianas, con una presencia menor en ciudades más grandes.</p>
+
+<h2>Exploración Detallada</h2>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/Imagen24.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen25.jpg" />
+
+<p>Obs: Los hombres en el conjunto de datos tienden a tener salarios más altos en comparación con las mujeres.</p>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/Imagen26.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen27.jpg" />
+
+<p>Obs: Los hombres dominan tanto en ciudades grandes como en ciudades medianas, mientras que las mujeres son más prevalentes en ciudades pequeñas.</p>
+
+<img src="../../../../../../assets/img/clientCluster/Imagen28.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen29.jpg" />
+
+<p>Obs: Entre las mujeres, un porcentaje más alto posee calificaciones educativas que van desde la escuela secundaria hasta la escuela de posgrado. En contraste, los hombres muestran una variedad de antecedentes educativos.</p>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/Imagen30.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen31.jpg" />
+
+<p>Obs: A pesar de que las mujeres tienen antecedentes educativos más elevados, los hombres tienden a dominar en roles calificados y altamente cualificados. Por otro lado, una parte significativa de las mujeres en el conjunto de datos tiene un estado de desempleo.</p>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/Imagen32.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen33.jpg" />
+
+<p>Obs: En ciudades pequeñas, la mayoría de las personas están desempleadas, seguidas de cerca por empleados calificados. En contraste, las ciudades medianas y grandes muestran una tendencia diferente, con una mayor concentración de empleados calificados. Además, las grandes ciudades destacan por una notable presencia de empleados altamente cualificados.</p>
+
+<img src="../../../../../../assets/img/clientCluster/Imagen34.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen35.jpg" />
+
+<p>Obs: El histograma ofrece una representación visual clara de la distribución de ingresos. Las personas en la categoría de desempleados, que representan varios tipos de empleo, generalmente tienen los salarios más bajos, a menudo por debajo de los 50,000. Por otro lado, los empleados calificados tienden a ganar salarios que van desde 100,000 hasta aproximadamente 150,000. Destacadamente, aquellos en posiciones altamente cualificadas disfrutan de un rango de ingresos más alto, típicamente entre 150,000 y incluso 300,000.</p>
+
+<h2>Aplicando el Modelo</h2>
+
+<img src="../../../../../../assets/img/clientCluster/Imagen36.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen37.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen38.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen39.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen40.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen41.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen42.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen43.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen44.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen45.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen46.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen47.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen48.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen49.jpg" />
+
+
+<h2>Conclusiones</h2>
+<h2>Cluster 0:</h2>
+<ul>
+  <li><strong>Género:</strong> Hay más mujeres que hombres.</li>
+  <li><strong>Estado Civil:</strong> Los solteros superan a los no solteros.</li>
+  <li><strong>Edad:</strong> Edades de 30 a 40 años.</li>
+  <li><strong>Educación:</strong> Estudiantes universitarios.</li>
+  <li><strong>Ingresos:</strong> Ingresos de 100,000 a 180,000.</li>
+  <li><strong>Ocupación:</strong> Empleados.</li>
+  <li><strong>Tamaño de la Ciudad:</strong> Ciudad Pequeña > Ciudad Mediana > Ciudad Grande.</li>
+</ul>
+
+<!-- Cluster 1 -->
+<h2>Cluster 1:</h2>
+<ul>
+  <li><strong>Género:</strong> Hay más mujeres que hombres.</li>
+  <li><strong>Estado Civil:</strong> Los solteros superan a los no solteros.</li>
+  <li><strong>Edad:</strong> Edades de 40 a 50 años.</li>
+  <li><strong>Educación:</strong> Estudiantes universitarios.</li>
+  <li><strong>Ingresos:</strong> Ingresos de 120,000 a 140,000.</li>
+  <li><strong>Ocupación:</strong> Empleados y desempleados.</li>
+  <li><strong>Tamaño de la Ciudad:</strong> Ciudad Pequeña.</li>
+</ul>
+
+<!-- Cluster 2 -->
+<h2>Cluster 2:</h2>
+<ul>
+  <li><strong>Género:</strong> Hay más mujeres que hombres.</li>
+  <li><strong>Estado Civil:</strong> Los solteros superan a los no solteros.</li>
+  <li><strong>Edad:</strong> Edades de 40 a 50 años.</li>
+  <li><strong>Educación:</strong> Estudiantes universitarios y posgraduados.</li>
+  <li><strong>Ingresos:</strong> Ingresos de 175,000 a 300,000.</li>
+  <li><strong>Ocupación:</strong> Altamente empleados.</li>
+  <li><strong>Tamaño de la Ciudad:</strong> Ciudad Grande y Ciudad Mediana.</li>
+</ul>
+
+<!-- Cluster 3 -->
+<h2>Cluster 3:</h2>
+<ul>
+  <li><strong>Género:</strong> Hombres y mujeres casi iguales.</li>
+  <li><strong>Estado Civil:</strong> Los solteros superan a los no solteros.</li>
+  <li><strong>Edad:</strong> Edades de 20 a 40 años.</li>
+  <li><strong>Educación:</strong> Estudiantes universitarios.</li>
+  <li><strong>Ingresos:</strong> Ingresos de 40,000 a 100,000.</li>
+  <li><strong>Ocupación:</strong> Desempleados.</li>
+  <li><strong>Tamaño de la Ciudad:</strong> Ciudad Pequeña.</li>
+</ul>
+
+<!-- Cluster 4 -->
+<h2>Cluster 4:</h2>
+<ul>
+  <li><strong>Género:</strong> Hay más mujeres que hombres.</li>
+  <li><strong>Estado Civil:</strong> Casi igual cantidad de solteros y no solteros.</li>
+  <li><strong>Edad:</strong> Edades de 50 a 70 años.</li>
+  <li><strong>Educación:</strong> Posgraduados.</li>
+  <li><strong>Ingresos:</strong> Ingresos de 120,000 a 220,000.</li>
+  <li><strong>Ocupación:</strong> Empleados y altamente empleados.</li>
+  <li><strong>Tamaño de la Ciudad:</strong> Ciudad Mediana > Ciudad Grande > Ciudad Pequeña.</li>
+</ul>
+
+<!-- Cluster 5 -->
+<h2>Cluster 5:</h2>
+<ul>
+  <li><strong>Género:</strong> Hay más hombres que mujeres.</li>
+  <li><strong>Estado Civil:</strong> Los no solteros superan a los solteros.</li>
+  <li><strong>Edad:</strong> Edades de 20 a 30 años.</li>
+  <li><strong>Educación:</strong> Estudiantes universitarios.</li>
+  <li><strong>Ingresos:</strong> Ingresos de 100,000 a 130,000.</li>
+  <li><strong>Ocupación:</strong> Empleados.</li>
+  <li><strong>Tamaño de la Ciudad:</strong> Ciudad Pequeña > Ciudad Mediana > Ciudad Grande.</li>
+</ul>
+
+<!-- Insertar las imágenes correspondientes aquí -->
+<img src="../../../../../../assets/img/clientCluster/Imagen50.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen51.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen52.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen53.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen54.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen55.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen56.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen57.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen58.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen59.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen60.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen61.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen62.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen63.jpg" />
+<img src="../../../../../../assets/img/clientCluster/Imagen64.jpg" />
+
+      </div>
       `,
       shortDescripton: `
-      Los pacientes con enfermedad hepática han aumentado continuamente debido al consumo 
-      excesivo de alcohol, la inhalación de gases nocivos, la ingesta de alimentos contaminados, 
-      encurtidos y drogas. El objetivo de este trabajo es evaluar algoritmos de predicción en un 
-      esfuerzo por reducir la carga sobre los médicos
+      Nos sumergimos en el análisis de datos utilizando técnicas de agrupamiento para segmentar a los clientes de un supermercado. La agrupación consiste en reunir puntos de datos similares según una métrica de similitud seleccionada, revelando patrones y estructuras inherentes en el conjunto de datos sin depender de categorías predefinidas.
       `,
-      image:""
+      image: "../../../../../../assets/img/clientCluster/Imagen46.jpg"
     },
     {
       title: "Dataset Iris orientado al clustering",
@@ -1242,7 +1473,7 @@ Atributos:<br>
       shortDescripton: `
       Por lo tanto, el objetivo principal del problema de clustering en este contexto es agrupar las observaciones en función de similitudes en las características morfológicas, sin tener en cuenta las etiquetas de clase. Es decir, explorar y descubrir patrones de agrupamiento que pueden ayudar en la comprensión de la variabilidad de las características en el conjunto de datos.
       `,
-      image:"../../../../../../assets/img/clustering_iris/clustering_iris_19.png"
+      image: "../../../../../../assets/img/clustering_iris/clustering_iris_19.png"
     }
 
   ].reverse();
